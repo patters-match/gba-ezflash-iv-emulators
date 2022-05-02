@@ -63,6 +63,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 
 ## Exit-Patching Method
 Each of the emulators uses some variation of the **visoly.s** source file. Since they are not identical, it is not trivial to make a binary patcher. A sample **visoly.s** is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function, to replace it with the *ez4_reset* compiled code.
+
 --------
 ## Emulator Tips
 #### Cologne
