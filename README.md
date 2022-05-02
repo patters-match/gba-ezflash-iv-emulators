@@ -31,7 +31,7 @@ This collection serves use case 3 above. In each emulator folder **build.bat** (
 
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit returns to the EZ-Flash IV menu.
 
-## EZ-Flash Versions
+## EZ-Flash IV Versions
 #### Firmware 1.x
 - Don't use the EZ-Client to patch the resulting compilations. A major point of this collection is to avoid having to constantly patch.
 - The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
