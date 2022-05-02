@@ -23,10 +23,10 @@ These emulators were originally designed to be used in a number of ways:
 3. bundle each ROM with its own copy of the emulator  
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
-The Exit menu option was typically intended for Pogoshell so this function needs patching to function correctly with EZ-Flash IV flashcarts.
+Each emulator's Exit menu option was typically intended for Pogoshell-era flashcarts (*visioly.s* in the source code). This function has been manually patched to support EZ-Flash IV flashcarts.
 
 ## Usage
-This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
+In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts.
 
 ## EZ-Flash Versions
 #### Firmware 1.x
@@ -38,7 +38,7 @@ This compilation leverages my Python 3 [gba-emu-compilation-builders](https://gi
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
 - It is recommended that you disable the firmware's integrated GSS patcher (Global Soft-reset and Sleep). Change this line in KEYSET.CFG at the root of your SD card:
   ```DISABLE_GSS = 1```
-  or if you prefer to keep GSS, here is a list of exclusions to add to the file:
+  or if you prefer to keep GSS, here is a list of exclusions to add to the bottom of the file:
   ```
   #GAMELIST TO SKIP GSS AUTOMATICALLY
   #EMULATORS
@@ -143,10 +143,5 @@ SMSAdvanceBin.zip        SMSAdvance Menu Maker
 SNESAdvanceBin.zip       SNESAdvance Menu Maker
 
 
-More about visoly.s and exit patching
--------------------------------------
-
-Between each of the various emulators, every one uses some variation of the visoly.s file.  Because they're not
-identical, it's not trivially possible to make a search/replace binary patcher. Instead, the visoly.s is included
-for those adventurous enough to arm disassemble one of the emulators and compare against the visoly.s to figure
-out where init_flashcart is.  This is where the exit code is patched at.
+##Exit-Patching Method
+Each of the emulators uses some variation of the *visoly.s* source file. Since they're not identical, it's not trivial to make a binary patcher. A sample *visoly.s* is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function. This is where one of the two versions of the ez4_exit code is patched at.
