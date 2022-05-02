@@ -23,7 +23,7 @@ These emulators were originally designed to be used in a number of ways:
    - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save may constrain*  
 2. as plugins for the Pogoshell file manager  
    - *only supports much older flashcart devices e.g. Flash2Advance*  
-3. bundle each game ROM with its own copy of the emulator into a standalone ```.gba```  
+3. bundle each game ROM with its own copy of the emulator into a standalone ```.gba``` file  
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
 ## Purpose
