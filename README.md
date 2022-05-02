@@ -22,9 +22,9 @@ These emulators were originally designed to be used in a number of ways. You cou
 
 The EZ-Flash flashcart copies ```.gba``` files to its interal PSRAM before execution which can be quite slow for large emulator compilations. Since the whole compilation must share the 64KB SRAM save this can get quite contended, particularly for those emulators which support save states.
 
-On an EZ-Flash IV device the SD card means there is no storage constraint, so option 3 is the optimal choice. This allows quick loading of games and, provided the exit menu function works, easy navigation to the next one without having to power cycle the GBA.
+On an EZ-Flash IV device the large SD card removes any storage constraint, so option 3 is the optimal choice. This allows quick loading of games and, provided the exit menu function works, easy navigation to the next one without having to power cycle the GBA.
 
-Where needed, the emulator binaries were manually exit-patched so that the L+R Exit menu option would return to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
+Where needed, these emulator binaries were manually exit-patched so that the L+R Exit menu option returns to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B at any time. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
 
 This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders), invoked by build.bat (for Windows) and build.sh (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
 
