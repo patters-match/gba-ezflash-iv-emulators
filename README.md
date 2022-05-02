@@ -61,6 +61,9 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - gbata7 was used to fix the GBA ROM header after these patches (emulators crash on some firmwares without this fix).
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
 
+## Exit-Patching Method
+Each of the emulators uses some variation of the **visoly.s** source file. Since they are not identical, it is not trivial to make a binary patcher. A sample **visoly.s** is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function, to replace it with the *ez4_reset* compiled code.
+--------
 ## Emulator Tips
 #### Cologne
 - find the BIOS rom with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No Title Delay Hack)"
@@ -83,5 +86,3 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - Select+Up/Down to change screen offset
 - [list of best functioning games](https://web.archive.org/web/20050305113636/http://ygodm.tonsite.biz/snesadv/snesadv_gamelist.html)
 
-## Exit-Patching Method
-Each of the emulators uses some variation of the *visoly.s* source file. Since they're not identical, it's not trivial to make a binary patcher. A sample *visoly.s* is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function. This is where one of the two versions of the ez4_exit code is patched at.
