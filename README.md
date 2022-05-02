@@ -20,7 +20,7 @@ Python 3
 ## Background
 These emulators were originally designed to be used in a number of ways: 
 1. assemble many game ROMs into a large compilation and browse the games from a menu upon launch  
-   - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save is a constraint*  
+   - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save may constrain*  
 2. as plugins for the Pogoshell file manager  
    - *only supports much older flashcart devices e.g. Flash2Advance*  
 3. bundle each game ROM with its own copy of the emulator  
