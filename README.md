@@ -27,14 +27,14 @@ On an EZ-Flash IV device the SD card means storage is plentiful, so option 3 is 
 Where needed, these emulator binaries have been manually exit-patched so that the L+R Exit menu option returns to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B at any time. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function correctly.
 
 ## Usage
-This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders), invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
+This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
 
 ## EZ-Flash Versions
 #### Firmware 1.x
 - Don't use the EZ-Client to patch the resulting compilations. A major point of this collection is to avoid having to constantly patch.
 - The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
 - gbata7 was used to fix the GBA ROM header after these patches (emulators crash on some firmwares without this fix).
-- You will need to edit build.bat (for Windows) and build.sh (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable
+- You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable
 #### Firmware 2.x
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
 - It is recommended that you disable the firmware's integrated GSS patcher (Global Softreset and Sleep). Change this line in KEYSET.CFG at the root of your SD card:
