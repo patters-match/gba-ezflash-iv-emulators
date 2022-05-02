@@ -20,7 +20,7 @@ These emulators were originally designed to be used in a number of ways. You cou
 2. use the emulator as a plugin for the Pogoshell file manager, which supported older flashcart devices e.g. Flash2Advance
 3. bundle each ROM with its own copy of the emulator
 
-The EZ-Flash flashcart copies ```.gba``` files to its interal PSRAM before execution which can be quite slow for large emulator compilations. Since the whole compilation must share the 64KB SRAM save this can get quite contended, particularly for those emulators which support save states.
+The EZ-Flash flashcart copies ```.gba``` files to its internal PSRAM before execution which can be quite slow for large emulator compilations. Since the whole compilation must share the 64KB SRAM save this can get quite contended, particularly for those emulators which support save states.
 
 On an EZ-Flash IV device the SD card means storage is plentiful, so option 3 is the optimal choice. This allows fast loading of games and, provided the exit menu function works, easy navigation to the next one without having to power cycle the GBA.
 
