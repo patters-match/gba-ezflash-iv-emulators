@@ -37,7 +37,7 @@ This compilation leverages my Python 3 [gba-emu-compilation-builders](https://gi
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable
 #### Firmware 2.x
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
-- It is recommended that you disable the firmware's integrated GSS patcher (Global Softreset and Sleep). Change this line in KEYSET.CFG at the root of your SD card:
+- It is recommended that you disable the firmware's integrated GSS patcher (Global Soft-reset and Sleep). Change this line in KEYSET.CFG at the root of your SD card:
   ```DISABLE_GSS = 1```
   or if you prefer to keep GSS, here is a list of exclusions to add to the file:
   ```
