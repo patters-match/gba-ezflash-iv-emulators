@@ -40,7 +40,9 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 #### Firmware 2.x
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
 - It is recommended that you disable the firmware's integrated GSS patcher (Global Soft-reset and Sleep). Amend this line in **KEYSET.CFG** at the root of your SD card:
-  ```DISABLE_GSS = 1```
+  ```
+  DISABLE_GSS = 1
+  ```
   or if you prefer to keep GSS, here is a list of exclusions to add to the bottom of the file:
   ```
   #GAMELIST TO SKIP GSS AUTOMATICALLY
