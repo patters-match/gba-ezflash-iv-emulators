@@ -71,7 +71,7 @@ ez4/reset_ez4-2.s|Code to reset into ez4 loader; switches from arm to thumb and 
 ez4/reset_ez4-2.bin|Binary to reset into ez4 loader
 ez4/visoly.s|visoly.s, from an older version of PocketNES
 
-My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with other emulator source code. Then I used a hex editor to compare exit-patched emulator binariea with their unpatched originals so I could determine the initial state of the replaced section. I found that by progressively trimming both ends of this sequence, I was able to successfully locate an equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite.
+My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binariea with their unpatched originals so I could determine the initial state of the replaced section. I found that by progressively trimming both ends of this sequence, I was able to successfully locate an equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite.
 
 --------
 ## Emulator Tips
