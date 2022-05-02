@@ -16,11 +16,11 @@ Emulator|Target System|Author(s)|Released
 
 ## Purpose
 These emulators were originally designed to be used in a number of ways: 
-- assemble many ROMs into a large compilation and browse the games from a menu upon launch  
+- assemble many game ROMs into a large compilation and browse the games from a menu upon launch  
   - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save is a constraint*  
 - as plugins for the Pogoshell file manager  
   - *only supports much older flashcart devices e.g. Flash2Advance*  
-- bundle each ROM with its own copy of the emulator  
+- bundle each game ROM with its own copy of the emulator  
   - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
 Each emulator's Exit menu option was typically intended for Pogoshell-era flashcarts. The included emulators have had this function manually patched so that Exit works on EZ-Flash IV flashcarts.
