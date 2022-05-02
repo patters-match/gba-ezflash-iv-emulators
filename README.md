@@ -1,10 +1,53 @@
 # EZ-Flash IV Exit-Patched Emulator Collection
-This is a collection of Loopy/FluBBa/Dwedit emulators, SRAM and exit-patched for the EZ-Flash IV.
-- Don't use the EZ Flash client (if still using firmware 1.x) to patch an included emulator or a resulting emulator + ROM compilation. A major point of this collection is to avoid having to constantly patch.
-- Exit patching was manually done so that the L+R Exit menu option would function in all emulators. To be very clear, the exit patch does *not* enable L+U+A+B. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
-- Compatibility with the EZ-Flash exit is built-in to newer versions of emulators (Goomba Color, Jagoomba, Dwedit's PocketNES fork), but others needed binary patching with reset_ez4 files. See section 'More about visoly.s and exit patching' for more details.
-- 64KB SRAM patching for EZ-Flash IV firmware 1.x was done through cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
-- gbata7 was used to fix the GBA ROM header after these patches (emulators crashed on some firmwares without fix).
+This is a collection of emulators for the Gameboy Avdance, SRAM and exit-patched to function optimally with the EZ-Flash IV flashcart.
+
+Emulator|Target System|Author(s)|Released
+:-------|:------------|:--------|:---
+[PocketNES](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
+[PCEAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine|FluBBa|Apr 2003
+[Goomba](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
+[SNESAdvance](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
+[SMSAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System, Game Gear, SG-1000|FluBBa|Jul 2005
+[Cologne](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
+[Goomba Color](https://www.dwedit.org/gba/goombacolor.php)|a Goomba fork to add Gameboy Color|Dwedit|Jan 2006
+[MSXAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
+[NGPAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
+[Jagoomba](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
+
+## Purpose
+These emulators were originally designed to be used in a number of ways. You could:
+1. assemble many ROMs into a large compilation and browse the games from a menu upon launch
+2. use the emulator as a plugin for the Pogoshell file manager, which supported older flashcart devices e.g. Flash2Advance
+3. bundle each ROM with its own copy of the emulator
+The EZ-Flash flashcart copies ```.gba``` files to its interal PSRAM before execution which can be quite slow for large emulator compilations. Since the whole compilation must share the 64KB SRAM save this can get quite contended, particularly for those emulators which support save states.
+On an EZ-Flash IV device the SD card means there is no storage constraint, so option 3 is the optimal choice. This allows quick loading of games and, provided the exit menu function works, easy navigation to the next one without having to power cycle the GBA.
+Where needed, the emulator binaries were manually exit-patched so that the L+R Exit menu option would return to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
+
+ on EZ-Flash IV firmware 1.x.
+This compilation uses my Python 3 compilation builder scripts, invoked by build.bat (for Windows) and build.sh (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
+
+## EZ-Flash Versions
+#### Firmware 1.x
+- Don't use the EZ Flash client to patch the resulting compilations. A major point of this collection is to avoid having to constantly patch.
+- The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
+- gbata7 was used to fix the GBA ROM header after these patches (emulators crashed on some firmwares without this fix).
+- You will need to edit build.bat (for Windows) and build.sh (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable
+#### Firmware 2.x
+- The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
+- It is recommended that you disable GSS (Global Softreset and Sleep Patch). Change this line in KEYSET.CFG at the root of your SD card:
+  ```DISABLE_GSS = 1``` (From 0 - 1)
+  Or if you prefer GSS, here is a list of exclusions for these (Add the following to the bottom of the file):
+  ```#GAMELIST TO SKIP GSS AUTOMATICALLY
+  #EMULATORS
+  COLG = 1   #Cologne
+  GMBC = 1   #Goomba Color/Jagoomba
+  GMBA = 1   #Goomba
+  MSXA = 1   #MSXAdvance
+  NGPA = 1   #NGPAdvance
+  PCEA = 1   #PCEAdvance
+  PNES = 1   #PocketNES
+  SMSA = 1   #SMSAdvance
+  SNAV = 1   #SNESAdvance```
 
 # Included Files
 * Updated emulators, SRAM and exit-patched in the following folders:
@@ -45,30 +88,6 @@ snesadvance_compile.py   python 3 program to create a .gba file from snesadvance
 build.bat                batch script to create a .gba file for each ROM in the folder (for Windows)
 build.sh                 bash script to create a .gba file for each ROM in the folder (for macOS and Linux)
 old/python2/             old python2 compile scripts
-
-                         For EZ-Flash IV firmware 1.x, edit build.sh/build.bat to use the -sav option instead of
-                         -pat (which is for firmware 2.x)
-
-                         It is recommended that you disable GSS (Global Softreset and Sleep Patch)
-
-                         Change this line in KEYSET.CFG at the root of your SD card:
-                         DISABLE_GSS = 1 (From 0 - 1)
-
-                         Or if you prefer GSS, here is a list of exclusions for these (Add the following to the
-                         bottom of the file):
-
-                         #GAMELIST TO SKIP GSS AUTOMATICALLY
-                         #EMULATORS
-                         COLG = 1   #Cologne
-                         GMBC = 1   #Goomba Color/Jagoomba
-                         GMBA = 1   #Goomba
-                         MSXA = 1   #MSXAdvance
-                         NGPA = 1   #NGPAdvance
-                         PCEA = 1   #PCEAdvance
-                         PNES = 1   #PocketNES
-                         SMSA = 1   #SMSAdvance
-                         SNAV = 1   #SNESAdvance
-
 
 * Example source and compiled binary code for the EZ Flash IV reset (exit) function
 
