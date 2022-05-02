@@ -37,7 +37,8 @@ This compilation uses my Python 3 compilation builder scripts, invoked by build.
 - It is recommended that you disable GSS (Global Softreset and Sleep Patch). Change this line in KEYSET.CFG at the root of your SD card:
   ```DISABLE_GSS = 1``` (From 0 - 1)
   Or if you prefer GSS, here is a list of exclusions for these (Add the following to the bottom of the file):
-  ```#GAMELIST TO SKIP GSS AUTOMATICALLY
+  ```
+  #GAMELIST TO SKIP GSS AUTOMATICALLY
   #EMULATORS
   COLG = 1   #Cologne
   GMBC = 1   #Goomba Color/Jagoomba
@@ -47,7 +48,8 @@ This compilation uses my Python 3 compilation builder scripts, invoked by build.
   PCEA = 1   #PCEAdvance
   PNES = 1   #PocketNES
   SMSA = 1   #SMSAdvance
-  SNAV = 1   #SNESAdvance```
+  SNAV = 1   #SNESAdvance
+  ```
 
 # Included Files
 * Updated emulators, SRAM and exit-patched in the following folders:
