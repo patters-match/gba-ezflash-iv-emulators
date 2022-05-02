@@ -3,16 +3,16 @@ This is a collection of emulators for the Gameboy Avdance, SRAM- and exit-patche
 
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
-[PocketNES](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
-[PCEAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine|FluBBa|Apr 2003
-[Goomba](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
-[SNESAdvance](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
-[SMSAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System, Game Gear, SG-1000|FluBBa|Jul 2005
-[Cologne](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
-[Goomba Color](https://www.dwedit.org/gba/goombacolor.php)|a Goomba fork to add Gameboy Color|Dwedit|Jan 2006
-[MSXAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
-[NGPAdvance](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
-[Jagoomba](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
+[PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
+[PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine|FluBBa|Apr 2003
+[Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
+[SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
+[SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System, Game Gear, SG-1000|FluBBa|Jul 2005
+[Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
+[Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|a Goomba fork to add Gameboy Color|Dwedit|Jan 2006
+[MSXAdvance 0.2](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
+[NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
+[Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
 
 ## Purpose
 These emulators were originally designed to be used in a number of ways. You could:
@@ -38,8 +38,8 @@ This compilation leverages my Python 3 [gba-emu-compilation-builders](https://gi
 #### Firmware 2.x
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
 - It is recommended that you disable GSS (Global Softreset and Sleep Patch). Change this line in KEYSET.CFG at the root of your SD card:
-  ```DISABLE_GSS = 1``` (From 0 - 1)
-  Or if you prefer GSS, here is a list of exclusions for these (Add the following to the bottom of the file):
+  ```DISABLE_GSS = 1``` (From 0 to 1)
+  Or if you prefer to keep GSS, here is a list of exclusions to add (Add the following to the bottom of the file):
   ```
   #GAMELIST TO SKIP GSS AUTOMATICALLY
   #EMULATORS
@@ -54,7 +54,7 @@ This compilation leverages my Python 3 [gba-emu-compilation-builders](https://gi
   SNAV = 1   #SNESAdvance
   ```
 
-# Included Files
+## Included Files
 * Updated emulators, SRAM and exit-patched in the following folders:
 
 cologne08/               Cologne v0.8
