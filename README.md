@@ -1,25 +1,12 @@
-﻿EZ-Flash IV Exit-Patched Emulator Collection
---------------------------------------------
-
+# EZ-Flash IV Exit-Patched Emulator Collection
 This is a collection of Loopy/FluBBa/Dwedit emulators, SRAM and exit-patched for the EZ-Flash IV.
+- Don't use the EZ Flash client (if still using firmware 1.x) to patch an included emulator or a resulting emulator + ROM compilation. A major point of this collection is to avoid having to constantly patch.
+- Exit patching was manually done so that the L+R Exit menu option would function in all emulators. To be very clear, the exit patch does *not* enable L+U+A+B. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
+- Compatibility with the EZ-Flash exit is built-in to newer versions of emulators (Goomba Color, Jagoomba, Dwedit's PocketNES fork), but others needed binary patching with reset_ez4 files. See section 'More about visoly.s and exit patching' for more details.
+- 64KB SRAM patching for EZ-Flash IV firmware 1.x was done through cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
+- gbata7 was used to fix the GBA ROM header after these patches (emulators crashed on some firmwares without fix).
 
-* Don't use the EZ Flash client (if still using firmware 1.x) to patch an included emulator or a resulting emulator
-  + ROM compilation. A major point of this collection is to avoid having to constantly patch.
-* Exit patching was manually done so that the L+R Exit menu option would function in all emulators. To be very
-  clear, the exit patch does *not* enable L+U+A+B. Nor does it attempt to apply a Start+Select+A+B reset patch. It
-  is meant solely to allow the emulator Exit menu option to function properly.
-* Compatibility with the EZ-Flash exit is built-in to newer versions of emulators (Goomba Color, Jagoomba, Dwedit's
-  PocketNES fork), but others needed binary patching with reset_ez4 files. See section 'More about visoly.s and
-  exit patching' for more details.
-* 64KB SRAM patching for EZ-Flash IV firmware 1.x was done through cory1492's v2 patcher (EZ4-64-2). The 1.x firm-
-  ware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew
-  binaries will default to 32KB.
-* gbata7 was used to fix the GBA ROM header after these patches (emulators crashed on some firmwares without fix).
-
-
-Included Files
---------------
-
+# Included Files
 * Updated emulators, SRAM and exit-patched in the following folders:
 
 cologne08/               Cologne v0.8
