@@ -15,16 +15,14 @@ Emulator|Target System|Author(s)|Released
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
 
 ## Purpose
-These emulators were originally designed to be used in a number of ways. You could:
+These emulators were originally designed to be used in a number of ways:
 1. assemble many ROMs into a large compilation and browse the games from a menu upon launch
-2. use the emulator as a plugin for the Pogoshell file manager, which supported older flashcart devices e.g. Flash2Advance
+   *slow to load into EZ-Flash PSRAM before execution, contention within the single 64KB SRAM save*
+2. use the emulator as a plugin for the Pogoshell file manager
+   *for older flashcart devices e.g. Flash2Advance*
 3. bundle each ROM with its own copy of the emulator
-
-The EZ-Flash flashcart copies ```.gba``` files to its internal PSRAM before execution which can be quite slow for large emulator compilations. Since the whole compilation must share the 64KB SRAM save this can get quite contended, particularly for those emulators which support save states.
-
-On an EZ-Flash IV device the SD card means storage is plentiful, so option 3 is the optimal choice. This allows fast loading of games and, provided the exit menu function works, easy navigation to the next one without having to power cycle the GBA.
-
-Where needed, these emulator binaries have been manually exit-patched so that the L+R Exit menu option returns to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B at any time. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function correctly.
+   *best for EZ-Flash IV - plenty of SD card storage, quick to load*
+These emulators offer an Exit menu option, but typically this was intended for use case 2, so they need patching to function correctly with EZ-Flash IV.
 
 ## Usage
 This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
