@@ -43,7 +43,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   ```
   DISABLE_GSS = 1
   ```
-  or if you prefer to keep GSS, here is a list of exclusions to add to the bottom of the file:
+  or if you prefer to keep GSS enabled, here is a list of exclusions to add to the bottom of the file:
   ```
   #GAMELIST TO SKIP GSS AUTOMATICALLY
   #EMULATORS
