@@ -26,7 +26,8 @@ On an EZ-Flash IV device the large SD card removes any storage constraint, so op
 
 Where needed, these emulator binaries were manually exit-patched so that the L+R Exit menu option returns to the EZ-Flash IV menu. To be very clear, the exit patch does *not* enable L+Up+A+B at any time. Nor does it attempt to apply a Start+Select+A+B reset patch. It is meant solely to allow the emulator Exit menu option to function properly.
 
-This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders), invoked by build.bat (for Windows) and build.sh (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
+## Usage
+This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders), invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
 
 ## EZ-Flash Versions
 #### Firmware 1.x
