@@ -19,11 +19,11 @@ These emulators were originally designed to be used in a number of ways:
 1. assemble many ROMs into a large compilation and browse the games from a menu upon launch  
    - *slow to load into EZ-Flash PSRAM before execution, contention within the single 64KB SRAM save*  
 2. use the emulator as a plugin for the Pogoshell file manager  
-   - *for older flashcart devices e.g. Flash2Advance*  
+   - *only supports much older flashcart devices e.g. Flash2Advance*  
 3. bundle each ROM with its own copy of the emulator  
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
-These emulators offer an Exit menu option, but typically this was intended for use case 2, so they need patching to function correctly with EZ-Flash IV.
+The Exit menu option was typically intended for Pogoshell so this function needs patching to function correctly with EZ-Flash IV flashcarts.
 
 ## Usage
 This compilation leverages my Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, invoked by **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to iterate through the ROMs in the current folder building a ```.gba``` executable for each.
