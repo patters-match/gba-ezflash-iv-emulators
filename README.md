@@ -88,7 +88,7 @@ My own method for patching additional emulators was to check that their **visoly
 - Audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
 - [CD-ROM ISO extracting guide](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
 - [CD-ROM / Super CD-ROM titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
-- The EZ3 build of PCEAdvance which supports Super CD-ROM is provided, though does not work on EZ-Flash IV.
+- The EZ3 build of PCEAdvance which supports Super CD-ROM is provided, though unfortunately it does not work on EZ-Flash IV.
 #### SMSAdvance
 - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
 - "Lock toprows" is an option for Full Screen display mode useful for certain Master System games, such as Outrun, which can keeps the score/speedometer on screen despite cropping the image to the GBA resolution
