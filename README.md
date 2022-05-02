@@ -22,6 +22,7 @@ These emulators were originally designed to be used in a number of ways:
    - *for older flashcart devices e.g. Flash2Advance*  
 3. bundle each ROM with its own copy of the emulator  
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
+
 These emulators offer an Exit menu option, but typically this was intended for use case 2, so they need patching to function correctly with EZ-Flash IV.
 
 ## Usage
