@@ -37,7 +37,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - see notes on firmware versions below
 - open Command Prompt (Windows) or Terminal session (macOS / Linux)
 - run **build.bat** (Windows) or **build.sh** (macOS / Linux)
-- copy ```.gba``` files to EZ-Flash IV SD card
+- copy the resulting ```.gba``` files to EZ-Flash IV SD card
 
 ## EZ-Flash IV Versions
 #### Firmware 2.x
