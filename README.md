@@ -23,7 +23,7 @@ These emulators were originally designed to be used in a number of ways:
 - bundle each ROM with its own copy of the emulator  
   - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
-Each emulator's Exit menu option was typically intended for Pogoshell-era flashcarts (*visioly.s* in the source code). This function has been manually patched to support EZ-Flash IV flashcarts.
+Each emulator's Exit menu option was typically intended for Pogoshell-era flashcarts. The included emulators have had this function manually patched so that Exit works on EZ-Flash IV flashcarts.
 
 ## Usage
 In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts.
