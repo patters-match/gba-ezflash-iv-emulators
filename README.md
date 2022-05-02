@@ -15,7 +15,7 @@ Emulator|Target System|Author(s)|Released
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
 
 ## Dependencies
-- Python 3
+Python 3
 
 ## Background
 These emulators were originally designed to be used in a number of ways: 
