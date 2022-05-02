@@ -35,8 +35,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - install Python 3 if not present
 - add games to the emulator folder
 - see notes on firmware versions below
-- open Command Prompt (Windows) or Terminal session (macOS / Linux)
-- run **build.bat** (Windows) or **build.sh** (macOS / Linux)
+- run **build.bat** from a Command Prompt (Windows), or **build.sh** from a terminal session (macOS / Linux)
 - copy the resulting ```.gba``` files to EZ-Flash IV SD card
 
 ## EZ-Flash IV Versions
