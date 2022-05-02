@@ -1,0 +1,223 @@
+W.I.P Gamelist for Cologne
+
+Bgr = Background.
+Spr = Sprites.
+(xx%) = speed.
+(spr x) = Sprite following.
+
+
+
+
+Coleco Vision Games:
+--------------------
+#
+2010 - The Graphic Action Game - Ok.
+
+A
+Adams Musicbox Demo - Missing keys.
+Alcazar The Forgotten Fortress - Ok.
+Alphabet Zoo - Ok.
+Amazing Bumpman
+Antarctic Adventure - Ok.
+Aquattack
+Artillery Duel
+
+B
+BC's Quest for Tires - Ok.
+BC's Quest for Tires II - Grog's Revenge - Crash if you try to switch side of mountain.
+Beamrider - Ok.
+Blockade Runner
+Boulder Dash - Ok.
+Brain Strainers
+Buck Rogers - Planet of Zoom - Ok.
+Bump 'N' Jump - Ok.
+Burger Time - Ok.
+
+C
+Cabbage Patch Kids Adventure - Ok.
+Cabbage Patch Kids Picture Show - Can't start game.
+Campaign '84
+Carnival - Ok.
+Centipede - Ok.
+Choplifter - Ok.
+Chuck Norris Super Kicks - Ok.
+ColecoVision Monitor Test - Not a game? Not starting.
+Congo Bongo - Ok.
+Cosmic Avenger
+Cosmic Crisis - Ok.
+Cosmo Fighter 2 - Ok.
+
+D
+Dam Busters, The - Ok?
+Dance Fantasy
+Decathlon - Ok.
+Defender - Ok.
+Destructor - SuperController? Player2 can start.
+Dig Dug [proto] - Ok.
+Donkey Kong - Ok.
+Donkey Kong for Adam - Ok.
+Donkey Kong Jr - Ok.
+Dr. Seuss - Ok.
+Dragon Fire - Lv2 broken.
+Dukes of Hazzard - SuperController? Player2 controls gears.
+
+E
+Escape From The Mind Master -Ok.
+Evolution - Ok.
+
+F
+Facemaker - Ok.
+Fallguy
+Fathom
+Final Testcartridge - Ok?
+Flipper Slipper
+Fortune Builder
+Fraction Fever
+Frantic Freddy
+Frenzy!
+Frogger
+Frogger II
+Frontline
+
+G
+Galaxian - Ok.
+Gateway to Apshai
+Gorf - Ok.
+Gust Buster
+Gyruss - Ok.
+
+H
+H.E.R.O. - Ok.
+Heist, The - Ok.
+
+I
+Illusions
+It's only Rock'n'Roll
+
+J
+James Bond 007
+Joust [proto] - Ok.
+Juke Box
+Jumpman Junior - Ok.
+Jungle Hunt - Ok.
+
+K
+Ken Uston Blackjack-Poker
+Keystone Kapers
+
+L
+Ladybug - Ok.
+Learning with Leeper
+Linking Logic
+Logic Levels
+Looping
+
+M
+M.A.S.H - Ok.
+Matt Patrol
+Memory Manor
+Meteoric Shower
+Miner 2049er - Ok.
+Monkey Academy - Ok.
+Montezuma's Revenge - Ok.
+Moonsweeper
+Motocross Racer
+Mountain King
+Mr. Do! - Ok.
+Mr. Do's Castle - Ok.
+
+N
+Nova Blast
+
+O
+Oil's Well
+Omega Race
+One on One Basketball
+
+P
+Pacman - Ok.
+Pepper II
+Pitfall II Lost Caverns - Sprite collision problems.
+Pitfall! - Ok.
+Pitstop - Mode 1 graphics?
+Popeye - Ok.
+Porkys - ???
+Power Lords - Quest for Volcan - Ok?
+
+Q
+Q-Bert - Ok.
+Q-Bert II - Ok.
+Quest for Quintana Roo
+
+R
+River Raid
+Robin Hood
+Roc 'N Rope - Ok.
+Rock 'n' Bolt
+Rocky Super-Action Boxing - Ok.
+Rolloverture
+
+S
+Sammy Lightfoot
+Sector Alpha
+Sewer Sam
+Sir Lancelot - Sprite collision problems.
+Skiing
+Slither
+Slurpy
+Smurf Paint 'n Play Workshop
+Smurf Rescue in Gargamel's Castle - Ok.
+Space Fury - Ok.
+Space Invaders Collection - Ok.
+Space Panic
+Spectron
+Spy Hunter - Ok.
+Squis 'Em Sam!
+Star Trek - Strategic Operation - Ok
+Star Wars - The Arcade Game
+Steamroller - Ok.
+Strike It
+Subroc - Ok.
+Super-Action Baseball
+Super-Action Controller Test - Crash?
+Super-Action Football
+Super-Action Soccer
+Super Cobra - Flickers alot.
+Super Cross Force - Ok.
+Super DK! - Ok.
+Super DK! Junior - Ok.
+
+T
+Tank Wars
+Tapper - Ok.
+Tarzan - Ok.
+Telly Turtle
+Threshold - Ok.
+Time Pilot - Ok.
+Tomarc The Barbarian
+Tournament Tennis
+Tunnels & Trolls Demo
+Turbo - SuperController? Player2 can start.
+Tutankham - Ok
+
+U
+Up'n Down
+
+V
+Venture
+Victory
+Video Hustler - Ok.
+
+W
+War Games
+War Room
+Wing War
+Wizard of Id's Wizmath
+Word Feud
+
+Y
+Yolk's on You, The - Freezes.
+
+Z
+Zaxxon - Ok.
+Zenji - Ok?

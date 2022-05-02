@@ -1,0 +1,371 @@
+(Some technical notes for the terminally curious)
+
+##############################################################################
+SNESAdvance.EXE
+##############################################################################
+
+
+All data required to build SNES Advance is internal to SNESAdvance.EXE.  You
+can insert your own data by placing any of the following files in the same
+directory as SNESAdvance.EXE:
+
+snesadvance.bin         =emulator binary
+background.bin          =256 color background (240x160)
+background.pal          =palette for background.bin
+font.bin                =16 color 16x16 font (ascii chars 32-??)
+font.pal                =font palette
+
+Gfx data (except font.pal) must be LZ77 compressed with a VRAM-safe
+compression algorithm.  (GBACrusher does this, if you can find it)
+
+
+##############################################################################
+SNESAdvance.GBA format
+##############################################################################
+
+
+???:            snesadvance.bin
+4 bytes:        background.bin size
+???:            background.bin
+4 bytes:        background.pal size
+???:            background.pal
+4 bytes:        font.bin size
+???:            font.bin
+4 bytes:        font.pal size
+???:            font.pal
+4 bytes:        total number of roms
+???:            rom data (repeat until EOF)
+
+
+rom data
+--------
+32 bytes:       rom title
+4 bytes:        rom size
+4 bytes:        rom CRC32
+8 bytes:        rom flags
+4 bytes:        autoscroll address 1
+4 bytes:        autoscroll address 2
+4 bytes:        autoscroll scale
+4 bytes:        autoscroll (signed) offset
+???:            rom contents (no header)
+
+
+rom flags
+---------
+bit0:           0=Mode20 (LoROM), 1=Mode21 (HiROM)
+bit1:           0=NTSC, 1=PAL
+bit2:           0=SRAM disable, 1=SRAM enable
+bit3:           0=scroll by (addr1)  1=scroll by (addr1)-(addr2)
+bit4:           1=autoscroll value is a 16 bit number
+bits 16-31:     "more settings"
+bits 32-63:     "even more settings"
+
+##############################################################################
+More about rom flags
+##############################################################################
+
+---- "More settings" (fix priority)
+
+000ZYXNNNNNNNNNN
+
+N=blank tile number
+X=double BG1
+Y=double BG2
+Z=force BG3 low priority
+
+The SNES allows you to set the priority of individual tiles in a background 
+layer; unfortunately the GBA doesn't.  This tries to fix the problem by using 
+two GBA backgrounds to simulate one on the SNES.  Lower priority tiles are 
+placed in one layer, higher priorities in the other.  You can use this trick 
+for BG1 or BG2 but not both, since the GBA has only one extra background to 
+spare.  "Blank tile number" should be self-explanatory, this should be set to 
+the number of a blank tile (often 0, but not always) when you use the double 
+BG stuff .  You can use VisualBoyAdvance's tile viewer to find this (char
+base 0x6000000, click on a tile to see its number).
+
+---- "Even more settings" (fix corrupt gfx)
+
+OBJC     BG3C     BG2C     BG1C
+XY00NNNN XY00NNNN XY00NNNN XY00NNNN
+
+N=size decrease
+X=from top/bottom
+Y=priority
+
+Part of the SNES Advance debug info shows how SNES VRAM is laid out, 
+representing it with a 32-bit bitmap; 1 bit per 2Kb of VRAM (read the Rom 
+Patching section below for more info on using the debug version).  BG?C, OBJC 
+is tile data for backgrounds/sprites.  BG?S is screen data (contains the tile 
+layout of each background).  When different data types overlap, SNES Advance 
+has no way of knowing how they should be interpreted.  This gives you a way 
+to fix the problem by allowing you to resize VRAM areas.
+
+Example:
+
+  BG1C=0000FFFF
+  BG2C=0000FFFF
+  BG3C=000FF000
+
+BG1+2 both use 16-color tiles so are safe to overlap; BG3 uses 4-color 
+tiles.  By default, BG3C overwrites the last part of BG1+2C.   To make it go 
+the other way (give full 32Kb to BG1+2, and 8Kb to BG3) you can either give 
+BG1/2C higher priority (0x00004040) or resize BG3C (0x00840000).
+
+0x00004040 = 00000000 00000000 01000000 01000000
+                                ^        ^
+                                |        |
+    give BG1+2 priority --------+--------+
+
+0x00840000 = 00000000 10000100 00000000 00000000
+                      ^   ^^^^
+                      |     |
+                      |     +--subtract 4 2Kb 'blocks'
+                      +--------from bottom of BG3C
+
+Another example:
+
+  BG1C=0FFFF000
+  OBJC=0000FF00
+
+Both are 16-color, but because sprite and background tiles are stored in 
+different areas on the GBA, these can't overlap.  OBJC overwrites BG1C here; 
+if it needs to go the other way, use 0x04000000 or 0x00000040.
+ 
+##############################################################################
+Autoscrolling
+##############################################################################
+
+
+The SNES display field is larger than the GBA's.  To overcome this problem, a
+technique called autoscrolling is used.  The goal of autoscrolling is to
+automatically move the screen to stay centered on the main character.
+
+The general formula for autoscrolling is:
+
+  scroll position = [Addr1] * scale% + offset
+        OR        = ([Addr1]-[addr2]) * scale% + offset
+
+(In detail)
+Addr1: SNES address pointing to the vertical position of main character.
+Addr2: Subtracted from the first value (explained below).
+Scale:  How much the above value will affect the scroll position.
+Offset:  Moves the scroll position by a fixed amount.
+The values referenced by addr1,2 can be either 8 or 16 bits in size.
+
+Some games only store the player's position relative to the entire playfield
+rather than the visible screen.  For example, the player's Y position might
+range from 0-2047 instead of 0-239 if a game's map is particularly large,
+rendering the first autoscrolling method useless.  If this is the case, you
+can correct the problem with so-called "difference" autoscrolling by finding
+where the game stores the map's scroll position and subtracting that from the
+player position.  If you find that the screen jumps periodically as you move
+up and down using standard autoscrolling, you probably need this.
+(sorry if that was confusing, it's hard to explain)
+
+
+##############################################################################
+SNESAdvance.DAT
+##############################################################################
+
+
+SNES Advance stores rom settings in snesadvance.dat.  Lines are formatted
+like this:
+
+CRC32|title|flags1|flags2|autoscroll1|autoscroll2|scale|offset[|patches]
+
+All values are stored in hexdecimal.  Patches modify the rom
+as it's saved.  Multiple patches are separated by a comma.
+
+Example:
+
+29573026|Whatever|0|0|0|0|0|0|0080=40,1080=012345,AAAA=42
+
+Meaning:
+
+rom[0x0080]=0x40
+rom[0x1080]=0x01
+rom[0x1081]=0x23
+rom[0x1082]=0x45
+rom[0xAAAA]=0x42
+
+
+##############################################################################
+Rom patching
+##############################################################################
+
+
+There are two reasons you would want to patch a ROM.  One is to skip over code
+that's preventing a game from running.  For example, a game might lock up when
+waiting for a response from the SPC (which isn't emulated yet) so you would
+patch it to skip past this.  The other reason for patching is to speed up a
+game.  All SNES games need to synchronize themselves with the TV's refresh
+rate.  When a game has finished processing the current frame, it enters an
+idle state - a period when the CPU does nothing except wait for the next frame
+to begin.  "Speed hacking" is a way to tell the emulator that processing is
+done for the current frame, so it can skip to the next and not waste time
+emulating these idle loops.
+
+The debug build of SNES Advance is very useful for creating both kinds of
+patches; you can use it to follow the execution of the SNES CPU.  Run the
+debug version of SNES Advance using your favorite GBA emulator and go to
+address 0x2030000 in its memory viewer.  The SNES CPU state is dumped to
+memory:
+
+2030000 = A reg
+2030004 = X reg
+2030008 = Y reg
+203000C = D reg
+2030010 = S reg
+2030014 = PC reg
+2030018 = Flags
+203001C = Cycle counter
+2030020 = Next 8 bytes at PC
+2030028 = Rom offset
+203002C = Frame counter
+
+L button: Step one instruction at a time
+R (hold): Run continuously (faster)
+L+R (hold): Run continuously (slower)
+
+---
+Example 1:
+
+Build a SNES Advance rom of Super Ghouls'N'Ghosts.  Make sure it's _NOT_
+already patched (rename SNESADVANCE.DAT to something else, or move it to a
+different folder).  Start the game up in VisualBoyAdvance.  Go to VBA's Tools
+menu and choose Memory Viewer.  Select Automatic Update,  8-bit, enter 2030000
+into the address box, and click the Go button.  
+
+Now click back to the main VBA window.  Hold the R button for a while (GBA R,
+not keyboard R).  You'll see lots of numbers changing in the memory window,
+eventually they'll fall into a repeating pattern ... it seems the game has
+gotten stuck.  Press the L button repeatedly, you'll see that it's in a
+3-instruction loop.  At 2030020 you should see D0, AD, 3A, D0, AD 3A ... etc.
+SNES Advance doesn't have a disassembler, but it does show which bytes it's
+executing, so it can be disassembled by hand.  Looking at 2030020 again, the
+byte stream is AD 40 21 3A D0 FA.  An easy way to figure out where the loop
+starts is to switch to 32-bit view and watch the PC (at 2030014).  Keep
+pressing L and watch the pattern.  When the PC reaches its lowest value, you
+should be at the start of the loop.  Using a table of 65816 opcodes, begin
+translating:
+
+    AD 40 21 = LDA $2140
+    3A       = DEC A
+    D0 FA    = BNE -6
+
+Now it should be easy to see what needs to be done: if the branch is removed,
+it will get rid of the endless loop.  Press L some more, to advance the PC to
+the offending instruction (push L until D0 FA is at 2030020).  Switch to
+32-bit view.  At 2030028, you should see 000001D1; this is the rom location
+we're looking at (in other words, this where we want to modify the rom).  We
+want to replace D0 FA with two NOP instructions (EA EA).  Open SNESADVANCE.DAT
+(a new one should have been created) in a text editor.  You should see a line
+in it that looks something like this:
+
+    6AABA901|Super Ghouls 'N Ghosts|0|0|0|0|0
+
+Change it to look like this:
+
+    6AABA901|Super Ghouls 'N Ghosts|0|0|0|0|0|1D1=EAEA
+
+Close VBA, rebuild your rom, and run it again.  If you did it correctly, it
+shouldn't freeze up anymore.  Most of the time, you'll be patching sound
+routines just like this one.  These always involve reading $214X, so they
+aren't very hard to spot.  Be careful though; try to make sure a game is truly
+stuck and not just running slowly.
+
+---
+Example 2:
+
+This time, we're making a speed hack.  Build a SNES Advance rom of Super Mario
+World (again, making sure it's not already patched).  Start running it until
+the intro starts playing (Mario is running around), then open the memory
+viewer like before.  What you're trying to find is a loop that doesn't seem to
+be doing anything (idle loop, explained above).  You're more likely to find
+these just before VBLANk.  Switch to 32-bit view, you should see "LINE" in the
+right column, followed by a number.  This number shows the current scanline.
+Hold L+R and wait until the line number gets near 000000F0, but not past it.
+Switch back to 8-bit view, and start pressing L and watch for a repeating
+pattern.  In this case, it's a simple 2-instruction loop:
+
+    A5 10 = LDA $10
+    F0 FC = BEQ -4
+
+Unlike the first example, we don't want to get rid of the loop, but make it
+end sooner.  To advance the emulator to the next event (VBlank, IRQ, whatever)
+two new instructions were added to SNES Advance.  Opcode $42 works like a
+relative branch.  The high nibble of the next byte is the branch type, low
+nibble is the branch offset (always a negative branch).  For example, you'd
+replace D0FC with 42DC, or 80FA with 428A.  Note that you can only use this
+when the branch is no larger than 16 bytes.  Opcode $DB is another relative
+branch, in the range of +- 64.  The 8th bit of the branch offset determines
+the branch type: 0 for BNE, 1 for BEQ. For example, D0EE would be replaced
+with DB7E.  For Super Mario World, F0Fc is replaced with 42Fc, and the patch
+string will look like this:
+
+    B19ED489|Super Mario World|0|0|0|0|0|6D=42
+
+Note that this is a very simple example, other games have complex loops that
+are hard to find or patch correctly.  Also, some games do calculations inside
+their idle loops (such as random number generators).  Hacking these will alter
+the game behavior.  Take Batman Returns for example - if you look carefully,
+you can see that using the provided hack alters the pattern of falling snow in
+the title screen.  Some games can be hacked in more than one place.  The $42,
+$DB opcodes sometimes don't branch far enough, and you'll need to make more
+extensive modifications.    
+
+More tips:  Search for hacks when not much is happening on-screen.  You can be
+sure that more time is being spent inside idle loops here, increasing your
+chance of finding them.  Games made by the same company may use similar code,
+so once you figure out how one works, doing more will be easier.  Here are
+some common code sequences:
+
+(CAPCOM)
+
+This is characterized by an inner loop surrounded by an unconditional outer
+loop.
+
+baca:   9c 81 02        stz $0281
+        ad 7f 02        lda $027f
+        8d 80 02        sta $0280
+        a0 00           ldy #0
+
+bad5:   be 56 00        ldx $0056,y
+        e0 04           cpx #4
+        b0 0d           bcs $bae9
+        18              clc
+        98              tya
+        69 18           adc #$18
+        a8              tay
+        ce 80 02        dec $0280
+        d0 ef           bne $bad5
+        4c ca ba        jmp $baca   << patch to DBE2 (BEQ $baca)
+bae9:
+
+(KONAMI)
+
+81C3:   22 95 99 00     jsl $009995
+        80 FA           bra $81C3   << patch to 428A
+        ...
+9995:   A0 00 1F        ldy #$1f00
+        5A              phy
+        2B              pld
+        A5 16           lda $16
+        F0 08           beq $99a6
+        ...
+99a6:   A6 2C           ldx $2c
+        D0 03           bne $99ad
+        4C 49 9A        jmp $9a49
+        ...
+9a49:   6B              rtl
+
+(another KONAMI)
+
+-       a9 00 00        LDA #$0000
+        5b              TCD
+        a5 42           LDA $42
+        d0 06           BNE +
+        a5 6c           LDA $6C
+        65 38           ADC $38
+        85 6c           STA $6C
++       80 f0           BRA -       << patch to 4280

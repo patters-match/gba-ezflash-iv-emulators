@@ -1,0 +1,151 @@
+W.I.P Gamelist for NGPAdvance
+
+(xx%) = speed.
+(spr x) = Sprite following.
+
+
+
+NeoGeo Pocket Games:
+--------------------
+
+B
+Bakumatsu Rouman Tokubetsu Hen - Gekka no Kenshi - Tsuki ni Saku Hana, Chiri Yuku Hana (J)	: Ok.
+Baseball Stars (JE) (M2)							: Ok.
+Baseball Stars Color (JUE) (M2)						: Ok.
+Big Bang Pro Wrestling (J) (M2)						: Ok.
+Bikkuriman 2000 - Viva! Pocket Festiva! (J) 		: Ok.
+Biomotor Unitron (J)								: Ok.
+Biomotor Unitron (UE)								: Ok.
+Bust-A-Move Pocket (U)								: Ok.
+
+C
+Cool Boarders Pocket (JE) (M2)						: Ok?
+Cool Cool Jam (J)									: Ok?
+Cool Cool Jam (UE) (Sample)							: Ok. (Only works on NGP Color)
+Crush Roller (JUE) (M2)								: Ok.
+
+D
+Dark Arms - Beast Buster 1999 (JUE) (M2)			: Ok.
+Delta Warp (J)										: Ok.
+Densetsu no Ogre Battle Gaiden - Zenobia no Ouji (J): Ok.
+Densha de Go! 2 on Neo Geo Pocket (J)				: Ok.
+Dive Alert - Becky's Version (UE)					: Ok.
+Dive Alert - Burn Hen (J)							: Ok.
+Dive Alert - Matt's Version (UE)					: Ok.
+Dive Alert - Rebecca Hen (J)						: Ok.
+Dokodemo Mahjong (J)								: Ok.
+Dynamite Slugger (JE) (M2)							: Ok.
+
+E
+Evolution - Eternal Dungeons (E)					: Ok.
+
+F
+Fantastic Night Dreams Cotton (E)					: Ok.
+Fantastic Night Dreams Cotton (J)					: Ok.
+Faselei! (E)										: Ok.
+Faselei! (J)										: Ok.
+Fatal Fury F-Contact (JUE) (M2)						: Ok.
+
+G
+Ganbare Neo Poke-kun (Ka) (J)						: Ok.
+
+I
+Infinity Cure (J)									: Ok.
+
+K
+Kikou Seiki Unitron - Sono Tsuide. Hikari Umareru Chi Yori. (J)	: Ok.
+King Of Fighters R1									: Ok.
+King Of Fighters R2									: Ok.
+King of Fighters, The - Battle de Paradise (J)		: Ok.
+Koi Koi Mahjong (J)									: Ok.
+
+L
+Last Blade, The - Beyond the Destiny (E)			: Ok.
+
+M
+Magical Drop Pocket (J)								: Ok.
+Magical Drop Pocket (UE)							: Ok.
+Melon-chan no Seichou Nikki (J)						: Ok?
+Memories Off - Pure (J)								: Sprite glitches.
+Metal Slug 1st Mission								: Working, sprite glitches.
+Metal Slug 2nd Mission								: Working, sprite glitches.
+Mezase! Kanji Ou (J)								: Ok?
+Mizuki Shigeru no Youkai Shashinkan (J)				: Ok?
+
+N
+Neo 21 - Real Casino Series (JUE)					: Ok.
+Neo Baccarat - Real Casino Series (JUE)				: Ok.
+Neo Cherry Master - Real Casino Series (JE) (M2)	: Ok.
+Neo Cherry Master Color - Real Casino Series (JUE) (M2)	: Ok.
+Neo Derby Champ Daiyosou (J)						: Ok?
+Neo Dragon's Wild - Real Casino Series (JUE) (M2) (v1.11)	: Ok.
+Neo Dragon's Wild - Real Casino Series (JUE) (M2) (v1.13)	: Ok.
+Neo Geo Cup '98 (JE) (M2)							: Ok.
+Neo Geo Cup '98 Plus (JUE) (M2)						: Ok.
+Neo Mystery Bonus - Real Casino Series (JUE) (M2)	: Ok.
+Neo Poke Pro Yakyuu (J)								: Ok.
+Neo Turf Masters (JUE) (M2)							: Ok.
+Nigeronpa (J)										: Ok.
+
+O
+Oekaki Puzzle (J)									: Ok.
+
+P
+Pachinko Hisshou Guide - Pocket Parlor (J)			: Ok?
+Pachi-Slot Aruze Oukoku Pocket - Azteca (J)			: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Dekahel 2 (J)		: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Delsol 2 (J)		: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - e-Cup (J)			: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Hanabi (J) (v1.02)	: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Hanabi (J) (v1.04)	: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Oohanabi (J)		: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Porcano 2 (J)		: Palette glitches.
+Pachi-Slot Aruze Oukoku Pocket - Ward of Lights (J)	: Palette glitches.
+Pac-Man (JUE) (M2)									: Ok.
+Party Mail (J)										: Ok?
+Picture Puzzle (UE)									: Ok.
+Pocket Love If (J)									: 
+Pocket Reversi (E)									: 
+Pocket Reversi (J)									: 
+Pocket Tennis - Pocket Sports Series (JE) (M2)		: 
+Pocket Tennis Color - Pocket Sports Series (JUE) (M2)	: 
+Puyo Pop (JUE) (M2) (v1.05)							: Doesn't start without real Bios.
+Puyo Pop (JUE) (M2) (v1.06)							: Doesn't start without real Bios.
+Puzzle Bobble Mini (JE) (v1.09)						: 
+Puzzle Bobble Mini (JE) (v1.10)						: Ok.
+Puzzle Link 2 (UE)									: 
+Puzzle Link (E)										: 
+
+R
+Renketsu Puzzle Tsunagete Pon! (J)					: 
+Renketsu Puzzle Tsunagete Pon! Color (J)			: 
+Rockman - Battle & Fighters (J)						: Background glitches on "Battle".
+
+S
+Samurai Shodown! 2 - Pocket Fighting Series (JUE) (M2)	:
+Samurai Shodown! - Pocket Fighting Series (JE) (M2)	: Ok.
+Shanghai Mini (JUE) (M2)							: Ok.
+Shinki Sekai Evolution - Hateshinai Dungeon (J)		: 
+Shougi no Tatsujin (J)								:
+Shougi no Tatsujin Color (J)						: 
+SNK Gals' Fighters (J)								: Ok.
+SNK Gals' Fighters (UE)								: Ok.
+SNK vs. Capcom - Card Fighters 2 - Expand Edition (J)		: 
+SNK vs. Capcom - Card Fighters' Clash - Capcom Version (UE)	: 
+SNK vs. Capcom - Card Fighters' Clash - SNK Version (UE)	: 
+SNK vs. Capcom - Gekitotsu Card Fighters - Capcom Supporter Version (J)	: 
+SNK vs. Capcom - Gekitotsu Card Fighters - SNK Supporter Version (J)	: 
+SNK vs. Capcom - The Match of the Millennium (JUE) (M2)	: 
+Sonic the Hedgehog - Pocket Adventure (JUE)			: Crashes after first stage when it can't save.
+Sonic the Hedgehog - Pocket Adventure [sample]		: Ok.
+Soreike!! Hanafuda Doujou (J)						: 
+Super Real Mahjong - Premium Collection (J)			: 
+
+T
+Tsunagete Pon! 2 (J)								: 
+
+W
+Wrestling Madness (UE) (Beta)						: Ok.
+
+
+

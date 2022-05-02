@@ -1,0 +1,12 @@
+TGCD format. V1.0
+
+Header - "TGCD", 4 bytes.
+Version - "0100", 4 bytes.
+Reserved - 4 bytes, zero for now.
+Tracks - Number of tracks, 1 byte.
+Length - LBA, 3 bytes.
+
+TrackInfo
+Mode - Data or Audio, 1 byte. 4 for data track.
+LBA - Start LBA, 3 bytes.
+Pointer - Pointer to data for this track counting from the end of this header. 4 bytes Little Endian.

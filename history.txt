@@ -1,0 +1,90 @@
+05-01-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9815005
+* added build.sh and build.bat scripts to each emulator folder for easier batch rom conversions
+* added exit-patched PCEAdvance 7.5 and a new compile script
+* added SNESAdvance 0.1f (no emulator exit though) and a new compile script
+* merged SNESAdvance update history information
+* major rewrite of all Python 3 compile scripts, which are mostly at feature parity with the old Win32 GUI applications
+* all compile scripts:
+  - drag and drop a selection of ROMs onto the shell window after typing the script name, to easily add multiple ROMs
+  - blank SRAM save file of the appropriate size can now be created automatically using the -sav option
+  - GSS patch file for EZ-Flash IV firmware 2.x (to force 64KB SRAM saves) can now be created using the -pat option
+  - patch file data is encoded within the script body - no external dependency
+  - splash screen support
+  - optional overrides of file paths
+  - can clean brackets from ROM titles
+* some compile scripts (as applicable):
+  - auto-detection of ROM types for emulators that support multiple types with specific header requirements
+  - region options and PAL timings are now auto-detected based on ROM naming
+  - boot-to-BIOS support
+  - small ROMs suitable for link transfer (<192KB) can be marked in the game list
+* pceadvance_compile.py:
+  - ISO and TCD tracklist support for PC Engine CD-ROM
+  - some sprite follow settings for "Unscaled (Auto)" display mode (those featured in gamelist.txt)
+  - CD BIOS automatically added when an ISO image is added, and titled with the ISO name
+* goomba_compile.py:
+  - works around an EZ-Flash issue where some ROMs would cause duplicate game list entries
+  - can prefer ROM filenames rather than original ROM game titles in the game list
+* pocketnes_compile.py:
+  - can lookup ROM checksum in PocketNES Menu Maker database (pnesmmw.mdb) for optimal game settings, sprite follow
+  - can prefer game titles from PocketNES Menu Maker database
+  - 256 byte alignment of all ROM data for optimum performance
+* snesadvance_compile.py:
+  - SuperDAT database is mandatory (snesadvance.dat)
+  - default graphics assets are encoded in the script, external skin files are ingested if present
+  - can accept headered or unheadered ROMs (.smc/.sfc)
+  - can export header-stripped ROMs
+  - can prefer game titles from SuperDAT database
+
+03-31-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9790550
+* added PocketNES 9.98 for games that don't work correctly with newer builds (e.g. Salamander)
+* added 'ez4/EZ Flash IV help.txt' for SD card - to remind of the various EZ4 button combos
+
+03-27-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9786967
+* added NGPAdvance 0.3 and a new compile script
+
+03-26-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9785995
+* added MSXAdvance 0.2 and a new compile script. Versions 0.3 and 0.4 of MSXAdvance are quite broken:
+https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/
+* added a new compile script for Jagoomba/Goomba/Goomba Color
+* updated all compile scripts from Python 2 to Python 3
+* added a splash screen option to all the compile scripts
+* updated all compile scripts to create the .pat file needed for EZ-Flash IV firmware 2.x
+* updated README.TXT
+* moved the example FOR loops into a separate file 'automating.txt'
+
+03-13-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9767068
+* added Jagoomba 0.4a, an improved Goomba Color fork
+https://github.com/EvilJagaGenius/jagoombacolor/releases/tag/v0.4a
+* updated the FOR loop examples for batch conversion of ROM collections.
+
+03-07-22 patters
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9767068
+* Added Goomba Color 2019-05-04, fixed version number displayed in menu
+* Added the latest PocketNES 1-4-2020
+* Gathered missing changelog information from various sources and updated the Goomba Color history.txt
+* Gathered missing changelog information from various sources and updated the PocketNES history.txt
+* Added the documentation and tools that were originally bundled with each emulator
+* Included the emupatch.pat file to force 64K SRAM when using EZ-Flash IV firmware 2.xx
+* Updated the main Readme with additional info from this forum thread for EZ-Flash IV firmware 2.xx
+* Updated the main Readme with some simple FOR loop examples to automate batch creating .gba files from a folder full of ROMs
+
+27-01-18 nibbles27 with help from Shinrai
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-7808771
+* provided emupatch.pat to force 64KB SRAM saves with EZ-Flash IV firmware v2.x
+
+08-29-16 nibbles27
+https://gbatemp.net/threads/pocketnes-goomba-cologne-and-smsadvance-sram-and-exit-patched-updated.439715/post-9767015
+* Cologne v0.7 updated to Cologne v0.8 (Flubba)
+* Goomba v2.30 updated to Goomba Paletted v2.40 (Kuwanger's Fork)
+* Goomba Color 3-31-08 updated to Goomba Color 12-14-2014 (Dwedit's Fork)
+* PocketNES 3-18-08 updated to PocketNES 7-1-2013 (Dwedit's Fork)
+* SMSAdvance v2.4 updated to SMSAdvance v2.5 (Flubba)
+
+05-23-08 kuwanger
+https://web.archive.org/web/20080914115553/http://ezflash.sosuke.com/viewtopic.php?f=12&t=12660
+*original release:

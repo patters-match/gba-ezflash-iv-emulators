@@ -1,0 +1,418 @@
+W.I.P Gamelist for PCEAdvance
+
+Remember to decrypt any encrypted US roms.
+Bgr = Background.
+Spr = Sprites.
+(xx%) = speed.
+(spr x) = Sprite following.
+
+#
+15-in-1 Mega Collection (J) - Perfect.
+1943 Kai (J) - Perfect? (40-80%) (spr 9)
+21-Emon (J) - Perfect?
+5-in-1 Fami Collection (J) - Some bgr/spr glitches, use PocketNES.
+6-in-1 Fami Collection (J) - Some bgr/spr glitches, use PocketNES.
+
+A
+Adventure Island (J) - Perfect?
+Aero Blasters - Perfect. (spr 6)
+After Burner II (J) - Perfect. (80%)
+Air Zonk (U) - Perfect? (80-100%)
+Alien Crush - Perfect?
+Andre Panza Kick Boxing (U) - Perfect?
+Ankoko Densetsu (J) - Perfect? (34%)
+Aoi (Blue) Blink (J) - Perfect?
+Appare! Gateball (J) - Few bgr glitches.
+Artist Tool (J) - Perfect?
+Atomic Robokid Special (J) - Perfect. (80-90%) (spr 0)
+AV Poker World Gambler (J) - Perfect?
+
+B
+Ballistix - Perfect?
+Bari Bari Densetsu (J) - Perfect?
+Barunba (J) - Perfect?
+Batman (J) - Perfect?
+Battle Load Runner (J) - Perfect?
+Battle Royale (J) - Perfect? (50%)
+Be Ball (Taisang Version) (J) - Perfect?
+Benkei Gaiden (J) - Perfect?
+Blazing Lazers (U) - Perfect?
+Blodia (J) - Perfect?
+Bloody Wolf (U) - Perfect?
+Body Conquest 2 (J) - Seems ok.
+Bomberman - Perfect?
+Bomberman '93 - Perfect?
+Bomberman '93 Special (J) - Perfect?
+Bomberman '94 (J) - Perfect? (70-100%)
+Bomberman Users Battle - Looks ok.
+Bonk 3 Bonk's Big Adventure (U) - Perfect? (50%)
+Bonk's Adventure - Perfect?
+Bonk's Revenge (U) - Perfect?
+Bouken Danshakan Don Sunheart (J) - Perfect?
+Boxy Boy (U) - Perfect?
+Bravoman (U) - Some spr flickering.
+Break In (J) - Perfect?
+Bubblegum Crash (J) - Perfect? (100%)
+Bullfight Ring no Haja (J) - Perfect? (100%)
+Burning Angels (J) - Perfect?
+
+C
+Cadash - Perfect?
+Champion Wrestler (J) - Perfect?
+Champions Forever Boxing (U) - Perfect?
+Chase HQ - Perfect?
+Chew Man Fu (U) - Locks up sometimes before play.
+Chibi Marukochan Quiz de Pihyar (J) - Perfect?
+Chikudenya Toubee (J) - Doesn't work.
+China Warrior (U) - Perfect?
+Chouzetsu Rinjin (J) - Some spr flickering.
+Circus Lido (J) - Slow, seem ok.
+City Hunter (J) - Perfect?
+College Pro Baseball '89 (J) - Perfect?
+College Pro Baseball '90 (J) - Perfect?
+Columns (J) - Perfect?
+Coryoon Child of Dragon (J) - Perfect?
+Cratermaze (U) - Few bgr glitches.
+Cross Wiber Cyber Combat Police (J) - Perfect?
+Cyber Core - Perfect?
+Cyber Cross (J) - Perfect?
+Cyber Dodge (J) - Perfect?
+Cyber Knight (J) - Perfect?
+
+D
+Daichikun Crisis Do Natural (J) - Perfect?
+Darius (Alpha/Plus) - Allmost perfect. (90%-100%)
+Darkwing Duck (U) - Perfect?
+Davis Cup Tennis (U) - Perfect?
+Dead Moon - Perfect? (50-85%)
+Deep Blue - Bgr flickering. (40%)
+Detana!! Twinbee (J) - Perfect? (55%) (Turn off TimerIRQ)
+Devil Crash (J) - Perfect? (spr 11)
+Devil's Crush (U) - Perfect? (spr (11)
+Die Hard (J) - Perfect?
+Digital Champ (J) - Perfect?.
+Don Doko Don (J) - Perfect?
+Doraemon Meikyu Daisakusen (J) - Perfect?
+Doraemon Nobita no Dorabian Night (J) - Perfect. (40%)
+Double Dungeons - Perfect?
+Double Ring (J) - Perfect?
+Download (J) - Perfect?
+Dragon Egg! (J) - Perfect? (80%)
+Dragon Fighter (J) - Status bar flickering (50%)
+Dragon Saber (J) - Perfect? (50%)
+Dragon Spirit - Perfect? (50%)
+Dragon's Curse (U) - Perfect?
+Drop Off (U) - Perfect?
+Drop Rock Hora Hora (J) - Perfect?
+Dungeon Explorer - Perfect?
+
+E
+Energy (J) - Perfect?
+Eternal City Toshi Tenso Keikaku (J) - Perfect? (80%)
+
+F
+F1 Circus (J) - Perfect? (80%)
+F1 Circus '91 - World Championship (J) - Perfect? (40%)
+F1 Circus '92 - The Speed of Sound (J) - Perfect? (40%)
+F-1 Dream (J) - Perfect? (40%)
+F-1 Pilot (J) - Perfect? (??%)
+F1 Triple Battle (J) - Glitches on the road? (??%)
+Falcon (U) - Perfect? (??%)
+Fantazy Zone - Perfect? (80-100%)
+Fighting Run (J) - Uses 2bitplane sprites, looks crap.
+Final Blaster (J) - Perfect? (85-100%)
+Final Lap Twin - Perfect? (??%)
+Final Match Tennis (J) - Perfect? (66-85%)
+Final Soldier (Special Version) (J) - Perfect? (80-100%)
+Fire Pro Wrestling 2nd Bout (J) - Perfect? (50%)
+Fire Pro Wrestling 3 - Legend Bout (J) - Perfect? (55%)
+Fire Pro Wrestling Combination Tag (J) - Perfect? (45%)
+Formation Armed F (J) - Perfect? (55%)
+Formation Soccer Human Cup '90 (J) - Perfect? (66%)
+Formation Soccer on J.league (J) - Perfect? (33%)
+Fushigi Ni Yumi No Alice (J) - Perfect? (100%)
+
+G
+Gai Flame (J) - Bgr flickering in scaled mode.
+Gaia no Monsho (J) - Perfect?
+Galaga '88 (J) - Perfect? (85%)
+Galaga '90 - Taisang Version (U) - Perfect? (85%)
+Galaga '90 (U) - Perfect? (85%)
+Ganbare! Golf Boys (J) - Allmost perfect. (75%)
+Genji Tsushin Agedama (J) - Some spr flickering. (50%)
+Genpei Toumaden (J) - Few spr glitches. (50%)
+Genpei Toumaden Volume 2 (J) - Few spr glitches. (50%)
+Ghost Manor (U) - Some spr flickering, screen too wide. (50%)
+Gokuraku Chuka Taisen (J) - Perfect? (95-100%)
+Gomola Speed (J) - Perfect? (50%)
+Gradius (J) - Some bgr glitches. (58%)
+Gun Boat (U) - Perfect? (??%)
+Gunhed (J) - Perfect? (70-95%)
+Gunhed Taikai (J) - Perfect? (66-83%)
+
+H
+Hana Tahka Daka (J) - Perfect? (50%)
+Hani in the Sky (J) - Perfect? (95-100%)
+Hani on the Road (J) - Perfect? (85%)
+Hatris (J) - Perfect?
+Heavy Unit (J) - Perfect? (90-100%)
+Hisou Kihei Serd (J) - Perfect? (??%)
+Hit The Ice - Allmost perfect. (60%)
+Hono no Tataka Tamako Dodge Danpei (J) - Perfect? (70%)
+Hyperdyne Sidearms - Taisang Version (J) - Perfect? (66%)
+Hyperdyne Sidearms (J) - Perfect? (66%)
+
+I
+Idol Hanafuda Fan Club (J) - Perfect? (100%)
+Image Fight (J) - Perfect? (50%)
+Impossamole (U) - Perfect? (40%)
+
+J
+J. League Greatest Eleven Soccer (J) - Perfect? (28%)
+Jack Nicklaus' Greatest 18 Holes of Championship Golf (J)
+   - Perfect? (??%)
+Jack Nicklaus' Turbo Golf (U) - Perfect? (??%)
+Jackie Chan's Action Kung Fu - Some spr flickering. (75%)
+Jaseikin Necromancer (J) - Perfect? (37%)
+Jigoku Meguri (J) - Perfect? (55%)
+Jimmu Densho Yaksa (J) - Some spr flickering. (??%)
+JJ & Jeff (U) - Perfect? (80-100%)
+Jyuohki (J)(Altered Beast) - Perfect? (75%)
+
+K
+Kaiser's Quest (J) - Perfect? (??%)
+Kaizou Ningen Shubibiman (J) - Perfect?
+Kaizou Ningen Shubibiman 2 (J) - Perfect?
+Kato Chan & Ken Chan (J) - Perfect? (80-100%)
+Katutobi Takuhai Kun (J) - Perfect?
+Keith Courage in Alpha Zones (U) - Perfect? (66%)
+Kickball (J) - Perfect?
+Kiki Kai Kai (J) - Perfect? (60%)
+King of Casino - Perfect?
+Kiyuu Kiyoku Mahjong Idol Graphics (J) - Perfect?
+Kiyuu Kiyoku Mahjong Idol Graphics II (J) - Perfect?
+Klax - Perfect?
+Knight Rider Special (J) - Perfect?
+Kung Fu, The (J) - Perfect?
+Kyuukyoku Tiger (J) - Perfect. (50%-100%) (spr 3)
+
+L
+Lady Sword (J) - Perfect?
+Legend of Hero Tonma - Some flicker on main sprite.
+Legendary Axe, The (U) - Perfect? (spr 14)
+Legendary Axe II, The (U) - Perfect? (34%)
+Liquid Kids (J) - Perfect?
+Lode Runner Ushina Wareta Maikyuu (J) - Jerky scrolling?
+
+M
+Maerchen Maze (J) - Perfect? (55%)
+Magical Chase - Some flicker on background (70%). Don't turn off Timer.
+Mahjong Gakuen Mild (J) - Perfect (??%)
+Mahjong Gakuen Touma Shiro Tojo (J) - Perfect? (??%)
+Mahjong Goku Special (J) - Perfect? (??%)
+Mahjong Shikaka Retsuden Mahjong Wars (J) - Perfect? (??%)
+Maison Ikkoku (J) - Perfect? (??%)
+Majin Eiyu Wataru (J) - Perfect? (66%)
+Makai Hakkenden Shada (J) - Locks up. (15%)
+Makai Prince Dorabo Chan (J) - Perfect?
+Makyo Densetsu (J) - Perfect?
+Maniac Pro Wrestling (J) - Perfect?
+Mesopotamia (J) - Perfect? (75-100%)
+Metal Stoker (J) - Perfect?
+Military Madness (U) - Screen too wide. (80%)
+Momo Tarou Densetsu Gaiden - Perfect?
+Momo Tarou Densetsu Turbo (J) - Perfect?
+Momo Tarou Densetsu II (J) - Perfect? (100%)
+Momo Tarou Katsu Geki (J) - Perfect? (50%)
+Monster Pro Wrestling (J) - Perfect? (100%?)
+Morita Shogi PC - Perfect?
+Moto Roader - Perfect?
+Moto Roader II (J) - Perfect?
+Mr. Heli (J) - Perfect?
+
+N
+Narazumo no Sentou Butai (J) - Perfect? (40%)
+Naxat Open (J) - Perfect? (??%)
+Naxat Stadium - Taisang Version (J) - Perfect? (60%)
+Naxat Stadium (J) - Perfect? (60%)
+Nazo no Masukare-do (J) - Perfect? (??%)
+Necros no Yousai (J) - Perfect? (33%)
+Nectaris (J) - Screen too wide. (80%)
+Nekketsu Koukou Dodgeball bu PC Bangai Hen (J) - Perfect? (50%)
+Nekketsu Koukou Dodgeball Bu Soccer PC Hen (J) - Perfect?
+Neutopia - Perfect? (83%)
+Neutopia II - Slow paced, otherwise seem ok.
+New Adventure Island (U) - Perfect? (50%)
+New Zealand Story (J) - Perfect? (55%)
+NHK Taiga Drama Taiheiki (J) - Perfect?
+Night Creatures (U) - Perfect? (60%)
+Niko Niko Pun (J) - Perfect? (50%)
+Ninja Gaiden (J) - Perfect (66-100%)
+Ninja Spirit - Perfect.
+Ninja Warriors (J) - Perfect? (80-100%)
+
+O
+Obocchama Kun (J) - Perfect? (85-90%)
+Operation Wolf (J) - Perfect? (90-100%)
+Order of The Griffon (U) - Some bgr glitches. (??%)
+Ordyne - Perfect? (50-55%)
+Outlive (J) - Some bgr flickering. (??%)
+Outrun (J) - Perfect? (??%)
+Override (J) - Perfect (40-50%)
+
+P
+P-47 The Freedom Fighter (J) - Perfect? (80-90%)
+Pachiokun Juban Shobu (J) - Perfect?
+Pacland - Perfect? (66-100%)
+Paranoia (J) - Perfect?
+Parasol Stars (J) - Perfect?
+Parasol Stars (U) - Perfect?
+Parodius (J) - Some bgr glitches..
+Pc Denjin Punkic Cyborgs (J) - Perfect? (80-100%)
+Pc Genjin (J) - Perfect?
+Pc Genjin 2 (J) - Perfect?
+Pc Genjin 3 (J) - Perfect? (50%)
+Pc Genjin 3 Special (J) - Perfect? (50%)
+Pc Pachislot Idol Gambler (J) - Perfect? (100%)
+Photograph Boy (J) - Perfect?
+Populous (J) - ok?
+Power Drift (J) - Some bgr/spr flickering. (??%)
+Power Eleven (J) - Perfect?
+Power Gate (J) - Perfect?
+Power Golf - Perfect?
+Power League (J) - Perfect?
+Power League '93 (J) - Perfect?
+Power League All Stars GOLD (J) - Perfect?
+Power League II (J) - Perfect?
+Power League III (J) - Perfect?
+Power League IV (J) - Perfect?
+Power League V (J) - Perfect?
+Power Sports (J) - Perfect?
+Power Tennis (J) - Perfect?
+Pro Yakyuu World Stadium (J) - Perfect?
+Pro Yakyuu World Stadium '91 (J) - Perfect?
+Psycho Chaser (J) - Perfect?
+Psychosis (U) - Perfect?
+Puzzle Boy (J) - Perfect?
+Puzznic (J) - Perfect?
+
+Q
+Quiz Toukou Shashin (J) - Perfect?
+
+R
+Rabio Lepus Special (J) - Perfect? (40%)
+Racing Damashi (J) - Perfect? (35%)
+Raiden - Some spr flickering. (50-95%) (spr 5)
+Rastan Saga II (J) - Perfect? (80-100%)
+Rock On (J) - Perfect? (40%)
+R-Type - Perfect? (70-100%)
+R-Type II (J) - Perfect? (50%)
+Ryukyu (J) - Perfect? (??%)
+
+S
+S.C.I. - Special Criminal Investigation (J) - Bgr glitches. (??%)
+Sadakichi Saban Hideyoshi no Ougon (J) - Perfect? (??%)
+Salamander (J) - Few Bgr glitches.
+Samurai-Ghost (U) - Few spr glitches. (50%)
+Sekikehara (J) - Perfect? (??%)
+Sengoku Mahjong (J) - Bgr flickering in scaled mode. (??%)
+Shanghai (J) - Bgr flickering in scaled mode. (??%)
+Shinobi (J) - Perfect? (50%)
+Shiryou Sensen (J) - Perfect? (87%)
+Shockman (U) - Perfect? (66%)
+Shogi Shodan Icchokusen (J) - Perfect? (100%)
+Shogi Shoshinsha Muyo (J) - Bgr flickering. (??%)
+Sidearms Magea Chip version (U) - Perfect?
+Sidearms (U) - Perfect?
+Silent Debuggers, The - Perfect? (100%?)
+Sindibad Chitei no Dai Makyu (J) - Perfect? (100%?)
+Sinistron (U) - Perfect?
+Skweek (J) - Some bgr flicker. (50%)
+Soldier Blade - Perfect? (50-100%) (TimerIRQ off)
+Soldier Blade Special (J) - Perfect? (50-100%) (TimerIRQ off)
+Somer Assault (U) - Perfect? (75-100%)
+Son Son II (J) - Perfect? (35%)
+Sonic Spike (U) - Perfect? (80%)
+Soukoban World (J) - Perfect? (100%)
+Space Harrier - Perfect? (33%)
+Space Invaders Fukkatsu no Hi (J) - Perfect? (100%)
+Spin Pair (J) - Perfect? (100%)
+Spiral Wave (J) - Perfect? (60%)
+Splatter House - Perfect? (60%)
+Stratego (J) - Perfect? (100%)
+Street Fighter II Champion Edition (J) - Spr flickering. (70%)
+Strip Fighter II (J) - bgr/spr glitches. Missing buttons.
+Super Mario Bros (from 6-in-1) (J) - Some spr glitches. Use PocketNES.
+Super Metal Crusher (J) - Perfect?
+Super Momo Tarou Dentetsu (J) - Perfect? (40%)
+Super Momo Tarou Dentetsu II (J) - Perfect?
+Super Star Soldier - Perfect? (60-100%) (TimerIRQ off)
+Super Volley Ball - Perfect? (90%)
+Susano Oh Densetsu (J) - Perfect? (100%)
+
+T
+Takahashi Meijin no Shin Boukenjima (J) - Perfect?
+Takeda Shingen (J) - Perfect? (38%)
+Takin' It to The Hoop (U) - Perfect? (25%?) (Disable CPU speed hack)
+Talespin (U) - Perfect? (70%)
+Tatsujin (J) (Prototype) - Perfect? (80-100%)
+Tatsujin (J) - Perfect? (80-100%)
+Tennokoe Memory Bank (J) - Missing some hardware? (??%)
+Tenseiryu Saint Dragon (J) - Perfect? (70-100%)
+Terra Cresta II (J) - Perfect? (60%)
+Thunder Blade (J) - Perfect? (??%)
+Tiger Road (U) - Perfect? (50%)
+Tiger Shark (J) - Perfect?
+Time Cruise (U) - Perfect? (50%)
+Time Cruise 2 (J) - Perfect?
+Timeball (U) - Perfect?
+Titan (J) - Perfect? (85%)
+Toilet Kids (J) - Perfect? (80%)
+Tora e no Michi (J) - Perfect? (50%)
+Toriyuu Siyoujin no Jitsen Kabushiki Bai Bai Game (J) - Perfect? (??%)
+Tower of Druaga, The (J) - Perfect? (42%)
+Toy Shop Boys (J) - Perfect? (80%)
+Tricky (J) - Perfect?
+Tricky Kick (U) - Perfect?
+Tsuppari Sumo Wrestling Game (J) - Perfect? (100%?)
+Turrican (U) - Few spr glitches. (48%)
+TV Sports Basketball - Perfect?
+TV Sports Football - Some bgr glitches, screen too wide.
+TV Sports Hockey (U) - Freezes randomly.
+TV Sports Ice Hockey (J) - Freezes randomly.
+
+U
+USA Pro Basketball (J) - Perfect? (25%?) (Disable CPU speed hack)
+
+V
+Valkyrie no Densetsu (J) - Perfect?
+Veigues Tactical Gladiator - Perfect? (40%)
+Victory Run - Perfect? (??%)
+Vigilante - Flickering main sprite. (80%)
+Violent Soldier (J) - Perfect? (44%)
+Volfied (J) - Perfect? (44%)
+
+W
+Wai Wai Mahjong (J) - Perfect? (??%)
+Wallaby!! (J) - Perfect? (??%)
+Winning Shot (J) - Screen too wide, otherwise ok. (40%?)
+Wonder Momo (J) - Perfect? (40%?)
+Wonderboy In Monsterland (J) - Perfect? (50%)
+World Beach Volley (J) - Perfect? (80%)
+World Circuit (J) - Perfect? (37%)
+World Class Baseball (U) - Perfect? (60%)
+World Court Tennis - Perfect? (75%)
+World Jockey (J) - Perfect? (60%)
+World Sports Competition (U) - Perfect?
+
+X
+Xevious (J) - Perfect? (80%)
+
+Y
+Yo, Bro (U) - Perfect?
+Youkai Douchuuki (J) - Bgr glitches.
+Yuu Yuu Jinsei (J) - Perfect? (80-100%)
+
+Z
+Zero 4 Champ (J) Perfect? (80-100%)
+Zipang (J) (Salomons Key?) Perfect? (100%)

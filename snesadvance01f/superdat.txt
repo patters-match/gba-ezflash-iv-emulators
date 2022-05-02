@@ -1,0 +1,703 @@
+____________________________________________________________________________________
+___ Important Stuff ________________________________________________________________
+
+Official Superdat Thread  : http://boards.pocketheaven.com/viewtopic.php?t=222
+Official SNESAdvance Site : http://www.snesadvance.org
+
+____________________________________________________________________________________
+___ January 24 2006 ________________________________________________________________
+
+*All updates by mog123 - nice work!*
+
+Prehistorik Man (U)(no longer garbled graphics, very playable, but you cant see the upper
+part of the screen- garbled)
+
+Energy Breaker (J)( Works without glitches at Full speed, textboxes are not visible, but
+text is)
+
+Breath of fire 1&2 Work great, very playable, text is visible, no garbled graphics runs
+at Full speed
+
+Legend of Zelda - No more sprite/BG dissapearing/ cutting off
+
+Super Mario all Stars - Works in game perfectly but menu is garbled and cant se e what
+u're choosing
+
+And some other jrpgs that i messed with (a couple of them, dark half is very playable)
+
+
+Donkey Kong Country works in game prefectly (thx ethoscapade) HAD Sprite following but i
+removed it, the screen flickered no matter what i did, it jumped from one sprite to another;/
+
+Kirby's Dream Course - Works Perfectly-95% speed (fixed graphic glitches, now member icon 
+drawing menu works, no cloud glitches-dissapearing in choosing course, and when loading 
+the course the boarder shows just like it should be-it was invisible earlier)
+
+Mario is Missing - Perfect!
+
+FF6 (3-US) (J) - Still Works liek shit, garbled graphics cant see text, but now you 
+can see ungarbled sprites in battle ! ;D
+
+FF Mystic Quest - Works like silver (obviously not gold ;d) no text and the screen 
+flickers very quickly - black screen->normal->black screen->normal 
+WARNING - MAY CAUSE EPILEPSY ATTACK (;D)
+
+Sunset Riders (dont know what was fixed ;p but added ethoscapade's code ;p)
+
+U[1]N Squadron - Only speedhacked
+
+Fire Emblem monsya no nazu (or something like that ;d) - Runs at 75 % speed menu 
+like crap game works perfect, text is visible but japanese ;p
+
+NBA 97' - Menu Works kind of glitchy but viewable the gameplay is great sometimes
+glitches for a minisec and unglitches, could use a little speedhack
+
+NBA 98' - Menu isnt visible, just keep on pressing B and Start until you get to 
+choosing teams and then choose what you want, gameplay is great
+
+Shadowrun - Some graphic glitches but very playable
+
+All-American Football- small graphic glitches fix
+
+____________________________________________________________________________________
+___ January 11 2005 ________________________________________________________________
+
+Merged FluBBa's superdat with mine.
+
+.:Added:.
+Fix/S.Hack         : Alien Vs. Predator (E) [!]      : FluBBa
+Fix/S.Hack         : Alien Vs. Predator (U)          : FluBBa
+Fix/S.Hack         : Alien Vs. Predator (J)          : FluBBa
+Fix/S.Hack         : Brutal - Paws of Fury (U)       : FluBBa
+GFX Fix/Speed Hack : Cool Spot (U) [!]               : sephiroth2k
+Speed Hack         : Famicom Tantei Club Part II (J) : Hiei-
+GFX/Follow/S.Hack  : Ganbare Goemon - Yukihime Kyusy : TAK
+GFX/Follow         : Gokujyou Parodius (J)           : TAK
+Fix/GFX Fix/S.Hack : Kirby's Dream Course (U)        : FluBBa
+Speed Hack         : Marchen Adventure Cotton 100% ( : kennyk
+Fix/S.Hack         : Mega lo Mania (E)               : FluBBa
+Fix                : NBA Hang Time (U)               : FluBBa
+Fix/Speed Hack     : Pocky & Rocky (U) [!]           : sephiroth2k
+Speed Hack         : Ranma RPG - Anime [T+Eng1.00]   : Hiei-
+Speed Hack         : Samurai Shodown (U)             : FluBBa
+Fix/S.Hack         : Shadowrun (U)(17759)            : FluBBa
+Fix/S.Hack         : Shadowrun (U)(63540)            : FluBBa
+Fix/Speed Hack     : Sparkster (U)                   : sephiroth2k
+Speed Hack         : Super Double Dragon (U)         : FluBBa
+Corrected S.Hack   : Super Ghouls N Ghosts           : FluBBa
+Speed Hack         : Super Mario All-Stars (U)       : FluBBa
+Speed Hack         : Super Punch-Out!! (U)           : FluBBa
+Speed Hack         : Super Star Wars (u)(31438)      : FluBBa
+GFX Fix            : Super Turrican                  : FluBBa
+Fix/GFX Fix/S.Hack : Terminator, The (U)             : FluBBa
+GFX/S.Hack         : Umi Hara Kawa Se (J)            : FluBBa
+Speed Hack         : Uncharted Waters - New Horizons : DarkCube
+
+Huge update, so let me know if I missed something. - sephiroth2k
+
+____________________________________________________________________________________
+___ October 14 2004 ________________________________________________________________
+
+.:Added:.
+GFX Fix            : Street Fighter II - The World Warriors : TAK
+GFX Fix            : Final Fantasy 4 (J)                    : TAK
+Fix/GFX Fix/S.Hack : Killer Instinct (V1.0) (U)             : FluBBa
+Fix/GFX Fix/S.Hack : Killer Instinct (V1.1) (U)             : FluBBa
+GFX Fix            : Super Metroid (U)                      : FluBBa
+____________________________________________________________________________________
+___ October 10 2004 ________________________________________________________________
+
+.:Added:.
+Speed Hack : Final Fantasy II (U)         : FluBBa
+Fix?       : Super Metroid (U)            : FluBBa
+Speed Hack : Super Star Wars (U)(31438)   : FluBBa
+Fix/S.Hack : Super Turrican               : FluBBa
+Speed Hack : Ys 3 - Wanderers from Ys     : FluBBa
+Speed Hack : Zombies Ate My Neighbors (U) : FluBBa
+Speed Hack : Secret of Mana (U)           : sephiroth2k
+Fix        : Panel De Pon (J)             : troninator
+
+First update by me in a long time - FluBBa recently released an updated bin,
+get it at http://hem.passagen.se/flubba/gba.html.
+
+____________________________________________________________________________________
+___ August 27 2004 _________________________________________________________________
+
+.:Added:.
+
+Speedhack          : Congo's Caper (U)                      : Hiei-
+Speed/P.GFX/Sprite : Double Dragon V - The Shadow Falls (U) : Hiei-
+Fix & Speedhack    : Dragon - The Bruce Lee Story (U)       : Hiei-
+Speedhack          : Joe & Mac (U) [!]                      : Hiei-
+GFX Fix            : Jungle Book, The (U)                   : Hiei-
+Speedhack          : Super BC Kid (E)                       : Hiei-
+Speedhack          : Super Bonk (U)                         : Hiei-
+
+Another update. Thanks a lot to Mr. Slip for some help with the game list he sent me
+(like the other time). Super BC Kid & Super Bonk are the same games (U & E versions).
+I first hacked the (E) and found the (U) later so i hacked it too. Double Dragon V
+now runs very well so i'll add it to my "fully/mostly playble gamelist" soon.
+
+(Sorry if my english skills aren't perfect, i'm french :o)
+
+
+_____________________________________________________________________________________
+___ August 23 2004 __________________________________________________________________
+
+.:Added:.
+
+Sprite & Hack   : Blazeon (U)                                              : Hiei-
+Gfx Fix/Sprite  : Dragon Ball Z - Super Saiya Densetsu (J) (V1.1) [T+Eng]  : Hiei-
+Gfx/Sprite/Fix  : Dragon Ball Z - Super Gokuu Den (J)                      : Hiei-
+Speedhack       : Sonic Wings (J)                                          : Hiei-
+Speedhack       : Space Funky B.O.B (J)                                    : Hiei-
+Sprite & Hack   : Tetris Battle Gaiden (J)                                 : Hiei-
+Speedhack       : Thunder Spirits (J)                                      : Hiei-
+Fix/Sprite/Hack : Twinbee - Rainbow Bell Adventure (J)                     : Hiei-
+Fix & Speedhack : Wonder Project J - Kikai no Shounen Pino (J) [T+Eng1.04] : Hiei-
+
+As Sephiroth2k isn't here for a week, he asked me if i can update the superdat so here's
+the new version. Somes games of this list works well now, just try them to see which ones.
+
+(Sorry if my english skills aren't perfect, i'm french :o)
+
+
+_____________________________________________________________________________________
+___ July 24 2004 ____________________________________________________________________
+
+.:Added:.
+
+Speedhack       : Darius Twin (U)                                  : DarkCube
+Fix & Speedhack : Dr. Mario (J) (NP)                               : Hiei-
+New Speedhack   : Final Fight 3 (U)                                : Hiei-
+GFX Fix & Hack  : Knights of the Round                             : Hiei-
+Fix & Speedhack : Mighty Morphin Power Rangers - Movie Edition (U) : Hiei-
+Sprite & Hack   : Rockman & Forte (J) [T+Eng1.00-MMB_AGTP]         : Hiei-
+Gfx Fix & Hack  : SD Gundam X (J)                                  : Hiei-
+Speedhack       : U.N. Squadron (U)                                : Hiei-
+Sprite Follow   : Sim City (U)                                     : kylekatarn
+Fix             : Sim Earth (U)                                    : kylekatarn
+
+Thanks fly out to Hiei- for handling this update!
+
+
+____________________________________________________________________________________
+___ July 8 2004 ____________________________________________________________________
+
+.:Added:.
+Speed Hack      : The Adventures of Batman & Robin (U) : Hiei-
+Fix + GFX +Hack : Asterix & Obelix (E) [f1]            : lordsnooty
+Speed Hack      : Blues Brothers, The (U)              : lordsnooty
+Fix & Speedhack : Hyper V-Ball (U)                     : Hiei-
+Part. Fix +Hack : Kirby's Avalanche (U) [!]            : lordsnooty
+Speed Hack      : NHL '94                              : lordsnooty
+Speed Hack      : Whirlo (E)                           : lordsnooty
+Part. Fix +Hack : RPG Tukool - Super Dante             : Pwned
+
+Neato.
+
+
+____________________________________________________________________________________
+___ June 24 2004 ___________________________________________________________________
+
+.:Added:.
+Fix             : Archer MacLean's Dropzone (E)                 : lordsnooty
+Fix & Speedhack : Asterix (E) [!]                               : lordsnooty
+Fix & Speedhack : Asterix & Obelix (E) [f1]                     : lordsnooty
+Fix             : F1 Pole Position (u)                          : Hiei-
+Fix & Speedhack : Flashback - The Quest for Identity (U)        : lordsnooty
+Fix             : James Pond's Crazy Sports (E)                 : lordsnooty
+Fix & Speedhack : King of the Monsters 2 (U)                    : lordsnooty
+Fix             : Magic Sword (U)                               : Hiei-
+GFX Fix & Speed : Magic Sword (U)                               : sephiroth2k
+Fix             : Marvel Super Heroes - War of the Gems (E) [!] : lordsnooty
+GFX Fix         : Pokemon (PD)                                  : PmHacks
+Fix             : Super Tennis (U) [!]                          : Hiei-
+
+Big update today, a new generation of hackers is born.  Also, we can add Magic Sword
+to the list of near-perfect games.
+
+____________________________________________________________________________________
+___ June 16 2004 ___________________________________________________________________
+
+.:Added:.
+Fix & Speedhack : Tetris & Dr. Mario (U) [!] : sephiroth2k (Dr. Mario needs fixing)
+CRC Fix : Mega Man X (DarkCube IPS) : DarkCube?
+
+____________________________________________________________________________________
+___ June 10 2004 ___________________________________________________________________
+
+.:Added:.
+Speed Hack : Soul Blazer (U) : DarkCube
+Fix : Slam Dunk - SD Heat Up!! : DarkCube
+Speed Hack : Secret of the Stars (U) : DarkCube
+
+Once again, I apologize for the delayed update.  My 'real life' should be back to 
+normal soon, so there'll be more frequent updates (and maybe I'll even find time
+for making hacks again).
+
+____________________________________________________________________________________
+___ June 1 2004 ____________________________________________________________________
+
+.:Added:.
+Not Quite Fixed : Tactics Ogre - Version 1.0 (J) : DarkCube
+Not Quite Fixed : Tactics Ogre - Version 1.1 (J) : DarkCube
+Not Quite Fixed : Tactics Ogre - Version 1.2 (J) : DarkCube
+
+Fixed the superdat entry for Super Mario World (U) (thanks DarkCube).
+
+Sorry I haven't been around much recently, it's a very stressful time for my
+family right now (my uncle died unexpectedly).
+
+____________________________________________________________________________________
+___ May 26 2004 ____________________________________________________________________
+
+.:Added:.
+Sprite Follow Address : Harvest Moon (U) : kylekatarn
+Protection Hack : Terranigma (E) [!] : DarkCube
+
+____________________________________________________________________________________
+___ May 16 2004 ____________________________________________________________________
+
+.:Added:.
+Fix : Star Trek Starfleet Academy : DarkCube
+
+____________________________________________________________________________________
+___ April 25 2004 __________________________________________________________________
+
+.:Added:.
+GFX Fix : Mega Man 7 (U) : DarkCube
+Fix & Speed Hack : Legend (U) : DarkCube
+GFX Fix : Final Fantasy 5 (Translated) : DarkCube
+
+____________________________________________________________________________________
+___ April 22 2004 __________________________________________________________________
+
+.:Added:.
+Semi-fix & Speed Hack : NHL '94 : DarkCube
+
+____________________________________________________________________________________
+___ April 17 2004 __________________________________________________________________
+
+.:Added:.
+Fix & Speed Hacks : Final Fantasy 3 (U) : Koji
+Improved GFX Fix : Final Fantasy 3 (U) : sephiroth2k
+Password Screen Speed Hack : Megaman X (U) : DarkCube
+
+____________________________________________________________________________________
+___ April 14 2004 __________________________________________________________________
+
+   Changed the name of this text to superdat.txt to avoid overwriting SNESAdvance
+readme.txt.
+
+.:Added:.
+GFX Fix : Zombies Ate My Neigbors (U) : sephiroth2k : Still no enemies=emu problem
+
+____________________________________________________________________________________
+___ April 13 _______________________________________________________________________
+
+   This marks the first day of keeping a changelog for the superdat, hooray. You'll
+find a credits section at the bottom of this text; from now on, I'll only be
+updating the post in the SNESAdvance forum with that day's updates.
+
+.:Added:.
+GFX Fix : Castlevania - Dracula X (U) : sephiroth2k
+
+
+____________________________________________________________________________________
+___ Credits ________________________________________________________________________
+
+-> *** loopy *** <-
+Any games in the dat without credit given are loopy's work.
+
+____________________________________________________________________________________
+___ Hacks __________________________________________________________________________
+
+Act Raiser (U) : Koji 
+Alien 3 (U) : sho
+Alien Vs. Predator (E) [!] : FluBBa
+Alien Vs. Predator (U) : FluBBa
+Alien Vs. Predator (J) : FluBBa 
+Asterix (E) [!] : lordsnooty
+Asterix & Obelix (E) [f1] : lordsnooty
+Bahamut Lagoon (J) : john6931 & DarkCube 
+Battle Dodgeball II (J) : Iceedarkness 
+Battle Dodgeball - Tokyu Gekito : Iceedarkness 
+Bebe's Kids (U) : DarkCube 
+Blaze On (J) : C++ 
+Blazeon (U) : Hiei-
+Boogerman - A Pick and Flick Ad : Iceedarkness 
+Brutal - Paws of Fury (U) : FluBBa
+Bubsy Bobcat (U) : LoPoZ 
+Captain America & the Avengers (U) : DarkCube 
+Casper (U) : DarkCube 
+Cliffhanger (U) : sho 
+Congo's Casper (U) : Hiei-
+Contra III - The Alien Wars : loopy 
+Cool Spot (U) [!] : sephiroth2k
+Daffy Duck - The Marvin Missions (U) : Iceedarkness 
+Diddy Kong's Quest (U) : LoPoZ 
+Doomsday Warrior (U) : DarkCube 
+Double Dragon V - The Shadow Falls (U) : Hiei-
+Dr. Mario (J) (NP) : Hiei-
+Dragon - The Bruce Lee Story (U) : Hiei-
+Dragon Quest 1 & 2 (T) : DarkCube 
+Dragon Quest 3 (J) : sho 
+Dragon Quest 5 (J) : C++ 
+Earthbound (U) : sephiroth2k 
+Earthworm Jim 2 (U) : sephiroth2k
+Famicom Tantei Club Part II (J) : Hiei- 
+Fatal Fury (U) : Koji 
+Fatal Fury 2 (U) : DarkCube 
+Fatal Fury Special (U) : Koji 
+Final Fantasy II (U) : FluBBa
+Final Fantasy 3 (V1.0) (U) : sephiroth2k 
+Final Fantasy 5 (Translated) : sephiroth2k 
+Final Fight (U) : sephiroth2k 
+Final Fight 2 (U) : sephiroth2k 
+Final Fight 3 (U) : Hiei-
+Fire Striker (U) : sephiroth2k 
+Flashback - The Quest for Identity (U) : lordsnooty
+Frogger (U) : sephiroth2k 
+Ganbare Goemon 2 (J) : sephiroth2k 
+Ganbare Goemon 3 (J) : sephiroth2k 
+Ganbare Goemon 4 - KiraKira Dot : sephiroth2k 
+Ganbare Goemon - Yukihime Kyusy : TAK
+G Gundam : Koji 
+Hagane (U) : Iceedarkness 
+Harvest Moon (U) : sephiroth2k 
+Joe & Mac (U) [!] : Hiei-
+Killer Instinct (V1.0) (U) : FluBBa
+Killer Instinct (V1.1) (U) : FluBBa
+King of the Monsters 2 (U) : lordsnooty
+Kirby's Dream Course (U) : FluBBa
+Knights of the Round (U) : DarkCube 
+Lagoon (U) : Koji 
+Lemmings (V1.1) (U) [!] : sho
+Legend (U) : DarkCube
+Lufia II - Rise of the Sinistrals (U) : sephiroth2k 
+Magic Sword (U) : sephiroth2k
+Marchen Adventure Cotton 100% ( : kennyk
+Mario is Missing : LoPoZ 
+Mega lo Mania (E) : FluBBa
+Mega Man 7 (U) : sephiroth2k 
+Mega Man's Soccer (U) : DarkCube 
+Mighty Morphin Power Rangers (U) : Iceedarkness 
+Mighty Morphin Power Rangers - Movie Edition (U) : Hiei-
+Mortal Kombat (U) : sephiroth2k 
+Musya (U) : sephiroth2k 
+Ninja Warriors Again, The (J) : sephiroth2k 
+Paper Boy 2 (U) : DarkCube 
+Peace Keepers (U) : Koji 
+Pinball Fantasies (U) : sho 
+Pirates of Dark Water, The (U) : jamesishere 
+Pocky & Rocky (U) [!] : sephiroth2k
+Pop 'N' Twinbee (J) : DarkCube 
+Prehistorik Man (U) : sho 
+Prince of Persia (U) : sephiroth2k 
+Q-bert 3 (U) : sephiroth2k 
+Ranma ½ Bun no 1 - Chogi Ranbu : Koji 
+Ranma ½ Bun no 1 - Bakuretsu Ra : Koji 
+Ranma RPG - Anime [T+Eng1.00] : Hiei-
+Run Saber (U) : DarkCube 
+Robotrek (U) : Koji 
+Rock N' Roll Racing (U) : DarkCube 
+Sailor Moon (F) : Koji 
+Samurai Shodown (U) : FluBBa
+SD The Great Battle (J) : Iceedarkness 
+Secret of Mana (U) : DarkCube and sephiroth2k
+Secret of the Stars (U) : DarkCube 
+Seiken Densetsu 3 (J) (Patched english 1.01) : sephiroth2k 
+Shadowrun (U)(17759) : FluBBa
+Shadowrun (U)(63540) : FluBBa
+Simpsons, The - Bart's Nightmare (U) : sephiroth2k 
+Skyblazer (U)(12134) : sephiroth2k
+Street Fighter II - The World Warrior : loopy 
+Street Fighter II Turbo (U) : sephiroth2k 
+Sonic Blastman 2 (U) : sephiroth2k
+Sonic Wings (J) : Hiei-
+Soul Blazer (U) : DarkCube 
+Space Funky B.O.B (J) : Hiei-
+Sparkster (U) : sephiroth2k
+Spider-Man - Maximum Carnage (U) : sephiroth2k 
+Spider-Man - Separation Anxiety : sephiroth2k 
+Super Adventure Island (U) : Koji 
+Super BC Kid (E) : Hiei-
+Super Battleship (U) : Koji 
+Super Bomberman 4 (J) : sephiroth2k 
+Super Bomberman 5 (J) : sephiroth2k 
+Super Bonk (U) : Hiei-
+Super Buster Brothers (V1.1) : Koji 
+Super Buster Brothers (V1.0) : Koji 
+Super Double Dragon (U) : FluBBa
+Super Ghouls N Ghosts : FluBBa
+Super Mario All-Stars (U) : FluBBa 
+Super Punch-Out!! (U) : FluBBa
+Super Soccer (U) : sephiroth2k
+Super Star Wars (U) [p1][!] : Koji 
+Super Star Wars (u)(31438) : FluBBa
+Super Street Fighter 2 - The New Challengers (U) : sephiroth2k 
+Super Turrican : FluBBa
+Teenage Mutant Ninja Turtles 4 (U) : sephiroth2k 
+Teenage Mutant Ninja Turtles - Tournament Fighters (U) : sephiroth2k 
+Terminator, The (U) : FluBBa
+Tetris & Dr. Mario (U) [!] : sephiroth2k
+Tetris Attack (U) : Iceedarkness
+Tetris Batle Gaiden (J) : Hiei-
+Tick, The (U) : Iceedarkness 
+Tiny Toons Adventures - Buster Busts Loose! (U) : Iceedarkness 
+Thunder Spirits (J) : Hiei-
+Twinbee - Rainbow Bell Adventure (J) : Hiei-
+Umi Hara Kawa Se (J) : FluBBa
+U.N. Squadron (U) : Hiei-
+Uncharted Waters - New Horizons : DarkCube
+Undercover Cops (J) : DarkCube 
+Wario's Woods (U) : Iceedarkness 
+WCW Super Brawl (U) : sho 
+X-Men Mutant Apocalypse (U) : sephiroth2k 
+Yoshi's Cookie (U) : sephiroth2k 
+Ys 3 - Wanderers from Ys : FluBBa
+YUUYUU Hakusho (J) : Koji 
+YUUYUU Hakusho Final (J) : Koji 
+YUUYUU Hakusho 2 - Kakutou no Syo (J) : Koji 
+Zen Nihon GT Sensyuken (J) : Iceedarkness 
+Zero the Kamikaze Squirrel (U) : Iceedarkness 
+Zombies Ate My Neighbors (U) : FluBBa
+
+
+
+____________________________________________________________________________________
+___ Fixes___________________________________________________________________________
+ 
+Addams Family (U) : DarkCube 
+Addams Family - Pugsley's Scave (U) : DarkCube 
+Adventures of Dr Franken (U) : DarkCube 
+Adventures of Rocky & Bullwinkle (U) : DarkCube 
+Aero the Acro-Bat (U) : DarkCube 
+Aero the Acro-Bat 2 (U) : DarkCube 
+Aerobiz (U) : DarkCube 
+Alien 3 (U) : sho
+Alien Vs. Predator (E) [!] : FluBBa
+Alien Vs. Predator (U) : FluBBa
+Alien Vs. Predator (J) : FluBBa 
+An American Tale - Fievel Goes West (U) : DarkCube
+Archer MacLean's Dropzone (E) : lordsnooty 
+Arkanoid - Doh it Again (U) : DarkCube 
+Asterix (E) [!] : lordsnooty
+Asterix & Obelix (E) [f1] : lordsnooty
+The Adventures of Batman & Robin (U) : DarkCube 
+Bahamut Lagoon (J) : john6931 & DarkCube 
+Bassins' Black Bass Fishing with Hank Parker (U) : DarkCube 
+Battle Grand Prix (U) : DarkCube 
+Beauty and the Beast (U) : DarkCube 
+Beavis and Butthead (US) : DarkCube 
+Biker Mice From Mars (U) : DarkCube 
+Bishoujo Sailor Moon R (trans) : Koji 
+Blues Brothers, The (U) : DarkCube 
+Brainies, The (U) : DarkCube 
+Bram Stoker's Dracula (U) : DarkCube 
+Brawl Brothers (U) : DarkCube and Koji independently 
+Brutal - Paws of Fury (U) : FluBBa
+Bugs Bunny in Rabbit Rampage (U) : sho 
+Cannondale Cup (U) : DarkCube 
+Captain America & the Avengers (U) : DarkCube 
+Casper (U) : DarkCube 
+Championship Pool (U) : DarkCube 
+Chessmaster, The (U) : DarkCube 
+Chester Cheetah - Wild Wild Quest (U) : DarkCube 
+Chester Cheetah - Wild Wild Quest (U) (Alt) : DarkCube 
+Chuck Rock (U) : DarkCube 
+Cliffhanger (U) : sho 
+Dennis the Menace (U) : DarkCube 
+Donald Duck - Maui Mallard in C : sho 
+Donkey Kong Country (V1.1) (U) : loopy or sephiroth2k, we both found it independantly  
+Donkey Kong Country (V1.0) (U) : DarkCube 
+Doom Troopers (U) : DarkCube 
+Dr. Mario (J) (NP) : Hiei-
+Dragon Ball Z - Super Butoden (J) : C++ 
+Dragon's Lair (U) : DarkCube 
+Dragon Quest 1 & 2 (T) : DarkCube 
+Dragon Quest 3 (J) : sho 
+Dragon Quest 5 (J) : C++ 
+Dream TV (U) : DarkCube 
+Earthbound (U) : sephiroth2k 
+Earthworm Jim 2 (U) : sephiroth2k 
+ESPN Sunday Night NFL (U) : DarkCube 
+E.V.O. Search for Eden (U) : DarkCube 
+Extra Innings (U) : DarkCube 
+F1 Pole Position (u) : Hiei-
+Final Fight Guy (US) : DJCHK 
+Flashback - The Quest for Identity (U) : lordsnooty
+Frogger (U) : sephiroth2k 
+Ganbare Goemon 2 (J) : sephiroth2k 
+Ganbare Goemon 3 (J) : sephiroth2k 
+Ganbare Goemon 4 - KiraKira Dot : sephiroth2k 
+Hagane (U) : Iceedarkness 
+Harvest Moon (U) : sephiroth2k 
+James Pond's Crazy Sports (E) : lordsnooty
+Killer Instinct (V1.0) (U) : FluBBa
+Killer Instinct (V1.1) (U) : FluBBa
+King of the Monsters 2 (U) : lordsnooty
+Kirby's Dream Course (U) : FluBBa
+Lagoon (U) : Koji 
+Magic Sword (U) : Hiei-
+Mario is Missing : LoPoZ 
+Marvel Super Heroes - War of the Gems (E) [!] : lordsnooty
+Mega lo Mania (E) : FluBBa
+Mega Man X 2 (U) : sephiroth2k 
+Micro Machines (U) : sephiroth2k 
+Mighty Morphin Power Rangers (U) : Iceedarkness 
+Mighty Morphin Power Rangers - Movie Edition (U) : Hiei-
+Mortal Kombat (U) : sephiroth2k 
+Mortal Kombat II (V1.1) (U) : nba jam 
+NBA Hang Time (U) : FluBBa
+NBA Give and Go (U) : DarkCube 
+NBA Jam Tournament Edition (U) : nba jam 
+Panel De Pon (J) : troninator
+Paper Boy 2 (U) : DarkCube 
+Peace Keepers (U) : DarkCube 
+Pinball Fantasies (U) : sho
+Pocky & Rocky (U) [!] : sephiroth2k 
+Prehistorik Man (U) : sho 
+Prince of Persia (U) : sephiroth2k 
+Q-bert 3 (U) : sephiroth2k 
+Ranma ½ Bun no 1 - Bakuretsu Ra : Koji 
+Rival Turf (U) : jamesishere 
+Rock N' Roll Racing (U) : OBlachubs 
+Secret of Mana (U) : sephiroth2k and DarkCube 
+Seiken Densetsu 3 (J) (Patched english 1.01) : sephiroth2k
+Shadowrun (U)(17759) : FluBBa
+Shadowrun (U)(63540) : FluBBa
+Sim Earth (U) : kylekatarn
+Simpsons, The - Krusty's Super : sho 
+Shin Kidoesenki Gundam Wing - Endless Duel (J) : Iceedarkness 
+Slam Dunk - SD Heat Up!! : DarkCube 
+Sonic Blastman 2 (U) : sephiroth2k and DarkCube both found it independently
+Sparkster (U) : sephiroth2k
+Star Trek Starfleet Academy : DarkCube
+Sunset Riders (U) : Skys Fall 
+Super Bomberman 2 (U) : sephiroth2k 
+Super Bomberman 4 (J) : sephiroth2k 
+Super Bomberman 5 (J) : sephiroth2k 
+Super Goal! (U) : sho 
+Super Metroid (U) : DarkCube and LoPoZ and FluBBa
+Super Star Wars (U) [p1][!] : Koji 
+Super Soccer (U) : sephiroth2k 
+Super Tennis (U) [!] : Hiei-
+Super Turrican : FluBBa
+Syndicate (U) : sephiroth2k 
+T2 - The Arcade Game (U) : nba jam 
+Teenage Mutant Ninja Turtles - Tournament Fighters (U) : sephiroth2k 
+Tetris & Dr. Mario (U) [!] : sephiroth2k
+Tetris Attack (U) : Iceedarkness
+Terminator, The (U) : FluBBa
+Terranigma (E) [!] : DarkCube : Protection Hack
+Terranigma (E) [!] : Koji : Fix
+Twinbee - Rainbow Bell Adventure (J) : Hiei-
+U.N. Squadron (U) : nba jam 
+Undercover Cops (J) : DarkCube 
+Wario's Woods (U) : Iceedarkness 
+Wings 2 (U) : nba jam 
+YUUYUU Hakusho Final (J) : Koji 
+YUUYUU Hakusho Tokubehuten (J) : Koji 
+Zen Nihon GT Sensyuken (J) : Iceedarkness 
+Zero the Kamikaze Squirrel (U) : Iceedarkness 
+Zombies Ate My Neighbors (U) : sephiroth2k 
+
+
+
+____________________________________________________________________________________
+___ New Graphics Fixes _____________________________________________________________
+
+Cool Spot (U) [!] : sephiroth2k
+Final Fantasy 3 (V1.0) (U) : sephiroth2k : Improved/Not Playable
+Final Fantasy 4 (J) : TAK
+Final Fantasy 5 (Translated) : DarkCube
+Ganbare Goemon - Yukihime Kyusy : TAK
+Gokujyou Parodius (J)           : TAK
+Killer Instinct (V1.0) (U) : FluBBa
+Killer Instinct (V1.1) (U) : FluBBa
+Kirby's Dream Course (U) : FluBBa
+Knights of the Round (U) : Hiei-
+Jungle Book, The (U) : Hiei-
+Magic Sword (U) : sephiroth2k
+Mega Man 7 (U) : DarkCube
+Pokemon (PD) : PmHacks
+Secret of Mana (U) : sephiroth2k
+Street Fighter II - The World Warriors : TAK
+Super Metroid (U) : FluBBa
+Super Turrican : FluBBa
+Terminator, The (U) : FluBBa
+Umi Hara Kawa Se (J) : FluBBa
+Zombies Ate My Neigbors (U) : sephiroth2k
+
+
+
+____________________________________________________________________________________
+___ Sprite Follow Addresses ________________________________________________________
+
+.: Game : Address :Scale% : Offset : Finder :.
+
+Aladdin (U) : 0x7e08ea : 30 : 5 : sephiroth2k 
+Batman Returns (U : 0x7e032c : 30 : 0 : sephiroth2k 
+Blaze On (J) : 0x7e1100 : 30 : 0 : C++ 
+Blazeon (U) : Hiei-
+Bonkers (U) : 0x7e0406 : 30 : 0 : sephiroth2k 
+Castlevania : Dracula X (U) : 0x001d48-0x001db6 : 30 : 0 : loopy 
+Dr. Mario (J) (NP) : Hiei-
+Dragon Ball Z - Super Gokuu Den (J) : Hiei-
+Dragon Ball Z - Super Saiya Densetsu (J) (V1.1) [T+Eng] : Hiei-
+Darius Twin (U) : 0x7e13d8 : 30 : 5 : sephiroth2k 
+Double Dragon V - The Shadow Falls (U) : Hiei-
+Demon's Crest (U) : 0x7e1034 : 30 : 10 : sephiroth2k 
+Final Fight 2 (U) : 0x7e0353 : 30 : 0 : sephiroth2k 
+Ganbare Goemon - Yukihime Kyusy : TAK
+Gunforce (U) : 0x7e9004 : 30 : 5 : sephiroth2k 
+Gokujyou Parodius (J) : TAK
+**Harvest Moon (U) : 0x7e0147 : 30 : 42 : kylekatarn
+Mario & Wario (J) [h3] (Joypad) : 0x7e00ab : 30 : 17 : sephiroth2k 
+Mario Paint (U) (h1) (Joypad) : 0x7e0227 : 30 : 0 : sephiroth2k 
+Mega Man 7 (U) : 0x7e0c08 : 30 : 0 : sephiroth2k 
+Mega Man X (V1.1) (U) : 0x7e0bb0 : 30 : 0 : sephiroth2k 
+**Secret of Mana (U) : 0x7e0604 : 100 : 10 : DarkCube 
+Sky Blazer (U)(12134) : 0x7ef101 : 40 : ?? : sephiroth2k 
+Super Castlevania IV (U) : 0x7e054e : 30 : 15 : sephiroth2k 
+Super Mario World (U) : 0x96-0x1c : 25 : 10 : loopy 
+Teenage Mutant Ninja Turtles 4 : 0x7e040c : 25 : 0 : sephiroth2k 
+Tetris Battle Gaiden (J) : Hiei-
+Twinbee - Rainbow Bell Adventure (J) : Hiei-
+*Xardion (U) : 0x7e0d02 : 30 : 5 : sephiroth2k 
+
+* Due to the weird way Xardion deals with sprites (storing them relative to position in
+level), the screen may jump briefly when crossing certain vertical thresholds. If anyone
+has a serious problem with this I'll fix it, but I really don't think it's worth it.
+ 
+** This mem follow address will jump up when text is present so you can read it and down
+when there is no text so you can play
+
+
+____________________________________________________________________________________
+___ Old Background Fixes ___________________________________________________________
+
+Aladdin (U) : 0x0132 : gbfan_gbfan_gbfan 
+Breath of Fire (U) : 0x0132 : gbfan_gbfan_gbfan 
+Daffy Duck - The Marvin Mission (U) : 0x0132 : gbfan_gbfan_gbfan 
+Earthbound (U) : 0x0132 : sephiroth2k 
+Fatal Fury Special (U) : 0x0132 : kungpow12345 
+Gradius 3 : 0x0132 : craig588 
+G Gundam : 0x0132 : kungpow12345 
+Lufia II - Rise of the Sinistrals (U) : 0x0132 : Visidan 
+Raiden Trad (U): 0x0312 : FluBBa 
+Scooby-Doo : 0x0123 : kungpow12345 
+Secret of the Stars (U) : 0x0132 : gbfan_gbfan_gbfan 
+Secret of Mana (U) : 0x0132 : DarkCube 
+Street Fighter II - The World Warrior (U) : 0x0132 : gbfan_gbfan_gbfan 
+Street Fighter II Turbo (U) : 0x0132 : gbfan_gbfan_gbfan 
+Sunset Riders (U) : 0x123 : Skys Fall 
+Super Mario World (U) : 0x0132 : LoPoZ 
+Super Punch-Out!! (U) : 0x0231 : gbfan_gbfan_gbfan 
+Super Street Fighter 2 - The New Challengers (U) : 0x0132 : gbfan_gbfan_gbfan 
+TMNT4 - Turtles in Time (U) : 0x0132 : LoPoZ 
+WCW Super Brawl (U) : 0x0132 : sho 
+Zen Nihon GT Sensyuken (J) : 0x132 : craig588z
+   

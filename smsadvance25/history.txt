@@ -1,0 +1,180 @@
+SMSAdvance revision history
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+V2.5 - 2009-01-26 (FluBBa)
+   Added support for GG Bios from Pogoshell.
+   Added mapper support for new Korean games.
+   Changed interrupt method so more cards should be able to patch SMSA.
+
+V2.4 - 2008-04-16 (FluBBa)
+   Fixed config loading for gamma setting.
+
+V2.3 - 2008-03-28 (FluBBa)
+   Fixed games branching over banks with the new VRAM copy (Sonic 1).
+
+V2.2 - 2008-03-27 (FluBBa)
+   Added copying of first 32kB ROM to VRAM for faster execution.
+   Added selection of machine.
+   Added correct noise generation for SG-1000 emulation.
+   Added correct palette in TMS9918 modes on SMS machines.
+   Added different vdp capabilities depending on selected machine.
+   Added some very basic Mode5 support when Machine=MegaDrive.
+   Added different io maps depending on selected machine.
+   Added support for the SMS1 tilemap address masking (Ys(J)).
+   Added support for turning on/off internal RAM.
+   Added auto save of SRAM (if it's allready present) when entering menu.
+   Added auto turn off of Bios when no header found (on machine=Auto).
+   Added auto region (Pop Breaker GG (J)).
+   Fixed support for Dodgeball King (KR).
+   Fixed pushing and poping of AF register (Adventure of Batman GG).
+   Fixed sprite bugs in unscaled mode on Codemasters games.
+   Fixed initializing of all CPU regs on reset.
+   Fixed timing of HALT instruction.
+   Fixed palette setting for TMS9918 modes on GG.
+   Fixed noscrolling for TMS9918 modes.
+   Fixed up Mode1 graphics a bit.
+   Fixed correct HCounter and latching.
+   Better switching between TMS9918 and SMS video modes.
+   More info shown from the game header.
+   Optimised tile rendering for mode 0 & 2 (for real this time).
+   Optimised all Z80 memory reads, one instruction and cycle shorter.
+   Optimised DAA opcode.
+   Optimised DEC opcodes.
+   Optimised SBC A/HL opcode.
+   Optimised one of the SRA opcodes.
+   Optimised CPI, CPD, CPIR & CPDR opcodes.
+
+V2.1 - 2007-05-08 (FluBBa)
+   Optimised tile rendering for mode 0 & 2.
+   Fixed a bug where GG games set the "lock-toprow" bit (Sonic Drift demo).
+   Added support for the SG-1000 games Mahjong and Home Mahjong.
+   Added support for RAM on some SG-1000 games (The Castle, Othello...).
+   Fixed clearing of SMS VRAM when no bios used.
+
+V2.0 - 2006-07-17 (FluBBa)
+   Added "Go Multiboot" menu option.
+   Added menu option for disabling background/sprites.
+   Fixed a bug in the screen on/off behaviour.
+   Fixed a bug in SRAM loading when using a BIOS.
+   Fixed default config.
+   Fixed Pause & Reset buttons when linking 2players.
+   Removed the save management menu when multibooting.
+   Optimised tiledecoding.
+   Optimised some of the SBC instructions.
+   Optimised EI instruction.
+   Optimised IO port access.
+
+V1.9 - 2006-06-03 (FluBBa)
+   Added Savestates.
+   Added support for Ernie Els Golf.
+   Fixed Start/Select going through when using L/R + Start/Select.
+   Fixed gamma settings acting directly.
+   Fixed Codemaster mapper a bit, now works with BIOS.
+   Fixed header detection, all GG games that use SMS mode now uses the GG BIOS.
+   Updated the readme a bit.
+
+V1.5 - 2006-05-13 (FluBBa)
+   Fixed volume attenuation.
+   Fixed soundclicks in rom selection menu.
+   Fixed a bug with the new sprite collision.
+   Fixed some bugs with the sprites in Mode 0 & 2.
+   Fixed a rare background bug in Mode 0, 1 & 2.
+   Fixed cpu timing for both PAL & NTSC (confirmed on real HW).
+   Better update timing in PAL mode.
+   More colorful SG-1000 palette.
+   Optimised BIT7 instructions.
+   Optimised some of the shift instructions.
+   Optimised DD/FD instructions.
+
+V1.4 - 2006-01-17 (FluBBa)
+   Added fake support for sprite collision (option).
+
+V1.3 - 2006-01-15 (FluBBa)
+   Added support for running the GG bios in SMS mode.
+   Added support for all SMS Bioses.
+   Added option in builder for "empty" slot at the end of ROMlist. (Loopy).
+   Added option to lock the 2 toprows in unscaled mode.
+   Added "Perfect Sprite" option for games like:
+       Global Gladiators.
+       GP Rider (GG).
+       Speedball 2.
+       Xenon 2.
+   Added emulation of locking the right side of the screen, games:
+       Gauntlet.
+       Golvellius.
+       Griffin (GG).
+       Line of Fire.
+       Megumi Rescue.
+       Rygar.
+	   Satelite 7.
+   Fixed IO port 2, Laser Ghost.
+   Fixed Monaco GP, SG-1000.
+   Fixed the support for Jang Pung II (KR).
+   Fixed priority on zoomed sprites in mode 0 & 2 (Bank Panic, SG-1000).
+
+V1.2 - 2005-11-30 (FluBBa)
+   Added support for graphics mode 0 & 2 (F-16 Fighter, SG-1000 games).
+   Now saves the whole (32kB) SMS SRAM.
+
+V1.1 - 2005-11-03 (FluBBa)
+   Added sprite following (somewhat).
+   Fixed background color (lots of games).
+   Fixed Game Over screen on Rambo III.
+   Fixed sprite bugs on Codemasters game in scaled mode.
+   Optimised CPU abit, again.
+
+V1.0 - 2005-10-14 (FluBBa)
+   Fixed Codemasters mapper (broken in V0.9).
+   Cleaned up the mapper code a bit.
+
+V0.9 - 2005-09-26 (FluBBa)
+   Added support for the GG BIOS.
+   Added config for using Select as Reset button.
+   Fixed Shanghai 2.
+   Fixed Ryu Kyu.
+   Fixed Space Gun.
+   Fixed a bug in joypad reading (Street Fighter II).
+   Optimised mapper detection.
+   Optimised sound mixer.
+   Optimised CPU abit.
+
+V0.8 - 2005-09-03 (FluBBa)
+   Added support for Street Fighter II.
+   Added config for using R as Start.
+   Fixed Pause in Robocop 3.
+   Fixed some scrolling glitches (Gunstar Heroes intro, Rygar).
+
+V0.7 - 2005-08-18 (FluBBa)
+   Reduced sprite flicker in Arch Rivals.
+   Fixed Rise of the Robots (HBlank IRQ enabled at start).
+
+V0.6 - 2005-08-15 (FluBBa)
+   Fixed Gunstar Heroes (bug in V0.5).
+
+V0.5 - 2005-08-13 (FluBBa)
+   Added Codemasters & Korean mappers.
+   Added 32k SRAM support for Shining Force 2 & 3 (not saved yet).
+   Fixed a memory management bug again (Shinobi in some cases).
+   Fixed a rendering bug in 224 mode (Codemasters games).
+
+V0.4 - 2005-08-10 (FluBBa)
+   Fixed memory management again (Shinobi, The Ninja, SDI).
+   Fixed a rendering bug in GG mode (GG Aleste).
+   Fixed sprite offset -8 (Ghouls'n Ghosts).
+
+V0.3 - 2005-08-07 (FluBBa)
+   Fixed nametable switching a bit (Sylvan Tale, Road Rash).
+   Fixed 256x224 screen for GG games (Star Trek games).
+   Fixed memory management a bit (Ys, Terminator).
+
+V0.2 - 2005-08-02 (FluBBa)
+   Fixed sprites in Golvelius.
+   Fixed hanging in StarGate.
+
+V0.1 - 2005-07-30 (FluBBa)
+   Initial release.
+
+V0.0 - 2005-07-06 (FluBBa)
+   Started Coding.
+

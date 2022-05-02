@@ -1,0 +1,34 @@
+---------------------------------
+Format of Cologne (v1) GBA images:
+---------------------------------
+
+???? bytes:  Cologne.gba contents
+(optional) 76800 bytes:  Splash screen (raw 240x160 15bit image)
+----
+4 bytes:  Identifier = "COL",0x1A
+4 bytes:  ROM size
+2 bytes:  ROM flags
+1 byte:   Branch hacks, bit 0-3: opcode, bit 4-7: length. (not yet).
+1 byte:   Reserved (set to 0)
+4 bytes:  Autoscroll value (a.k.a. "sprite following")
+1 byte:   BIOS flag, bit0=1 for BIOS rom.
+15 bytes: Reserved (set to 0)
+32 bytes: ROM title (NULL terminated)
+???? bytes:  ROM contents (.COL format)
+----
+4 bytes:  Next ROM indentifier
+etc etc...
+----
+
+ROM flags:
+    Bit 0: Reserved
+    Bit 1: Reserved
+    Bit 2: Reserved
+    Bit 3: Reserved
+    Bit 4: Enable CPU speed hack
+           (Enables the branch hacks)
+    Bit 5: 0=Autoscroll value is a sprite number
+           1=Autoscroll value is a memory location
+    Everything else:  Reserved (set to 0)
+
+

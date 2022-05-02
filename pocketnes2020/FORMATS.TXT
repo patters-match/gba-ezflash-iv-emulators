@@ -1,0 +1,30 @@
+------------------------------------
+Format of PocketNES (v9) GBA images:
+------------------------------------
+
+???? bytes:  POCKETNES.GBA contents
+(optional) 76800 bytes:  Splash screen (raw 240x160 15bit image)
+----
+32 bytes:  ROM title (NULL terminated)
+4 bytes:  ROM size
+4 bytes:  ROM flags
+4 bytes:  Autoscroll value (a.k.a. "sprite following")
+1 byte:  Branch hacks, bit 0-3: opcode, bit 4-7: length. (only V9.97 and later)
+3 bytes:  Reserved (set to 0)
+???? bytes:  ROM contents (.NES format)
+----
+32 bytes:  Next ROM title
+etc etc...
+----
+
+
+ROM flags:
+   Bit 0: Enable PPU speed hack
+          (speeds up some games)
+   Bit 1: Disable CPU speed hack
+          (a few games need this to work, try this if a game seems buggy)
+   Bit 2: Use PAL timing
+          (sort of..)
+   Bit 5: 0=Autoscroll value is a sprite number
+          1=Autoscroll value is a memory location
+   Everything else:  Reserved (set to 0)

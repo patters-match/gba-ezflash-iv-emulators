@@ -1,0 +1,268 @@
+PCEAdvance revision history
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+V7.5 - 2005-10-14 (FluBBa)
+   Optimized DMA control (sprite bit) a bit.
+   Fixed SUBQ_READ in CD emulation (FinalZone II intro doesn't crash).
+   Fixed AD_PLAY status in CD emulation (Valis II intro doesn't crash).
+   Fixed Game Over screen in Rayxanber II.
+   Separate version for EZ3.
+
+V7.4 - 2005-08-18 (FluBBa)
+   Added Black'n White mode to games that support it.
+   Fixed Arcade card emulation (on EZ3 cards).
+
+V7.3 - 2005-02-26 (FluBBa)
+   Optimized screen rendering some more.
+   Better SCD emulation when no extra memory found.
+   Fixed manual scroll when screen < 160 pixels high or < 240 pixels wide.
+   Fixed graphics when switching between scale modes.
+   Major code cleanup.
+
+V7.2 - 2005-01-30 (FluBBa)
+   Optimized screen rendering.
+   Fixed a transfer instruction to work with SCD RAM.
+
+V7.1 - 2005-01-19 (FluBBa)
+   Added Super CD-Rom emulation on EZ3 cards.
+   Optimized VDC write.
+   Optimized VRAM read/write.
+
+V7.0 - 2004-11-30 (FluBBa)
+   Added software sound mixer.
+   Added check for Nintendo DS.
+   Fixed a bug where emulated game could write to GBA ROM.
+   Fixed clock on EZ3 cards.
+   Fixed ROL & ROR instructions a bit.
+   Fixed ADC & SBC instructions a bit.
+   Fixed VRAM to VRAM DMA a bit.
+   Fixed screen height in Unscaled(Auto) mode.
+   Optimized VRAM read/write.
+
+V6.9 - 2004-08-22 (FluBBa)
+   Added support for iso files from Pogoshell.
+   Removed sprite setting from menu.
+
+V6.8 - 2004-08-19 (FluBBa)
+   Added correct sound pitch on channel 3 & 4.
+   Fixed the gamma adjuster a bit (more to do with the source).
+   Better VBLankWait.
+
+V6.7 - 2004-07-18 (FluBBa)
+   Added swapping of A & B buttons.
+   Fixed transfer on EZFA cards when bootmenu used.
+   Minor CPU and tilerender optimizations.
+   Speedhacks (Thanks to DKL):
+    "Tower of Druaga (J)".
+    "Volfied (J)".
+    "Wonder Momo (J)".
+    "World Circuit (J)".
+    "Thunderblade (J)".
+    "Timeball (U) / Blodia (J)".
+    "Kaiser's Quest (J)".
+
+V6.6 - 2004-06-19 (FluBBa) (Special GBAX compo release =)
+   Added double buffering for VDCCNT (Chase HQ).
+   Added double buffering for the palette (After Burner II).
+   Added a menu option for FPS meter.
+   Added a menu option for noflicker scaling.
+   Fixed a problem with the CLI instruction in the CPU.
+   Added more TCD files.
+   Speedhacked Cadash (thanks to DKL).
+
+V6.5 - 2004-05-22 (FluBBa)
+   Fixed the multi datatrack support in the .tcd files.
+
+V6.4 - 2004-05-15 (FluBBa)
+   Fixed "Davis Cup Tennis" and "Lode Runner".
+   Fixed the static in the sound.
+   Fixed a potential crash (affected encrypted "Gunboat (U)").
+   Rewrote parts of the CPU, should be a tiny bit faster.
+
+V6.3 - 2004-04-23 (FluBBa)
+   Added basic CD-ROM emulation.
+   Fixed the CLI instruction, TV Sports Hockey seem better, OutRun faster?
+   Fixed the ADC when D & T bit set (Rayxanber2).
+   Fixed "indexed indirect X" addressing to be more accurate.
+   Changed D & I location to register instead of memory.
+
+V6.2 - 2004-03-29 (FluBBa)
+   Added new settings menu.
+   Fixed graphics bug in Pacland.
+
+V6.1 - 2004-03-19 (FluBBa)
+   Fixed crashes in Puzznic and Boxyboy (when run in J mode).
+
+V6.0 - 2004-03-07 (FluBBa)
+   Fixed trash when exiting to Pogoshell.
+   Changed the menu layout and behaviour.
+   Compressed the font (save 1kByte =)
+
+V5.9 - 2004-02-27 (FluBBa)
+   Added HScroll option in menu, use L & R.
+   Added double buffering of background.
+   Fixed some sprite updating (sprite option should be redundant).
+   Fixed SRAM initialization.
+   Fixed more problems with folders under pogo.
+   Fixed multibooting from PogoPCE and on XG cards.
+   Changed the default values for Gamma and Scaling.
+   Changed detection of max screen height:
+    "Chase HQ (U)" starts.
+    "Air Zonk (U)" scrolling is ok.
+   Speedhacked:
+    "Dungeon Explorer".
+    "Final Lap Twin".
+    "Galaga", hopefully doesn't break it. ;)
+    "Jyuohki (Altered Beast)".
+    "Blazing Lazers/Gunhed" (intro).
+    And a lot more...
+
+V5.5 - 2004-01-15 (FluBBa)
+   Added speedhacks for A LOT of games.
+   Optimized all the fransfer operands.
+   Fixed the "one folder under the root" problem in Pogoshell.
+   Fixed the TRB & TSB operands. "Parasol Stars" works.
+
+V5.4 - 2004-01-11 (FluBBa)
+   Fixed LSR from zeropage,x (Gunhed(J)/Blazing Lazers(U)).
+   Fixed multibooting from multibooted GBA.
+
+V5.3 - 2004-01-07 (FluBBa)
+   Fixed more with the Timer IRQ.
+   Added support for multibooting 128kbyte roms.
+
+V5.2 - 2004-01-06 (FluBBa)
+   Made one of the transfers to VRAM HLE (faster).
+   Fixed the Timer IRQ.
+   Added new item to menu (TimerIRQ: enable/dissable).
+
+V5.1 - 2003-11-14 (FluBBa)
+   Fixed the clock routines.
+
+V5.0 - 2003-11-07 (FluBBa)
+   Added clock in menu if your card/emu supports it.
+   Resets more hardware regs before exiting.
+   Workaround for the XG2 bootmenu.
+
+V4.9 - 2003-10-26 (FluBBa)
+   Fixed lockup when no game was found.
+   Optimized writes to Y-Scroll reg.
+   Added a little fade when entering the menu.
+   Added Exit to normal PCEAdvance.
+   Now saves config also when exiting.
+   B-button is not recognised when leaving menu.
+
+V4.8 - 2003-09-23 (FluBBa)
+   Fixed some of the flickering/missing sprites, new menu option.
+   Fixed reseting of joypad input.
+
+V4.7 - 2003-08-28 (FluBBa)
+   Added checking for GameBoy Player, see readme.
+
+V4.6 - 2003-07-20 (FluBBa)
+   Fixed the SRAM bug.
+
+V4.5 - 2003-07-17 (FluBBa)
+   Simplified the SRAM handling. Use a "CD-ROM System" rom to manage your save.
+   Added multiplayer support.
+
+V4.4 - 2003-07-11 (FluBBa)
+   Added speedhacks for SF2CE.
+   Fixed "Air Zonk/PC Denjin Cyper punkics" & Toy Shop Boys.
+
+V4.3 - 2003-07-07 (FluBBa)
+   Fixed a crash in Aero Blaster because of the new sound routines.
+   Fixed mapping for 384kByte games, was broken in 4.1.
+
+V4.1 - 2003-07-06 (FluBBa)
+   Fixed "Cyber Core (J/U)" & "Download (J)", thanks to Charles MacDonald.
+   Added sound emulation.
+   Added support for "Street Fighter II CE" still no buttons though.
+
+V4.0 - 2003-06-22 (FluBBa)
+   Added check for IRQ after CLI/RTI, fixed Outrun/Bomberman intro.
+   Fixed the timing between screen/cpu.
+   Fixed a lot of games with missing/freezing sprites.
+   Fixed Timer IRQ a bit, some games are faster (1941 Kai (J), R-Type (J)).
+   Fixed and optimized the accumulator shift (After Burner II, Final Blaster, Magical Chase, Valkyrie no Densetsu).
+   Fixed TAI & TIA instructions, fixed alot of games.
+   Changed assignment of X & Y register.
+   Changed Raster Compare and vblank diff again (Bravoman).
+   Changed the menus to be like PocketNES again.
+   Optimized ROM access in CPU core.
+
+V3.0 - 2003-06-07 (FluBBa)
+   Added VRAM DMA IRQ (Magical Chase, Gaia no Monsho (J)).
+   Added dynamic tile memory allocation.
+   Added internal database of speedhacks.
+   Optimized the palette writes.
+   Optimized the sprite routine.
+   Fixed some sprites problems in unscaled mode (1943 Kai (J)).
+
+V2.7 - 2003-06-02 (FluBBa)
+   Fixed the rest of the sprite problems, again.
+
+V2.6 - 2003-06-01 (FluBBa)
+   Fixed the rest of the sprite problems.
+
+V2.5 - 2003-05-27 (FluBBa)
+   Added dynamic sprite memory allocation.
+
+V2.1 - 2003-05-26 (FluBBa)
+   Fixed the sprite dirtycache (JJ & Jeff (U)).
+
+V2.0 - 2003-05-23 (FluBBa)
+   Added VRAM to VRAM DMA.
+   Added BRAM lock/unlock.
+   Decimal mode disable in IRQ (Final Blaster works, Rabio Lepus & Outrun starts)
+   Rewrote the VRAM write so it's a bit faster.
+   Dynamic limits to how much you can scroll in unscaled mode (Atomic Robokid).
+   Some fixes to the border, it was gone after showing the menu.
+   Changed Raster Compare and vblank,
+	"Bomberman 94" & "Benkei Gaiden" works and "Atomic Robokid" looks correct.
+   Tweaked the sprite following a bit.
+   Added gamma controll.
+
+V1.9 - 2003-05-11 (FluBBa)
+   Sprites should work in unscaled mode.
+   Display horizontaly centered for all games.
+   Borders for games using less then 240 wide screen (Final Blaster, 15-in-1).
+   Fixed one line of garbage (R-Type).
+   Fixed background for "Batman (J)" & "Cratermaze (U)".
+   Changed Raster Compare back to what it was before, "Bomberman 94" works again.
+   Compatibility list included.
+
+V1.8 - 2003-05-06 (FluBBa)
+   Fixed some background glitches in unscaled mode.
+   Fixed some CPU problems:
+   "Darius Alpha/Plus" works again,
+   "Turrican" starts  =)
+   "Gun Boat" allmost starts.
+
+V1.7 - 2003-05-05 (FluBBa)
+   Fixed vertical scroll value by 1.
+   Fixed a smal background glitch on the first scanline (unscaled).
+   Fixed more of the background glitches.
+
+V1.6 - 2003-05-1 (FluBBa)
+   Fixed a lot of the background glitches.
+   Fix US roms from Pogoshell.
+
+V1.5 - 2003-04-24 (FluBBa)
+   Using as a Pogoshell plugin should work.
+
+V1.4 - 2003-04-14 (FluBBa)
+   Correct VDC reads (fixes "Bullfight Ring no Haja" & intro of "Darkwing Duck").
+
+V1.3 - 2003-04-09 (FluBBa)
+   Faster VDC writes.
+   Fixed cycles counting (faster emulation).
+   Init BRAM (Knight Rider (J), Neutopia (U), Darius (J)).
+   Fixed some of the problems with sprites in unscaled mode.
+   Fixed decimal mode of SBC (Chase HQ, Cyber Cross).
+   Fixed Horizontal scroll (Override).
+   Fixed screen jumping (Keith Courage...).
+
+V1.2 - 2003-04-01 (FluBBa)
+   Fixed menu characters and palette.
+   Fixed disapering sprites (JJ & Jeff, Image Fight, Cyber Cross and more)

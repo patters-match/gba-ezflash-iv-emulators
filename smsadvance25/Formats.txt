@@ -1,0 +1,38 @@
+-------------------------------------
+Format of SMSAdvance (v1) GBA images:
+-------------------------------------
+
+???? bytes:  SMSAdvance.gba contents
+(optional) 76800 bytes:  Splash screen (raw 240x160 15bit image)
+----
+4 bytes:  Identifier = "SMS",0x1A
+4 bytes:  ROM size
+2 bytes:  ROM flags
+1 byte:   Branch hacks, bit 0-3: opcode, bit 4-7: length. (not yet).
+1 byte:   Reserved (set to 0)
+4 bytes:  Autoscroll value (a.k.a. "sprite following")
+1 byte:   BIOS flag, bit0=1 for BIOS rom.
+15 bytes: Reserved (set to 0)
+32 bytes: ROM title (NULL terminated)
+???? bytes:  ROM contents (.SMS format)
+----
+4 bytes:  Next ROM indentifier
+etc etc...
+----
+
+ROM flags:
+    Bit 0: Use PAL timing
+           (0=NTSC, 1=PAL)
+    Bit 1: Domestic bit
+           (0=Usa/Europe, 1=Japan)
+    Bit 2: GameGear
+           (0=SMS, 1=GG)
+    Bit 3: SMS2
+           (0=SMS, 1=SMS2)
+    Bit 4: Enable CPU speed hack
+           (Enables the branch hacks)
+    Bit 5: 0=Autoscroll value is a sprite number
+           1=Autoscroll value is a memory location
+    Everything else:  Reserved (set to 0)
+
+

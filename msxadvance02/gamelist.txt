@@ -1,0 +1,102 @@
+W.I.P Gamelist for MSXAdvance
+
+Bgr = Background.
+Spr = Sprites.
+(xx%) = speed.
+(spr x) = Sprite following.
+
+
+
+
+MSX Games:
+--------------------
+
+#
+10-Yard Fight:				Ok.
+1942:						Ok.				[Konami4]
+
+A
+Actman:						Ok.
+Aliens:						Ok.				[ASCII16k]
+American Soccer:			Doesn't Work.	[ASCII16k?]
+Animal Land:				Ok?				[Konami5]
+
+B
+Batman - Rescue the Rovin:	Ok.				[ASCII8k]
+Black Onyx II:				Ok.				[ASCII16k]
+Bomber King:				Ok.				[ASCII8k]
+Borfesu:					Ok.				[ASCII16k]
+Bosconian:					Ok.
+Boxing Pro:					Doesn't Work.	[Konami???]
+
+C
+Cockpit, The:				Doesn't Work.	[???]
+Cosmic Soldier 2 - Psychic War: Ok?			[ASCII8k]
+Craze:						Ok.				[ASCII16k]
+CrossBlaim:					Ok.				[ASCII16k]
+
+D
+Daiva:						Ok.				[ASCII8k]
+Demonia:					Doesn't Work.	[ASCII8k]
+Dragon Quest:				Ok.				[Konami4]
+
+F-1 Spirit - The Way To Formula-1:Ok.		[Konami5]
+Fairyland Story, The:		Ok.				[Konami4]
+Fantasy Zone:				Ok.				[Konami4]
+Final Zone - Wolf:			Ok.				[ASCII8k]
+Final Zone - Zemina:		Ok.				[Konami4]
+Flight Simulator:			???				[Konami4]
+
+G
+Gall Force:					Doesn't Work.	[ASCII16k]
+Gambler Jikichushinpa 1:	Ok.				[ASCII8k]
+Golvellius:					Ok.				[ASCII16k]
+
+H
+Haja No Fuin:				Ok.				[ASCII16k]
+Hydlide I:					Ok.				[ASCII16k]
+Hydlide II:					Doesn't Work.	[ASCII16k]
+
+I
+In The World of Relics:		Doesn't Work.	[???]
+
+K
+Karuiza Wars:				No input.		[ASCII8k]
+King's Knight:				Ok.				[ASCII16k]
+King's Valley II:			Ok.				[Konami5]
+Knight Mare II:				Ok.				[Konami4]
+
+L
+Legendly Knight:			Ok.				[Konami4]
+
+M
+Mashou No Yakata Gabalin:	Doesn't Work.	[???]
+Meikyushinwa:				Doesn't Work.	[Konami4?]
+Parodius:					Ok.				[Konami5]
+Penguin Adventure:			Ok.				[Konami4]
+
+Romance of Three Kingdoms:	???				[Konami4]
+
+S
+Salamander:					Ok.				[Konami5]
+Scramble Formation:			Doesn't Work.	[???]
+Spy Vs. Spy:				Doesn't Work.	[???] (generic Konami?)
+Super Laydock:				Ok?				[???] (Konami/generic Konami?)
+
+T
+Three Eyed One Comes Here:	Ok.				[Konami4]
+
+V
+Valis - The Fantasm Soldier:Ok.				[Konami4]
+Vaxol:						Ok.				[ASCII16k]
+
+X
+Xanadu - Dragon Slayer II:	Ok.				[ASCII8k]
+Xevious:					Doesn't Work.	[???]
+
+
+Y
+Young Sherlock :			Ok.				[Konami4]
+
+Z
+Zaxxon : Ok.

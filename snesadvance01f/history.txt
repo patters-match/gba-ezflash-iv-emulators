@@ -1,0 +1,63 @@
+SNES Advance Revision History
+
+
+2005-01-20 (FluBBa) ________________________________________________________
+        - Fixed more with status for joypad polling (R-Type 3).
+        - Fixed HCountLatch (lots of games).
+
+2005-01-11 (FluBBa) ________________________________________________________
+        - Fixed with joypad reading (Super Mario Allstars).
+
+2005-01-04 (FluBBa) ________________________________________________________
+        - Fixed some PAL games.
+
+2004-10-20 (FluBBa) ________________________________________________________
+        - Fixed Mode7 intro in Actraiser.
+        - Added fade register.
+        - Added some alpha blending (in source).
+        - Added support for different sized SRAM.
+
+2004-10-13 (FluBBa) ________________________________________________________
+        - Correctly turn off backgrounds when it should.
+
+2004-10-11 (FluBBa) ________________________________________________________
+        - Fixed reading from VRAM.
+
+2004-10-09 (FluBBa) ________________________________________________________
+        - ADC & SBC now supports decimal mode.
+        - NES style joystick reading works.
+        - Rendering doesn't trash the stack.
+        - Some more registers emulated.
+
+
+v0.1 2004-04-04 (Loopy) ____________________________________________________
+
+        - Added key config option
+        - Menu key changed to Start+Sel+A+B
+        - Many changes to graphics
+        - Fixed a speed issue affecting some games
+        - DAT format changed, added more settings
+        
+alpha 3 2004-03-14  (Loopy) ________________________________________________
+
+        - DMA, sprite bugs fixed
+        - Speed throttling
+        - Menuscreen combo changed to Select+DPad
+
+alpha 2 2004-02-29 (Loopy) _________________________________________________
+
+        - Renamed emulator to SNES Advance
+        - VCOUNT stuff is emulated (w/IRQs)
+        - Added new type of autoscrolling
+
+alpha 1 2004-02-18 (Loopy) _________________________________________________
+
+        - Initial Release
+        - 65c816 CPU Instruction Set
+        - SRAM support
+        - LoROM and HiROM support
+        - DMA support
+        - NMI interrupts
+        - Graphic Modes: 1(partial)
+        - 8x8, 16x16, 32x32, and 64x64 sprite support
+        - 32x32, 64x32, 32x64, and 64x64 tile modes

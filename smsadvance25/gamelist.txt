@@ -1,0 +1,343 @@
+W.I.P Gamelist for SMSAdvance V2.2
+
+Bgr = Background.
+Spr = Sprites.
+(xx%) = speed.
+(spr x) = Sprite following.
+
+
+
+
+Master System Games:
+--------------------
+#
+
+A
+Ace of Aces (UE) - Perfect?
+Action Fighter (UE) - Perfect?
+Addams Family, The (UE) - Perfect?
+Aerial Assault (UE) - Perfect?
+After Burner - Perfect?
+Air Rescue (UE) - Perfect?
+Akai Koudan Zillion (J) - Perfect?
+Aladdin (UE) - Perfect?
+Aleste - Perfect?
+Alex Kidd in Miracle World (UE) - Perfect?
+Alex Kidd - The Lost Stars (UE) - Perfect?
+Alex Kidd BMX Trial (UE) - No paddle emulation.
+Alex Kidd in Hightech World - Perfect?
+Alf (UE) - Missing sprite collision.
+Alien Syndrome (UE) - Perfect?
+Alien Storm (UE) - Perfect?
+Altered Beast (UE) - Perfect?
+American Baseball (UE) - Perfect?
+Asterix (UE) - Perfect?
+Asterix and the Great Rescue (UE) - Perfect?
+Asterix and the Secret Mission (UE) - Perfect?
+Astro Flash (J) - Perfect?
+Astro Warrior & Pit Pot (UE) - Perfect?
+Astro Warrior - Perfect?
+Aztec Adventure - The Golden Road to Paradise (UE) - Perfect?
+
+B
+Back to the Future 2 - Flickering background.
+Back to the Future 3 (E) - Spr glitches in intro, only works on PAL machines.
+Bank Panic (UE) - Perfect?
+Bart Vs. The Space Mutants (UE) - Perfect?
+Battlemaniacs - Perfect?
+Bram Stoker's Dracula (E) - Ok. (use PAL)
+Bubble Bobble (UE) - Perfect?
+
+C
+Castle of Illusion - Starring Mickey Mouse - Ok.
+Cosmic Spacehead - Too small screen in scaled mode.
+
+D
+Dinobasher starring Bignose the Caveman - Ok.
+Double Target (J) - Intro screen glitchy.
+Double Dragon - Perfect?
+
+E
+Excellent Dizzy Collection, The - Too small screen in scaled mode.
+
+F
+F-16 Fighting Falcon - Perfect?
+Fantastic Dizzy - Palette flickering.
+
+G
+Gauntlet - Bgr glitches.
+Ghouls'n Ghosts (UE) - Perfect?
+Global Defense - Perfect?
+Global Gladiators - Ok.
+Golvellius - Valley of Doom - Perfect?
+
+H
+Hang On - Perfect?
+
+I
+Impossible Mission - Needs correct sprite collision.
+
+J
+
+K
+
+L
+Lemmings (UE) - Perfect?
+Line of Fire (UE) - Perfect?
+Loretta no Shouzou (J) - Perfect?
+
+M
+Marble Madness - Perfect?
+Megumi Rescue (J) - No paddle emulation, sprite glitch when game starts.
+Ms. Pac-Man (UE) - Perfect?
+
+N
+Ninja, The - Perfect?
+
+O
+Out Run - Perfect?
+
+P
+Phantasy Star (UE) [V3] - Bgr glitches in dungeons.
+Pit Fighter (UE) - Disable sprite collision.
+Power Strike 2 (UE) - Bgr glitches in intro.
+Predator 2 (E) - Perfect?  (use PAL)
+
+Q
+
+R
+R-Type (UE) - Perfect?
+Rygar - Perfect?
+
+S
+S.D.I. - Perfect?
+Shanghai (UE) - Background glitches.
+Shinobi (UE) - Perfect?
+Sonic The Hedgehog 2 (UE) - Perfect?
+Spacegun - No Light Gun support (use PAL).
+Speedball - Ok.
+Speedball 2 - Ok.
+Street Fighter II - Perfect?
+
+T
+Terminator, The - Perfect?
+
+U
+
+V
+
+W
+Woody Pop (J) - No paddle emulation.
+
+X
+Xenon 2 (UE) - Spr glitches (even with Perfect Sprite option). Use PAL mode.
+
+Y
+Ys - Status bar glitches.
+
+Z
+Zool - Works best in PAL mode.
+
+
+
+
+GameGear Games:
+---------------
+
+#
+
+A
+Ax Battler - A Legend of Golden Axe (j) - Perfect?
+Adventures of Batman & Robin - Perfect?
+
+B
+Bust-A-Move (UE) - Missing samples
+
+C
+Clutch Hitter - Perfect?
+Cosmic Spacehead - Perfect?
+
+D
+Deep Duck Trouble - Starring Donald Duck (U) - flicker on sprites?
+
+E
+Ernie Els Golf - Ok
+
+G
+GG Aleste - Perfect?
+GP Rider - Use perfect sprites
+Griffin (J) - Perfect?
+Gunstar Heroes - Some flicker on sprites
+
+H
+Hyper Chou Pro Yakyuu '92 (J) - Ok
+
+I
+Ichidant~R GG (Puzzle & Action) (JP) - Ok
+
+J
+James Pond 3 Operation Starfi5h - Palette problems
+
+K
+Kick & Rush - Ok
+
+L
+Lost World, The - Jurasic Park - Ok
+
+M
+Magic Knight Rayearth - Ok
+
+P
+Pete Sampras Tennis - Perfect?
+Pocket Jansou (J) - Ok
+Pop Breaker (J) - Ok
+Power Strike II (JUE) - Missing background scroll on menu
+Puzzle Bobble (J) - Missing samples
+
+R
+Rise of the Robots - Lots of glitches
+Ryu Kyu (J) - Perfect?
+
+S
+Shanghai 2 - Perfect?
+Shining Force Gaiden (J) - Perfect?
+Shining Force 2 - Sword of Haija (UE) - Perfect?
+Shining Force 3 - Final Conflict (J) - Perfect?
+Side Pocket - Perfect?
+Stargate (JUE) - Perfect?
+Star Trek - The Next Generation - Perfect?
+Star Trek Generations - Beyond the Nexus - Perfect?
+Sylvan Tale (J) - Bgr glitches
+
+T
+Tail's Adventures (JUE) - Perfect?
+Terminator, The - Perfect?
+Turrican demo. Works, but it doesn't work on a real GG?
+
+V
+Virtua Fighter Animation - Perfect?
+
+
+
+
+SG-1000 Games:
+--------------
+
+B
+Bank Panic - Ok
+Black Onyx - Ok
+Bomb Jack - Ok
+Border Line - Ok
+
+C
+C_So! - Ok?
+Castle, The - Ok
+Chack'n Pop - Ok
+Champion Baseball - Ok
+Champion Billiards - Ok
+Champion Boxing - Ok
+Champion Golf - Ok
+Champion Ice Hockey - Ok
+Champion Kendou - Ok
+Champion Pro Wrestling - Ok
+Champion Soccer - Ok
+Champion Tennis - Ok
+Championship Lode Runner - Ok
+Choplifter - Ok
+Congo Bongo - Ok
+
+D
+Doki Doki Penguin Land - Ok
+Dragon Wang - Ok
+Drol - Ok
+
+E
+Elevator Action - Ok
+Exerion - Ok
+
+F
+Flicky - Ok
+
+G
+Girl's Garden - Ok
+Golgo 13 - Ok
+GP World - Ok
+Gulkave - Ok
+Guzzler - Ok
+
+H
+H.E.R.O. - Ok
+Hang On II - Ok
+Home Mahjong - Ok
+Hustle Chumy - Ok
+Hyper Sports - Ok
+
+J
+James Bond 007 - Ok
+
+L
+Lode Runner - Ok
+
+M
+Mahjong - Ok
+Monaco GP - Ok
+
+N
+Ninja Princess - Ok
+N-Sub - Ok
+
+O
+Orguss - Ok
+Othello - Ok
+
+P
+Pacar - Ok
+Pachinko - Ok
+Pachinko II - Ok
+Pitfall II - Ok
+Popflamer - Ok
+
+Q
+Q-Bert - Ok
+
+R
+Rock n'Bolt - Ok
+
+S
+Safari Hunting - Ok
+Safari Race - Ok
+Sega Flipper - Ok
+Sega Galaga - Ok
+Serizawa Hachidan no Tsumeshogi (JP) - OK
+Shinnyushain Tooru Kun - Ok
+Sindbad Mystery - Ok
+Soukoban - Ok
+Space Invaders - Ok
+Space Slalom - Ok
+Star Force - Ok
+Star Jacker - Ok
+Super Tank - Ok
+
+T
+Terebi Oekaki - No control
+
+W
+Wonder Boy - Ok
+
+Y
+Yamato - Ok
+
+Z
+Zaxxon - Ok
+Zippy Race - Ok
+Zoom 909 - Ok
+
+
+
+
+Othello Multivision Games:
+---------------------------
+
+Space Mountain - Ok
+
+

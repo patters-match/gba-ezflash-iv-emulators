@@ -1,0 +1,1 @@
+copy /b pcebuild.gba+CosmicFantasy2(U).tcd+cd_track02.iso+cd_track04.iso+cd_track06.iso+cd_track08.iso+cd_track10.iso+cd_track12.iso+cd_track14.iso+cd_track16.iso+cd_track18.iso+cd_track20.iso+cd_track22.iso+cd_track24.iso+cd_track26.iso+cd_track28.iso tuff.gba

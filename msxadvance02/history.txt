@@ -1,0 +1,36 @@
+MSXAdvance revision history
+-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+V0.4 - 2009-04-08 (FluBBa)
+	Fixed timing of HALT instruction.
+	Optimised all Z80 memory reads, one instruction and cycle shorter.
+	Optimised DEC opcodes.
+	Optimised SBC A/HL opcode.
+	Optimised CPI, CPD, CPIR & CPDR opcodes.
+
+V0.3 - 2007-12-03 (FluBBa)
+	Added 64kB of RAM instead of 32kB.
+	Fixed initialization of horizontal position of keyboard.
+	Fixed initializing of all CPU regs on reset.
+	Fixed pushing and poping of AF register (BC Quest for Tires II).
+	Optimised some of the SBC instructions.
+	Optimised DAA opcode.
+	Optimised one of the SRA opcodes.
+	Optimised tile rendering.
+
+V0.2 - 2006-04-30 (FluBBa)
+	Added a virtual keyboard.
+	Added better keymapping.
+	Added SCC sound emulation.
+	Added 32kB RAM instead of 16kB.
+	Fixed Multiboot transfer.
+	Fixed blending when used as plugin.
+	Better update timing in PAL mode.
+	Better game mapper detection.
+
+V0.1 - 2006-03-30 (FluBBa)
+	Initial release.
+
+V0.0 - 2006-03-07 (FluBBa)
+	Started Coding.

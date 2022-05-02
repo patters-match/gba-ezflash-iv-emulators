@@ -1,0 +1,60 @@
+Cologne revision history
+-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+V0.8 - 2009-04-08 (FluBBa)
+   Fixed initializing of all CPU regs on reset.
+   Fixed timing of HALT instruction.
+   Fixed pushing and poping of AF register (BC Quest for Tires II).
+   Optimised tile rendering.
+   Optimised all Z80 memory reads, one instruction and cycle shorter.
+   Optimised DAA opcode.
+   Optimised DEC opcodes.
+   Optimised SBC A/HL opcode.
+   Optimised one of the SRA opcodes.
+   Optimised CPI, CPD, CPIR & CPDR opcodes.
+
+V0.7 - 2006-09-05 (FluBBa)
+   Added Savestates.
+   Added virtual joystick.
+   Added joystick config.
+   Fixed "Go Multiboot" when used from Pogo.
+   More colorful palette.
+
+V0.6 - 2006-07-24 (FluBBa)
+   Added "Go Multiboot" menu option.
+   Added menu option for disabling background/sprites.
+   Fixed multiboot transfer.
+   Optimised tiledecoding.
+   Optimised some of the SBC instructions.
+   Optimised IO port access.
+
+V0.5 - 2006-05-11 (FluBBa)
+   Fixed soundclicks in rom selection menu.
+   Fixed rare lockup bug in game select.
+   Fixed double 16x16 sprites in scaled mode.
+   Fixed reseting of scalemode on restart.
+   Fixed graphics mode1 a bit.
+
+V0.4 - 2006-03-12 (FluBBa)
+   Fixed the NMI bug.
+   Added 16bit sound mixing.
+   Optimised some of the shift instructions.
+   Optimised DD/FD instructions.
+
+V0.3 - 2006-02-23 (FluBBa)
+   Fixed keypad/joystick reading (Atari games).
+   This also fixed Q-Bert II.
+
+V0.2 - 2006-02-20 (FluBBa)
+   Added PAL/NTSC switch (PAL timing fixes some games...).
+   Fixed volume attenuation for the soundchip.
+   Fixed rare gfx error in Pogoshell.
+   Proper builder. (Loopy)
+
+V0.1 - 2006-01-30 (FluBBa)
+   Initial release.
+
+V0.0 - 2006-01-25 (FluBBa)
+   Started Coding.
+

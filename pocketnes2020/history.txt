@@ -1,0 +1,349 @@
+PocketNES revision history 
+-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+*the Dwedit changes may not be totally accurate, this info was pulled from various sites since the closure of Pocketheaven forum
+
+
+2020-01-04 (Dwedit)
+https://github.com/Dwedit/PocketNES/releases/tag/1-4-2020-B
+   Fixes problems with Go Multiboot and very large compressed ROMs, such as Cosmic Spacehead.
+   Fixed version number
+   Fixed Konami games not working correctly from last build
+
+2019-12-25 (Dwedit)
+https://github.com/Dwedit/PocketNES/releases/tag/12-25-2019
+   This build finally re-adds the Go Multiboot feature to let you eject the cartridge, and keep playing. Useful for link play.
+   The ROM file must be under 196K. 256K games are also supported, as long as they are smaller than 196K once compressed.
+
+2013-07-01 (Dwedit)
+https://www.dwedit.org/gba/pocketnes.php
+   Unknown
+
+2012-10-04 (Dwedit)
+https://gbatemp.net/threads/pocketnes-v10-04-12.335747/
+   Seamless sound, no more crackling on square wave channels.
+   Correct frequency sweeps and triangle wave volume.
+   Completely automatic speedhacks that just work, so there's no menu for them anymore.
+   FAST. Turn off VSYNC and watch the games zoom.
+   Many parts are are more accurate than before.
+   Working Savestates
+   Fixed many bugs
+   DMC IRQs! Play Fire Hawk and Mig 29 Soviet Fighter!
+   Dendy mode
+   Broken: (These were in the previous branch, but have not yet been reprogrammed)
+    * Mapper #9, #17, #33, #40, #64, 73, #105 3
+
+2012-09-30 (Dwedit)
+https://gbatemp.net/threads/pocketnes-v10-04-12.335747/
+   Fixed crash bugs, and the other crash bug on 10-4-2012
+
+2012-07-05 (Dwedit)
+https://gbatemp.net/threads/pocketnes-7-5-12.330176/
+   New version, now with DMC IRQs!
+   added mapper 206
+   now builds with latest devkitarm
+
+2012-06-13 (Dwedit)
+https://gbatemp.net/threads/pocketnes-6-13-2012.328711/
+   Unknown
+
+2008-11-10 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   Hack to make Bill & Ted, Rocket Ranger etc work
+   Faster CPU core
+   Some CPU instructions have more accurate timing (improves Battletoads)
+   Fixed the stupid bug where you scrolled to the bottom in unscaled mode and it crashes
+
+2008-07-31 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   Fixed cheatfinder
+   Added double nop instruction, fixes Puzznic
+
+2008-07-23 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   Fixed games which do not initially have last rom page mapped into reset vector area
+   Fixed compressed Bio Miracle Upa
+   Fixed critical bug in save system I accidentally introduced
+
+2008-07-22 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   Bugfixes to vertical scrolling change with screen off
+
+2008-07-21 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   Bugfixes to save system, preventing save corruption
+
+2008-07-19 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=409
+   New BG scaler
+   Supports trainers on roms
+   More accurate MMC3 emulation
+   Some scrolling fixes
+   Fully automatic speedhacks
+   Loads savestates from old versions of PocketNES
+   No longer chokes when loading corrupted savestates
+   ASM code to load roms moved to C
+   Supports illegal instruction LDAX ($nn),Y
+
+2007-08-26 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=320
+   New scrolling code!
+   New PPU hack
+   Fixed bugs
+   "dirty tiles" system
+   Changed version number from "9.99" to "X alpha 1"
+   Separated NES OAM from GBA OAM, games which do not update the sprite table every frame no longer messed up when changing the screen position in unscaled mode.
+   Synchronized CHR-RAM updates with sprite table updates, battletoads looks great
+   Now correctly displays warning when SRAM is full at bootup
+   All scanline-buffers synchronized together
+   Fixed many instances of the dummy scanline being treated as the first visible scanline
+
+V9.99 - 2008-03-18 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=345
+   More speedups from using EWRAM to store rom pages (instead of reading them from the cartridge)
+   Many savestate fixes
+   Now uses correct identification for savestates created with compressed roms. Old savestates made with compressed roms will not work.
+   Added in something developed a year ago and then I forgot to merge it in o_O (I thought it had been integrated in, but apparently it wasn't)
+   Fixed cheats getting lost after loading state
+   Fixed compressed VS games
+   Some internal code changes to allow certain features to be excluded at build time
+
+V9.99 - 2008-03-13 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=345
+   Fixed loading state graphics glitches
+
+V9.99 - 2008-03-08 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=345
+   Fixed the bug where the SRAM went back in time after entering the UI
+   Fixed sprite collision when games don't update the sprite tables every frame  (Bomberman 2 works again)
+   Fixed a bug which may have caused sram corruption
+   Added the punchout hack back in
+   Re-added PPU hack
+   Re-added cheat finder
+   Fixed a cheat finder bug (kept old cheats active after changing games)
+   Fixed bug where savestates did not load correctly from previous alphas
+   Changed IRQs for Mapper 69 [FME-7], (Mr. Gimmick, Return of the Joker...)
+   Savestates now save sound information
+
+V9.99 - 2007-07-16 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=312
+   Palette updater fixed, no longer writes out of bounds
+   Duck Tales Fix (supports changing 8x8 sprite origin between left and right pattern table per scanline)
+   'Dirty tiles' system for CHR-RAM games
+   Different code for updating the sprites
+   These two together fix sprite glitches in Battletoads, Wizards and Warriors 3, and more.
+   Also a buggy and broken dirty tile system for CHR-ROM games
+   New per-scanline scrolling code fixes Slalom, horribly breaks Rad Racer
+   Sprite visibility per-scanline buffer updated in sync with rest of buffers
+   Fixed a little bug which caused harmless extraneous memory writes
+   Yes it's really buggy.  Has a new 'new frame' system which fails in lots of games.
+
+V9.99 - 2006-10-13 (Dwedit)
+https://www.dcemu.co.uk/vbulletin/threads/39164-PocketNES-v9-99-Build-13-10-2006
+    New version uploaded, fixes a stupid IRQ bug. This bug made "Hello Kitty no Ohanabatake" crash, and Dragon Quest briefly scroll to the wrong position for one frame when changing areas. 
+    Really stupid bug. I was assuming RTI enabled interrupts. *pounds head against desk* Stupid Z80 experience and lack of 6502 experience...
+
+V9.99 - 2006-09-24 (Dwedit)
+https://www.dwedit.org/dwedit_board/viewtopic.php?id=224
+   Supports Monochrome Mode, used to flash the screen in Dragon Warrior 1, 2, and Final Fantasy 3.
+   Supports Frame IRQ used by Dragon Quest 1, 2, and Door Door.  Possibly buggy.
+   Supports NES Play Action Football
+   Supports Mapper 42
+   Now can save state in mapper 40,42,69
+   SRAM save compression takes place immediately on entering menu, making save smaller for pogoshell
+   Removed EWRAM Turbo option
+   Changing gamma immediatly updates palette
+   Code Cleanup
+   Fixed IRQ bugs
+
+V9.98 - 2005-05-02 (FluBBa)
+   Fixed some of the blending issues in the GUI.
+   Changed the position of the screen in scaled modes.
+
+V9.97 - 2004-09-23 (FluBBa)
+   Added support for speed hacking branch instructions.
+   Fixed clock on EZ(3?) cards.
+   Fixed ROL instructions a bit.
+   Fixed a lot of the garbage when changing games.
+   Optimized some parts of the PPU.
+   Cleaned up some code.
+
+V9.96 - 2004-08-25 (FluBBa)
+   Added Player1+Player2 input, good for SMB 2 players.
+   Added gamma adjustment.
+   Better VBLankWait.
+
+V9.95 - 2004-07-24 (FluBBa & Loopy)
+   Added correct PAL sound pitch (and shaved of 4kB).
+   Added correct PAL timing.
+   Added option to automaticlly load savestates.
+   Fixed sprite problems in Downtown special.
+   Better MultiBoot transfer.
+
+V9.94 - 2004-07-18 (FluBBa)
+   Fixed the new cpu core.
+   Fixed the new mapper #4.
+   Fixed a bit with the vertical scrolling (Rad Racer looks better).
+   Fixed transfer when used as compressed (.mbz) plugin.
+   Fixed transfer on EZFA cards when bootmenu used.
+   Fixed garbage when leaving rommenu if too long names used.
+   Fixed a lot of missing text with the new menus.
+   Added swapping of A & B buttons.
+   Saving of Autosleep time.
+   Saving of flicker setting.
+
+V9.93 - 2004-07-02 (FluBBa)
+   Changed back to the old mapper #4.
+   Changed back to the old cpu core.
+
+V9.92 - 2004-07-01 (FluBBa)
+   Added sliding menus.
+   Added scaling without flicker.
+   Added optional FPS meter.
+   Added setting for autosleep time.
+   Added automatic region detection from Pogoshell.
+   Added a clock for cards/emulators that support it.
+   Added mapper #5 again, CV3 specific.
+   Fixed menu dissapearing when first going from unscaled to scaled.
+   Tweaked mapper #4 (Thanks to Kevin Horton).
+
+V9.9 - 2003-11-07 (FluBBa)
+   Fixed lockup when no game was found.
+   Added a little fade when entering the menu.
+   Now saves config also when exiting.
+   B-button is not recognised when leaving menu.
+   Resets more hardware regs before exiting.
+   Workaround for the XG2 bootmenu.
+
+V9.8 - 2003-09-23 (FluBBa)
+   Optimized VRAM writes.
+   Fixed menu when used as PogoNES.
+   Fixed dark line.
+
+V9.7 - 2003-09-21 (FluBBa)
+   Fixed some things with the accumulator in the CPU core.
+   Changed Y & X registers (hopefully a little bit faster).
+   Moved PCM buffer and code to IWRAM (faster).
+   Added check for GameBoyPlayer.
+   Added Exit to normal PocketNES.
+
+V9.6 - 2003-05-25 (FluBBa)
+   Fixed a smal background glitch on the first scanline (unscaled).
+
+v9.5 (FluBBa)
+   Lowered the DPCM channel a bit to reduce the clipping of the other channels.
+   Smal speedup in the CPU core again.
+
+v9.4 (FluBBa)
+   Fixed a savestate problem with games with VRAM instead of VROM.
+
+v9.3 (FluBBa)
+   Fixed a "little" problem with the savestates.
+
+v9.2 (FluBBa)
+   Changed scanlines and irq to the way it was before.
+   Major change to the CPU core (faster).
+
+v9.1 (FluBBa)
+   Fixed flickering in some games, introduced in v9.
+
+v9 (FluBBa)
+Added CPU sleep when idle in VBlank (saves battery =).
+Added slomo with L+Start.
+Added PCM IRQ generation, fixes "Fire Hawk", "Last Starfighter" & "Silent Service".
+Added mapper 228 (Action52 intro is wrong).
+Added mapper 180 (Crazy Climber (J), no controller yet though).
+Added mapper 105 (Nintendo World Championship) remember to disable CPU hack (for "Rad Racer").
+Added mapper 93 (Fantazy Zone (J))
+Added mapper 72,73,75,76,78,86,87,92,94,232.
+Added mapper 70/152. Saint Seiya doesn't work correctly anyway, not the mappers fault.
+Added mapper 68 (Maharaja(J), Platoon(VS), no gfx in After Burner though).
+Added mapper 67 (Fantasy Zone 2 - The Teardrop of Opa-Opa (J)).
+Added mapper 34 (Deadly Towers & Impossible Mission 2).
+Added mapper 33 ("Don Doko Don 2" doesn't work, everything else should).
+Added mapper 22,24,26,32,65,80 & 97. All "Kaiketsu Yanchamaru" games are playable now.
+Added mappers 19,23 & 69.
+Added mapper 79 & 18.
+Added mapper 15(Contra 16 100-in-1).
+Fixed "Low G Man".
+Fixes to mappers 4,16,21 & 25.
+Fixed some of the savestate problems.
+Fixed graphic splits in scaled mode (many intro screens).
+Fixed PCM sample playing, takes a little more CPU now.
+Fixed multiplay, also supports up to 4 players now.
+Fixed background flicker.
+Fixed Sprite 0 hit a bit,
+   Captain Skyhawk, Snow Bros & Saint Seiya starts now,
+   probably break other games.
+Fixed sprites to background priority.
+Fixed sprites animation with CHR switching a bit (SMB3).
+Fixed scaled sprites a bit.
+Fixed invisible sprites (Ninja gaiden 2, TMNT 2).
+Fixes to multiboot,sram and Pogoshell (Herg).
+Fixed VS-palette for Platoon, Hoogans Alley, Pinball,
+   Clu Clu Land, Machrider, Dr Mario, Super Sky Kid
+   Battle City, Star Luster, Freedom Force & Slalom.
+Changed GBA hardware PWM frequency for (hopefully) better sound.
+Changed "Restart" in PogoNES to restart and added "Exit" to exit to the shell.
+
+
+
+v8 (Loopy)
+PCM sound channel added
+Left/Right in rom menu skips 10 at a time
+Quicksave,quickload (R+SELECT,R+START)
+Accelerated mode (L+START)
+More than 15 savestates are allowed
+Automatic SRAM handling
+Various bugfixes and cosmetic changes
+
+v7a (Loopy)
+2 player link play
+ROM compilation method changed
+
+v7 (Loopy)
+Multiple save states
+Better detection of bad roms
+Optional splash screen
+1P/2P Controller switchable
+Sleep option
+Brighter NES palette
+Improved sound
+More mappers (9,11,66,71,21,25)
+
+v6 (Loopy)
+State saving
+Autofire buttons
+Unscaled display (back by popular demand)
+VS Unisystem (mappers 99,151)
+More display improvements
+
+v5 (Loopy)
+Mappers 1,2,3,4
+Display shifted left 8 pixels (now centered horizontally)
+Scaled display (autoscroll options removed)
+SRAM saving
+Multiboot detect (separate MBV2 version not needed anymore)
+Fixed menu input (for Flash Advance multiboot)
+
+v4 (Loopy)
+Menu system
+Many display improvements
+Speed hacks
+Autoscroll options
+
+v3 (Loopy)
+Sound (square channels)
+Some PPU fixes
+Scroll screen with L/R buttons
+
+v2 (Loopy)
+Multiboot
+Mapper 1 games (with no CHR)
+Mapper 2
+Scrolling (sorta)
+Minor 6502 bugfixes
+Moved nes rom to the end of the file
+
+v1 (Loopy)
+Initial release
