@@ -14,19 +14,20 @@ Emulator|Target System|Author(s)|Released
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
 
-## Purpose
+## Background
 These emulators were originally designed to be used in a number of ways: 
-- assemble many game ROMs into a large compilation and browse the games from a menu upon launch  
-  - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save is a constraint*  
-- as plugins for the Pogoshell file manager  
-  - *only supports much older flashcart devices e.g. Flash2Advance*  
-- bundle each game ROM with its own copy of the emulator  
-  - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
+1. assemble many game ROMs into a large compilation and browse the games from a menu upon launch  
+   - *slow to load into EZ-Flash PSRAM before execution, single 64KB SRAM save is a constraint*  
+2. as plugins for the Pogoshell file manager  
+   - *only supports much older flashcart devices e.g. Flash2Advance*  
+3. bundle each game ROM with its own copy of the emulator  
+   - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
+
+## Purpose
+This collection serves use case 3. In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each title. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts.
 
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit returns to the EZ-Flash IV menu.
 
-## Usage
-In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts.
 
 ## EZ-Flash Versions
 #### Firmware 1.x
