@@ -1,5 +1,5 @@
 # EZ-Flash IV Exit-Patched Emulator Collection
-This is a collection of emulators for the Gameboy Avdance, SRAM- and exit-patched to function optimally with the EZ-Flash IV flashcart.
+This is a collection of emulators for the Gameboy Avdance, SRAM- and exit-patched to function optimally with the EZ-Flash IV flashcart:
 
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
@@ -53,6 +53,30 @@ This compilation leverages my Python 3 [gba-emu-compilation-builders](https://gi
   SMSA = 1   #SMSAdvance
   SNAV = 1   #SNESAdvance
   ```
+
+---
+## Emulator Tips
+#### Cologne
+- find the BIOS rom with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No Title Delay Hack)"
+- R+Start to bring up the virtual controller keypad
+#### MSXAdvance
+- the BIOS you need is "MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]"
+- R+Start to bring up the virtual keyboard
+- the emulator does not auto-select the correct mapper. You often need to change this (typically to Konami5) in Other Settings and restart the emulator for it to take effect
+- [compatibility list](https://web.archive.org/web/20070612060046/http://boards.pocketheaven.com/viewtopic.php?t=3768)
+- versions 0.3 and 0.4 [are broken](https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/)
+#### PCEAdvance
+- audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
+- [CD-ROM ISO extracting guide](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
+- [CD-ROM / Super CD-ROM titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
+#### SMSAdvance
+- BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
+- "Lock toprows" is an option for Full Screen display mode useful for certain Master System games, such as Outrun, which can keeps the score/speedometer on screen despite cropping the image to the GBA resolution
+#### SNESAdvance
+- Start+Select+A+B for the emulator menu
+- Select+Up/Down to change screen offset
+- [list of best functioning games](https://web.archive.org/web/20050305113636/http://ygodm.tonsite.biz/snesadv/snesadv_gamelist.html)
+
 
 ## Included Files
 * Updated emulators, SRAM and exit-patched in the following folders:
@@ -128,29 +152,3 @@ Between each of the various emulators, every one uses some variation of the viso
 identical, it's not trivially possible to make a search/replace binary patcher. Instead, the visoly.s is included
 for those adventurous enough to arm disassemble one of the emulators and compare against the visoly.s to figure
 out where init_flashcart is.  This is where the exit code is patched at.
-
-
-Emulator tips
--------------
-
-Cologne     - find the BIOS ROM with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No
-              Title Delay Hack)"
-            - R+Start to bring up the virtual controller keypad
-MSXAdvance  - the BIOS you need is "MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]"
-            - R+Start to bring up the virtual keyboard
-            - the emulator does not auto-select the correct mappper. You often need to change this (typically to
-              Konami5) in Other Settings and restart the emulator for it to take effect
-            - see https://web.archive.org/web/20070612060046/http://boards.pocketheaven.com/viewtopic.php?t=3768
-                  https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/
-PCEAdvance  - audio tends to work pretty well in mixer mode, but you do need to restart the emulator after
-              enabling it
-            - For CD-ROM ISO tips see here:
-              https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/
-            - CD-ROM / Super CD-ROM titles list here:
-              https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games
-SMSAdvance  - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master
-              System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which
-              system BIOS (SMS or GG) should be loaded
-SNESAdvance - Start+Select+A+B for the emulator menu
-            - Select+Up/Down to change screen offset
-            - see https://web.archive.org/web/20050305113636/http://ygodm.tonsite.biz/snesadv/snesadv_gamelist.html
