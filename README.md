@@ -57,7 +57,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   SNAV = 1   #SNESAdvance
   ```
 #### Firmware 1.x
-- Don't use the EZ-Client to patch the resulting compilations. A major point of this collection is to avoid having to constantly patch.
+- The ```.gba``` files produced by this collection are ready to be copied directly onto the SD card, do not use the EZ-Client to patch them.
 - The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
 - gbata7 was used to fix the GBA ROM header after these patches (emulators crash on some firmwares without this fix).
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
