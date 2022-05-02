@@ -31,6 +31,14 @@ This collection serves use case 3 above. In each emulator folder **build.bat** (
 
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit returns to the EZ-Flash IV menu.
 
+## Usage
+- install Python 3 if not present
+- add games to the emulator folder
+- see notes on firmware versions below
+- open Command Prompt (Windows) or Terminal session (macOS / Linux)
+- run **build.bat** (Windows) or **build.sh** (macOS / Linux)
+- copy ```.gba``` files to EZ-Flash IV SD card
+
 ## EZ-Flash IV Versions
 #### Firmware 2.x
 - The build scripts will generate the required patch files to force 64KB SRAM saves for each executable, to be placed in the PATCH folder on the SD card.
@@ -52,7 +60,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - Don't use the EZ-Client to patch the resulting compilations. A major point of this collection is to avoid having to constantly patch.
 - The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
 - gbata7 was used to fix the GBA ROM header after these patches (emulators crash on some firmwares without this fix).
-- You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable
+- You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
 
 ## Emulator Tips
 #### Cologne
