@@ -62,7 +62,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
 
 ## Exit-Patching Method
-Each of the emulators uses some variation of the **visoly.s** source file. Since they are not identical, it is not trivial to make a binary patcher. A sample **visoly.s** is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function, to replace it with one of the variants of the *reset_ez4* compiled code.
+Each of the emulators uses some variation of the **visoly.s** source file. Since they are not identical, it is not trivial to make a binary patcher. A sample **visoly.s** is included for those adventurous enough to disassemble one of the emulators and to figure out the location of the *init_flashcart* function, to replace it with one of the provided variants of the *reset_ez4* compiled code.
 
 My own method for patching additional emulators was to check that **visoly.s** was indeed mostly consistent with other emulator source code. Then I used a hex editor to compare exit-patched emulators with the unpatched originals so I could determine the initial state of the replaced section. I found that by progressively trimming both ends of this sequence, I was able to successfully locate an equivalent section in the new binary, even if there were sometimes very minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite.
 
