@@ -14,6 +14,9 @@ Emulator|Target System|Author(s)|Released
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
 
+## Dependencies
+- Python 3
+
 ## Background
 These emulators were originally designed to be used in a number of ways: 
 1. assemble many game ROMs into a large compilation and browse the games from a menu upon launch  
@@ -24,10 +27,9 @@ These emulators were originally designed to be used in a number of ways:
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
 ## Purpose
-This collection serves use case 3. In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each title. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts.
+This collection serves use case 3 above. In each emulator folder **build.bat** (for Windows) and **build.sh** (for macOS and Linux) will iterate through the ROMs in the current folder building a ```.gba``` executable for each title. They invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, which can also serve use case 1 if needed.
 
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit returns to the EZ-Flash IV menu.
-
 
 ## EZ-Flash Versions
 #### Firmware 1.x
