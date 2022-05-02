@@ -32,11 +32,11 @@ This collection serves use case 3 above. In each emulator folder the build scrip
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit returns to the EZ-Flash IV menu.
 
 ## Usage
-- install Python 3 if not present
-- add games to the emulator folder
-- see notes on firmware versions below
-- run **build.bat** from a Command Prompt (Windows), or **build.sh** from a Terminal session (macOS / Linux)
-- copy the resulting ```.gba``` files to EZ-Flash IV SD card
+- Install Python 3 if not present
+- Add games to the emulator folder
+- See notes on firmware versions below
+- Run **build.bat** from a Command Prompt (Windows), or **build.sh** from a Terminal session (macOS / Linux)
+- Copy the resulting ```.gba``` files to EZ-Flash IV SD card
 
 ## EZ-Flash IV Versions
 #### Firmware 2.x
