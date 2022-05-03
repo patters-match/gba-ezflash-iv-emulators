@@ -1,5 +1,5 @@
 # EZ-Flash IV Exit-Patched Emulator Collection
-This is a collection of emulators for the Gameboy Advance, SRAM- and exit-patched to function optimally with the EZ-Flash IV flashcart:
+This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit-patched to function optimally with the EZ-Flash IV flashcart:
 
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
