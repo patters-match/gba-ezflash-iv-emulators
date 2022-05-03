@@ -27,7 +27,7 @@ These emulators were originally designed to be used in a number of ways:
    - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
 
 ## Purpose
-This collection serves use case 3 above. In each emulator folder the build script will iterate through the ROMs in the current folder, building a ```.gba``` executable for each title. The build scripts invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, which may also serve use case 1 if required. Run the compile script with ```-h``` for more information.
+This collection serves use case 3 above. In each emulator folder the build script will iterate through the ROMs in the current folder, building a ```.gba``` executable for each title. The build scripts invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, which may also serve use case 1 if required.
 
 Each emulator's Exit function in the L+R menu was typically intended for Pogoshell-era flashcarts. Where needed, this function has been manually patched so that Exit actually returns to the EZ-Flash IV menu.
 
