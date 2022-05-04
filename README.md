@@ -1,21 +1,19 @@
 # EZ-Flash IV Exit-Patched Emulator Collection
-This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit-patched to function optimally with the EZ-Flash IV flashcart:
+This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit-patched to function optimally with the EZ-Flash IV flashcart. Modern cross-platform compilation builder scripts are also included.
 
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / PC Engine CD-ROM² |FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
-[SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
+[SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES *(no screen scaling)*|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
-[Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|a Goomba fork to add Gameboy Color|Dwedit|Jan 2006
+[Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|A Goomba fork to add Gameboy Color|Dwedit|Jan 2006
 [MSXAdvance 0.2](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
+[Snezziboy](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES *(with screen scaling)*|bubble2k|May 2006
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
-[Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|enhanced Goomba Color fork|Jaga|Nov 2021
-
-## Dependencies
-Python 3
+[Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga|Nov 2021
 
 ## Background
 These emulators were originally designed to be used in a number of ways: 
@@ -54,6 +52,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   PNES = 1   #PocketNES
   SMSA = 1   #SMSAdvance
   SNAV = 1   #SNESAdvance
+  SNZI = 1   #Snezziboy
   ```
 #### Firmware 1.x
 - The ```.gba``` files produced by this collection are ready to be copied directly onto the SD card, do not use the EZ4 Client to patch them.
@@ -98,4 +97,8 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - Start+Select+A+B for the emulator menu
 - Select+Up/Down to change screen offset
 - [List of best functioning games](https://web.archive.org/web/20050305113636/http://ygodm.tonsite.biz/snesadv/snesadv_gamelist.html)
-
+#### Snezziboy
+- Probably has the edge over SNESAdvance because it has screen scaling, and you can adjust the graphics settings on the fly to overcome some rendering issues mid-game
+- L+R+Start for the emulator menu
+- L+R+Select+Up to cycle BG Priority Sets
+- L+R+Select+Down to cycle Forced BG Modes
