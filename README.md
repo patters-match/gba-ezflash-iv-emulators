@@ -15,9 +15,6 @@ Emulator|Target System|Author(s)|Released
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga|Nov 2021
 
-## Dependencies
-Python 3
-
 ## Background
 These emulators were originally designed to be used in a number of ways: 
 1. assemble many game ROMs into a large ```.gba``` compilation and browse the games from a menu upon launch  
