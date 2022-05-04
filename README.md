@@ -11,7 +11,7 @@ Emulator|Target System|Author(s)|Released
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
 [Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|A Goomba fork to add Gameboy Color|Dwedit|Jan 2006
 [MSXAdvance 0.2](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
-[Snezziboy](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES *(with screen scaling)*|bubble2k|May 2006
+[Snezziboy 0.26](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES *(with screen scaling)*|bubble2k|May 2006
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga|Nov 2021
 
