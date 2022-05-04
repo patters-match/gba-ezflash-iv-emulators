@@ -1,0 +1,232 @@
+v0.26
+-----
+
+Fixes and Features:
+- Fixed a small bug in the debug version, as the horizontal cycles was not 
+  showing up correctly.
+- Fixed transparency so that it is disabled if the register $2130 disables all 
+  color math.
+  (Fixes the screw up in Aladdin)
+- Fix code skip for WAI/STP/WDM instructions so that if the player does not 
+  enable HDMA through the Snezziboy configuration, then the code skip selects 
+  the fastest skipping mode.
+- Fixed a critical bug in the mechanism that supports the intra-frame 
+  update of background scroll position. The bug, which crashes the emulator at
+  worst, or screws up some layers at best, only occurs after about 65535 SNES 
+  frames have been completely rendered, or roughly 18 minutes into gameplay, 
+  assuming the game runs at full 60 fps without slowdown.
+
+
+v0.25
+-----
+
+Fixes and Features:
+- Fixed a bug with the reading of registers $2137/$213C/$213D
+  (Final Fantasy Mystic Quest is able to proceed to the title screen)
+- Fixed a critical bug with the MVN/MVP instructions to handle the A register
+  correctly in 8-bit mode.
+- Fixed a DMA bug so that the incrementing of the source address does not
+  affect the address bank.
+  (Final Fantasy Mystic no longer crashes and now seems playable)
+- Fixed a bug with the DMA transfer to correctly increment the source address 
+  depending on the DMA increment mode.
+  (Secret of Mana no longer crashes before the first dungeon)
+- Fixed a bug with the RESET function that causes backgrounds remain 
+  stationary after using the configuration's RESET option.
+- Fixed the SBC instruction to take care of decimal mode subtraction 
+  (uses modified code from SNES Advance)
+  (Zombies ate my Neighbors is now playable)
+- Fixed Mode 7 where there was once a band appearing at the top of the screen.
+- Fixed (partially) SNES additive transparencies.
+- Implemented Mode 7 wraparound based on register $211A.
+
+
+HDMA:
+- Implemented partial HDMA for background scrolling positions
+  (Donkey Kong 3, first level moves as expected)
+  (Street Fighter 2 background moves as expected)
+  (Castlevania X first level background effects visible)
+  (HDMA is slow on the GBA and is expected)
+- Implemented new option to enable/disable HDMA
+  (for games that don't necessarily require it)
+
+Optimizations:
+- Made slight optimizations to instructions that operate on the A register,
+  and certain jump instructions
+- Made major optimizations to all instructions to remove instruction to add to 
+  SnesPC register 
+  (Credit to Gladius for the suggestion; most games should experience 
+  a slight but notable increase in speed)
+
+
+v0.24 (Quick Fix Release)
+-----
+
+Fixes and Features:
+- Quick fixed a minor problem in the header detection algorithm in the 
+  Snezziboy builder. (This may require a more proper fix later...)
+- Fixed a bug with the XCE code that was emulated wrongly.
+- Fixed the VRAM allocation so that Illusion of Gaia works correctly again.
+- Remove the wraparound bug that causes clones of Samus' ship during the
+  Super Metroid demo.
+
+
+v0.23
+-----
+
+Fixes and Features:
+
+- Fixed a critical bug with the register reads and writes (might be slower)
+- Improved cycle counting (again) for block move and DMA operations.
+- Added feature to handle mid-frame change of background offsets.
+  (Able to see water in Super Mario World,
+  Able to see scrolling clouds in Super Mario All Stars: Super Mario Bros, 
+  Able to see fixed status panel in Super Mario All Stars: Super Mario Bros 3, 
+  Able to see scrolling name entry in Zelda: A Link to the Past)
+- Fixed reading register $4212 to indicate auto-joypad read status.
+- Fixed writing register $4016 to reset only when the correct bit is set.
+- Fixed joypad registers to send joypad input only from the first controller.
+- Fixed HiROM mapping.
+- Added Mode 20/21 ROM Access Speed.
+- Fixed a bug with the INC/DEC opcode that was previously returning the wrong
+  flags.
+  (This fixes Super Mario Bros 2's glitch where the character suddenly warps to the
+  top of the screen)
+- Fixed messed up colors when in 256-color palettes.
+- Fixed fading to use always the brightest fade color per frame
+- Slightly improved VRAM allocation for background graphics
+- Implemented Mode 7 Graphics
+
+
+- Added more configuration options:
+  o FORCED BG MODE
+      AUTO, MODE 1, MODE 2,... MODE 7
+  o VRAM BG ALLOC
+      SMART - Don't allocate for disabled BGs 
+              may see less garbled graphics,
+              slow refresh on every enabling/disabling/flicker of BGs
+      FAST  - Allocate for disabled BGs
+              may see more garbled graphics
+              fast flickering of BGs (needed by games like Megaman 7)
+  o VRAM OBJ ALLOC
+      SHARED - Shared with BGs (may result in less space for BG graphics)
+      EXCLUSIVE - Not shared with BGs (allows more space for BG graphics)
+
+- Added Quick Configuration Feature:
+  o L+R+SELECT+UP: Cycle through the following BG Priority Sets
+      set 1 = (P1, P2, P0, P3)
+      set 2 = (P2, P1, P0, P3)
+      set 3 = (P0, P1, P2, P3)
+      set 4 = (P1, P0, P2, P3)
+
+  o L+R+SELECT+DOWN: Cycle through the FORCED BG MODEs
+      opt 0 = as required by game
+      opt 1-7 = the respective modes
+
+
+v0.22
+----
+
+Bug Fixes:
+
+- Fixed the JMP ($xxxx) and the JML [$xxxx] instruction to read the indirect addresses from bank zero
+  instead of the current data bank.
+  (Aero fighters now work)
+- Shifted the horizontal offset by 8 pixels to the right so games now look generally centralized
+- Modified the IO for WRAM write at IO addresses $2180-3 to behave as Snes9x
+- Fixed the interrupts to push the correct program counter onto the stack, and the RTI instruction to
+  pop the correct program counter from the stack.
+  (Earthworm Jim now works)
+- Fixed the $213C/D registers to generate the H/V counters correctly.
+  (Zelda-A Link to the Past now works, though in the name entry screen, the name selection still
+  does not move, and in-game text is invisible...)
+- Fixed the COP instruction to fire a COP interrupt
+  (Illusion of Gaia now intros correctly)
+- Fixed the MVP/MVN instruction to increment the cycle counter correctly.
+- Fixed the DMA such that source DMA address is incremented and the DMA size is set to 0,
+  after each DMA channel read/write is complete.
+  (Contra's intro and in-game background tiles display correctly now)
+  (FF2 non-mode 7 backgrounds now displays correctly)
+  (Illusion of Gaia title screens appear)
+- Added rendering for Modes 4 and 5.
+  (Secret of Mana name entry screen requires mode 5, and now appears better. Due to
+  double horizontal resolution though, the text appears but remains unreadable)
+- Added the $2139/A registers to read the VRAM.
+  (Illusion of Gaia seems to works perfectly)
+  (MegamanX, Megaman7 screens get restored after pressing start)
+- Added option for enabling backdrop
+  (With this option set to Yes, Super Mario World backgrounds will not appear black)
+
+Others:
+
+- Provided additional SnezziDebugger.exe that can be used to debug SNES games to search for 
+  speed hacks, SPC patches and other patches.
+
+
+v0.21 
+----
+
+Bug Fixes:
+
+- Fixed the TSC instruction so that the C register is updated regardless if M bit.
+- Fixed the TDC instruction so that the C register is updated regardless if M bit.
+- Fixed the RTL/RTS/RTI instructions so that it can properly return from the subroutine
+  that had been JSL/JSR-ed from $xx:8000
+- Made fixes in the memory map for games with no SRAM size, so that ROMs that try
+  to detect for absence of SRAM (protection against copying) will get what they expect.
+  (Bust-a-move makes it to the main screen, but the game itself is unplayable due to
+  the use of HDMA)
+- Made fixes to the $DB (modified STP instruction) to jump correctly. 
+  (Tetris Attack now works)
+- Fixed the PEI instruction; it was previously pushing $0000 always onto the stack
+- Fixed BIT instruction to update the N/Z flags correctly when BIT-ing in a non-immediate mode.
+  (Super Mario World fades correctly after each stage)
+  (Megaman7's collision detection is now accurate)
+- Fixed register $4016 for joypad auto-reading and latching
+  (Donkey Kong Country now recognizes joypad input)
+- Reworked SRAM reading and writing routines
+  (Donkey Kong Country seems playable; some screens are remain garbled) 
+- Fixed bug with VRAM writing
+  (Darius Twin's in-game screen no longer garbles-up randomly)
+
+Known Issues:
+
+- Breath of Fire I keeps flickering, and runs very slowly.
+- For some reason, sprites seem to be 'flickering' on many games.
+
+
+v0.2 
+----
+
+Bug Fixes:
+
+- Fixed the TXS instruction so that processor flags are not updated
+- Fixed the IO for WRAM write at IO addresses $2180-3
+  (Megaman7 sprites now appear)
+- Incorporated SNES Advance's SBC/ADC accurate implementations
+  (Super Mario World now works)
+- Used a jump table to implement scanline skipping for $42 and $DB opcodes
+- Fixed scanline skipping to proceed to the next immediate interrupt when NMI, V+H IRQ is enabled.
+  (MegamanX, Megaman7 runs faster)
+- Fixed 256 color background update (for mode 3)
+  (Super Mario All-Stars title and menu selection now visible, 
+  Super Mario Bros, The Lost Worlds subgames entirely playable with appropriate speed patch)
+- Fixed VRAM allocation for modes 2 and above 
+  (able to see blobs that have been dropped on the field)
+
+Known Issues:
+
+- VRAM writing sometime still screws up 
+  (Kirby's avalanche: can be worked around by pressing L+R+start to go to the config, and exiting
+  the config screen again)
+
+
+v0.1a
+----
+Included snezzi.gba emulator core into the v0.1 package.
+
+
+v0.1
+----
+First release, no changes.
+
