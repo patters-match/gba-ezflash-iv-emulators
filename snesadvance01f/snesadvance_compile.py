@@ -552,7 +552,7 @@ if __name__ == "__main__":
 								address = int(patch.split("=")[0],16)
 								payload = bytes.fromhex(patch.split("=")[1])
 								romarray[address:address+int(len(payload))] = payload
-								rom = romarray
+							rom = romarray
 
 			if args.c:
 				romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
