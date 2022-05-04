@@ -1,6 +1,8 @@
 05-04-22 patters
-* added Snezziboy emulator and builder script
+* added Snezziboy emulator and new Python 3 compile script
+* added a GBA title, and a GAME_ID of 'SNZI' to snezzi.gba which had blank header info
 * builder script has verbose mode to provide the same output as the original snezzi.exe tool
+* builder can only bundle a single ROM with each emulator instance, but multiple ROM files can be processed at once
 * fixed issue where SNESAdvance would only apply the first patch from the SuperDAT to each ROM
 
 05-01-22 patters
