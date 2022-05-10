@@ -441,6 +441,11 @@ if __name__ == "__main__":
 		help = "clean brackets from ROM titles",
 		action = 'store_true'
 	)
+	parser.add_argument(
+		'-v',
+		help = "verbose ouput, to show patches applied to game ROMs",
+		action = 'store_true'
+	)
 
 	# don't use FileType('wb') here because it writes a zero-byte file even if it doesn't parse the arguments correctly
 	parser.add_argument(
@@ -524,6 +529,12 @@ if __name__ == "__main__":
 			crcstr = hex(zlib.crc32(romdata))
 			crcstr = str(crcstr)[2:].upper()
 
+			if args.c:
+				romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
+				romtitle = romtitle.split(" (")[0] # strip the bracket parts of the name
+
+			romtitle = romtitle[:31].upper() # font.bin is upper case only
+
 			with open(args.database, "r", encoding='latin-1') as fh:
 				lines = fh.readlines()
 				for record in lines:
@@ -533,6 +544,11 @@ if __name__ == "__main__":
 						recorddata = record.split("|")
 						if args.dbn:
 							romtitle = recorddata[1]
+							if args.c:
+								romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
+								romtitle = romtitle.split(" (")[0] # strip the bracket parts of the name
+							romtitle = romtitle[:31].upper() # font.bin is upper case only
+						print (db_match, romtitle)
 						flags1 = int(recorddata[2],16)
 						flags2 = int(recorddata[3],16)
 						autoscroll1 = int(recorddata[4],16)
@@ -545,20 +561,22 @@ if __name__ == "__main__":
 
 						offset = int(recorddata[7].split("\n")[0],16) # remove any trailing newline char
 						if len(recorddata) > 8:
+							if args.v:
+								print("\t", "Patch:")
 							patches = recorddata[8].split(",")
 							romarray = bytearray(romdata)
 							for patch in patches:
 								patch = patch.split("\n")[0] # remove any trailing newline char
 								address = int(patch.split("=")[0],16)
-								payload = bytes.fromhex(patch.split("=")[1])
-								romarray[address:address+int(len(payload))] = payload
+								payload = patch.split("=")[1]
+								payloadbytes = bytes.fromhex(payload)
+								romarray[address:address+int(len(payloadbytes))] = payloadbytes
+								if args.v:
+									print("\t", hex(address), "=", payload)
 							rom = romarray
-
-			if args.c:
-				romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
-				romtitle = romtitle.split(" (")[0] # strip the bracket parts of the name
-
-			romtitle = romtitle[:31].upper() # font.bin is upper case only
+					
+			if db_match == "  ":
+				print (db_match, romtitle)
 
 		else:
 			print("Error: unsupported filetype for compilation -", romfilename)
@@ -568,7 +586,7 @@ if __name__ == "__main__":
 		romheader = struct.pack(header_struct_format, romtitle.encode('latin-1'), b"\0", len(rom), int(crcstr,16), flags1, flags2, autoscroll1, autoscroll2, scale, offset)
 		compilation = compilation + romheader + rom
 
-		print (db_match, romtitle)
+
 
 	writefile(args.outputfile, compilation)
 	if len(args.romfile) > 1:
