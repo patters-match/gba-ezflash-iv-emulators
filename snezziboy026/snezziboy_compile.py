@@ -60,7 +60,6 @@ def _map(s,e,m0,m1,m2,m3,m4,m5,m6,m7):
 def formmemorymap(loRom, romSize):
 	global memorymap
 	if loRom:
-
 		# LoROM
 		_map(0x00, 0x2f, LRAM,IO,  IO,  NOP, LROM,LROM,LROM,LROM)
 		_map(0x30, 0x3f, LRAM,IO,  IO,  SRAM,LROM,LROM,LROM,LROM)
@@ -74,7 +73,6 @@ def formmemorymap(loRom, romSize):
 		_map(0xc0, 0xff, LROM,LROM,LROM,LROM,LROM,LROM,LROM,LROM)
 
 	else:
-
 		# HiROM
 		_map(0x00, 0x2f, LRAM,IO,  IO,  NOP, HROM,HROM,HROM,HROM)
 		_map(0x30, 0x3f, LRAM,IO,  IO,  SRAM,HROM,HROM,HROM,HROM)
@@ -182,7 +180,7 @@ if __name__ == "__main__":
 	)
 	args = parser.parse_args()
 
-	emubinary =	args.emubinary.read()
+	emubinary = args.emubinary.read()
 
 	for item in args.romfile:
 
