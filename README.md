@@ -14,6 +14,7 @@ Emulator|Target System|Author(s)|Released
 [Snezziboy 0.26](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES|bubble2k|May 2006
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [GhostsnGoblinsGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Ghosts'n Goblins Arcade|Flubba|Apr 2009
+[YieArKungFuGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Yie Ar Kung-Fu Arcade|Flubba|Apr 2009
 [Jagoomba 0.4a](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga|Nov 2021
 
 ## Background
