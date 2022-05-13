@@ -57,6 +57,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   SMSA = 1   #SMSAdvance
   SNAV = 1   #SNESAdvance
   SNZI = 1   #Snezziboy
+  YIAC = 1   #YieArKungFuGBA
   ```
 #### Firmware 1.x
 - The ```.gba``` files produced by this collection are ready to be copied directly onto the SD card, do not use the EZ4 Client to patch them.
