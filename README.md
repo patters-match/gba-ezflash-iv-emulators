@@ -108,4 +108,5 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - L+R+Select+Down to cycle Forced BG Modes
 - [Wiki page](https://web.archive.org/web/20090503124323/http://wiki.pocketheaven.com/Snezziboy)
 - [Compatibility list](https://web.archive.org/web/20090508192702/http://wiki.pocketheaven.com/Snezziboy_Compatibility_List)
-
+#### YieArKungFuGBA
+- The emulator menu is broken unless you build a compilation with both ROM variants
