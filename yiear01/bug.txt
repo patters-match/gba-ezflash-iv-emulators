@@ -1,0 +1,1 @@
+In this emulator the L+R menu appears to be broken unless you use the build_both script
