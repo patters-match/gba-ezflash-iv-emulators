@@ -1,3 +1,7 @@
+13-05-22 patters
+* added Flubba's GhostsnGoblinsGBA emulator, exit patched and SRAM patched
+* added bash versions of its various builder scripts
+
 05-04-22 patters
 * added Snezziboy emulator and new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'SNZI' to snezzi.gba which had blank header info
