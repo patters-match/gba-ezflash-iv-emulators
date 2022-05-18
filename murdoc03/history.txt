@@ -1,0 +1,18 @@
+Murdoc revision history
+-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+V0.3 - 2006-05-10 (FluBBa)
+   Added 2nd soundchip.
+   Added 16bit sound mixing.
+   Fixed soundclicks in rom selection menu.
+   Fixed volume attenuation.
+   Optimised some CPU ops and fixed some other.
+
+V0.02 - 2005-09-17 (FluBBa)
+   Optimised sound mixer.
+   Fixed a CPU bug (RETI/RETN).
+
+V0.01 - 2005-07-06 (FluBBa)
+   Initial release.
+
