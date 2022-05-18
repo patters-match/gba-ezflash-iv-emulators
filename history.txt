@@ -2,7 +2,7 @@
 * modified PCEAdvance binary to use EZ-Flash IV PSRAM for Super CD-ROM support and, in theory, Arcade CD-ROM but
   unfortunately PSRAM doesn't currently work when the emulator is launched from NOR flash - so titles larger than 16MB
   do not work (no Akumajou Dracula X yet)
-* added Murdoc emulator for Mr Do!, SRAM patched, but there is no exit function
+* added Murdoc emulator for Mr Do!, exit patched and SRAM patched
 * added bash versions of the Murdoc simple concatenation scripts
 
 05-13-22 patters
