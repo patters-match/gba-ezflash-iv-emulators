@@ -52,6 +52,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   GMBC = 1   #Goomba Color/Jagoomba
   GMBA = 1   #Goomba
   MSXA = 1   #MSXAdvance
+  MRDO = 1   #Murdoc
   NGPA = 1   #NGPAdvance
   PCEA = 1   #PCEAdvance
   PNES = 1   #PocketNES
@@ -86,7 +87,7 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - Find the BIOS rom with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No Title Delay Hack)"
 - R+Start to bring up the virtual controller keypad
 #### Murdoc
-- The palette is a bit wrong for the lives and the background, which should be black. This is consistent with screenshots from FluBBa's site at the time, but it gets much worse if the splashscreen is included. I have removed this from the build scripts which is a pity because it's well made.
+- The palette is a bit wrong for the player's lives and for the background, which should be black. This is consistent with the [screenshot](https://web.archive.org/web/20150430211230im_/http://www.ndsretro.com/bilder/mrdo1.png) from FluBBa's old website, but the colours are completely wrong if the splashscreen is included. Consequently I have removed this from the build scripts, which is a pity because it's a good screen.
 #### MSXAdvance
 - The BIOS you need is "MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]"
 - R+Start to bring up the virtual keyboard
