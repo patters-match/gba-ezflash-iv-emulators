@@ -68,14 +68,15 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
 
 ## Exit-Patching Method
-Each of the emulators uses some variation of the **visoly.s** source file. Since they are not identical, it is not trivial to make a binary patcher. The following sample files are included to facilitate patching additional binaries:
+Each of the emulators uses some variation of the **visoly.s** source file which was designed to exit back to early flash card menus or Pogoshell. Since they are not identical, it is not trivial to make a binary patcher. The following sample files are included to facilitate patching additional binaries:
 File|Description
 :---|:----------
 ez4/reset_ez4.s|Code to reset into ez4 loader; copies itself into ewram before running
 ez4/reset_ez4.bin|Binary to reset into ez4 loader
 ez4/reset_ez4-2.s|Code to reset into ez4 loader; switches from arm to thumb and runs in-place
 ez4/reset_ez4-2.bin|Binary to reset into ez4 loader
-ez4/visoly.s|visoly.s, from an older version of PocketNES
+ez4/visoly.s|Code to reset, as used in many of FluBBa's emulators
+ez4/visoly.bin|Binary to reset, as used in many of FluBBa's emulators
 
 My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binaries with their unpatched originals so I could determine the initial state of the replaced section.
 
