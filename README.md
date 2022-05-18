@@ -4,7 +4,7 @@ This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
-[PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / PC Engine CD-ROM²|FluBBa|Apr 2003
+[PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
 [SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
@@ -86,8 +86,6 @@ I found that by progressively trimming both ends of this sequence, I was able to
 #### Cologne
 - Find the BIOS rom with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No Title Delay Hack)"
 - R+Start to bring up the virtual controller keypad
-#### Murdoc
-- The palette is a bit wrong for the player's lives and for the background, which should be black. This is consistent with the [screenshot](https://web.archive.org/web/20150430211230im_/http://www.ndsretro.com/bilder/mrdo1.png) from FluBBa's old website, but the colours are completely wrong if the splashscreen is included. Consequently I have removed this from the build scripts, which is a pity because it's a good screen.
 #### MSXAdvance
 - The BIOS you need is "MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]"
 - R+Start to bring up the virtual keyboard
