@@ -11,6 +11,7 @@ Emulator|Target System|Author(s)|Released
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
 [Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|A Goomba fork to add Gameboy Color|Dwedit|Jan 2006
 [MSXAdvance 0.2](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
+[Murdoc 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Mr. Do! Arcade|Flubba|May 2006
 [Snezziboy 0.26](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES|bubble2k|May 2006
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [GhostsnGoblinsGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Ghosts'n Goblins Arcade|Flubba|Apr 2009
@@ -84,6 +85,8 @@ I found that by progressively trimming both ends of this sequence, I was able to
 #### Cologne
 - Find the BIOS rom with the no-delay patch to speed up the boot time: "ColecoVision BIOS (1982) (No Title Delay Hack)"
 - R+Start to bring up the virtual controller keypad
+#### Murdoc
+- The palette is a bit wrong for the lives and the background, which should be black. This is consistent with screenshots from FluBBa's site at the time, but it gets much worse if the splashscreen is included. I have removed this from the build scripts which is a pity because it's well made.
 #### MSXAdvance
 - The BIOS you need is "MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]"
 - R+Start to bring up the virtual keyboard
