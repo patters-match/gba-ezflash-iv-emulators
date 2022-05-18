@@ -84,9 +84,9 @@ doReset
 	bl		init_flashcart
 	mov		r0, #0
 	ldr		r1,=0x3007ffa	;must be 0 before swi 0x00 is run, otherwise it tries to start from 0x02000000.
-	strh		r0,[r1]
+	strh 	r0,[r1]
 	bl		set_rom_start
-	mov		r0, #8		;VRAM clear
+	mov		r0, #0xC	;VRAM & Palette clear
 	swi		0x010000
 	swi		0x000000
 
