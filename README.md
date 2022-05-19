@@ -4,7 +4,7 @@ This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit
 Emulator|Target System|Author(s)|Released
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
-[PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
+[PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / PC Engine Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
 [SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
@@ -96,8 +96,8 @@ I found that by progressively trimming both ends of this sequence, I was able to
 #### PCEAdvance
 - Audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
 - [CD-ROM ISO extracting guide](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
-- [CD-ROM / Super CD-ROM titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
-- [Arcade CD-ROM titles list](https://atariage.com/forums/topic/123757-pc-engine-arcade-card-games/)
+- [CD-ROM² / Super CD-ROM² titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
+- [Arcade CD-ROM² titles list](https://atariage.com/forums/topic/123757-pc-engine-arcade-card-games/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
 - Though EZ-Flash IV PSRAM is now enabled allowing Super CD-ROM and Arcade CD-ROM support, it does not currently work when the emulator is launched from NOR flash so this excludes compilations which are over 16MB-192KB for Super CD-ROM (e.g. Akumajou Dracula X), or those over 14MB for Arcade CD-ROM (probably most of them).
 #### SMSAdvance
