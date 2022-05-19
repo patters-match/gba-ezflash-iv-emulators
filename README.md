@@ -78,9 +78,9 @@ ez4/reset_ez4-2.bin|Binary to reset into ez4 loader
 ez4/visoly.s|Code to reset, as used in many of FluBBa's emulators
 ez4/visoly.bin|Binary to reset, as used in many of FluBBa's emulators
 
-My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binaries with their unpatched originals so I could determine the initial state of the replaced section (usually **visoly.bin***).
+My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binaries with their unpatched originals so I could determine the initial state of the replaced section (usually **visoly.bin**).
 
-I found that by progressively trimming both ends of this sequence, I was able to successfully locate the equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite (usually **reset_ez4.bin***).
+I found that by progressively trimming both ends of this sequence, I was able to successfully locate the equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite (usually **reset_ez4.bin**).
 
 --------
 ## Emulator Tips
