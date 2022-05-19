@@ -99,7 +99,7 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - [CD-ROM² / Super CD-ROM² titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
 - [Arcade CD-ROM² titles list](https://atariage.com/forums/topic/123757-pc-engine-arcade-card-games/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
-- Though EZ-Flash IV PSRAM is now enabled allowing Super CD-ROM and Arcade CD-ROM support, it does not currently work when the emulator is launched from NOR flash so this excludes compilations which are over 16MB-192KB for Super CD-ROM (e.g. Akumajou Dracula X), or those over 14MB for Arcade CD-ROM (probably most of them).
+- Though EZ-Flash IV PSRAM is now enabled allowing Super CD-ROM² and Arcade CD-ROM² support, it does not currently work when the emulator is launched from NOR flash so this excludes compilations which are over 16MB-192KB for Super CD-ROM² (e.g. Akumajou Dracula X), or those over 14MB for Arcade CD-ROM² (probably most of them).
 #### SMSAdvance
 - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
 - "Lock toprows" is an option for Full Screen display mode useful for certain Master System games, such as Outrun, which can keeps the score/speedometer on screen despite cropping the image to the GBA resolution
