@@ -95,9 +95,8 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - Versions 0.3 and 0.4 [significantly broke compatibility](https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/)
 #### PCEAdvance
 - Audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
-- [CD-ROM ISO extracting guide](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
-- [CD-ROM² / Super CD-ROM² titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
-- [Arcade CD-ROM² titles list](https://atariage.com/forums/topic/123757-pc-engine-arcade-card-games/)
+- [CD-ROM ISO extracting info](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
+- [CD-ROM² / Super CD-ROM² / Arcade CD-ROM² titles lists, and TOCs](https://www.necstasy.net/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
 - Although EZ-Flash IV PSRAM is now enabled, allowing Super CD-ROM² and Arcade CD-ROM² support, it does not currently work when the emulator is launched from NOR flash. This excludes compilations which are over 16MB-192KB for Super CD-ROM² (e.g. Akumajou Dracula X), or those over 14MB for Arcade CD-ROM² (probably most of them).
 #### SMSAdvance
