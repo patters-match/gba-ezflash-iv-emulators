@@ -226,8 +226,11 @@ if __name__ == "__main__":
 
 		print (romtitle)
 
-	writefile(args.outputfile, compilation)
-
+	if args.bios or args.romfile:
+		writefile(args.outputfile, compilation)
+	else:
+		parser.print_help()
+		
 	if args.pat:
 		# EZ-Flash IV fw2.x GSS patcher metadata to force 64KB SRAM saves - for PATCH folder on SD card
 		patchname = os.path.splitext(args.outputfile)[0] + ".pat"

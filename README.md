@@ -35,7 +35,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
 ## Usage
 - Install Python 3 if not present
 - ```git clone https://github.com/patters-syno/gba-ezflash-iv-emulators```
-- Add games to the emulator folder
+- Add games to the chosen emulator folder
 - See notes on firmware versions below
 - Run **build.bat** from a Command Prompt (Windows), or **build.sh** from a Terminal session (macOS / Linux)
 - Copy the resulting ```.gba``` files to the EZ-Flash IV SD card
@@ -62,7 +62,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   YIAC = 1   #YieArKungFuGBA
   ```
 #### Firmware 1.x
-- The ```.gba``` files produced by this collection are ready to be copied directly onto the SD card, do not use the EZ4 Client to patch them.
+- The ```.gba``` files produced by this collection are ready to be copied directly onto the SD card. Do not use the EZ4 Client to patch them.
 - The emulators in this collection have all been header-patched to force 64KB SRAM saves, using cory1492's v2 patcher (EZ4-64-2). The 1.x firmware reads some metadata from the GBA ROM header to determine save size, and without this fix many homebrew binaries will default to 32KB.
 - gbata7 was used to fix the GBA ROM header after these patches (emulators crash on some firmwares without this fix).
 - You will need to edit **build.bat** (for Windows) and **build.sh** (for macOS and Linux) to change the compile script options from ```-pat``` to ```-sav``` so that the blank save files are generated for each executable, to be placed in the Saver folder on the SD card.
@@ -78,9 +78,9 @@ ez4/reset_ez4-2.bin|Binary to reset into ez4 loader
 ez4/visoly.s|Code to reset, as used in many of FluBBa's emulators
 ez4/visoly.bin|Binary to reset, as used in many of FluBBa's emulators
 
-My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binaries with their unpatched originals so I could determine the initial state of the replaced section.
+My own method for patching additional emulators was to check that their **visoly.s** was indeed mostly consistent with the versions in other emulator source code. Then I used a hex editor to compare exit-patched emulator binaries with their unpatched originals so I could determine the initial state of the replaced section (usually **visoly.bin**).
 
-I found that by progressively trimming both ends of this sequence, I was able to successfully locate the equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite.
+I found that by progressively trimming both ends of this sequence, I was able to successfully locate the equivalent section in the new binary, even if there were sometimes minor differences. Then it was a case of selecting the most appropriately sized variant of the *reset_ez4* binary code to overwrite (usually **reset_ez4.bin**).
 
 --------
 ## Emulator Tips
@@ -95,11 +95,10 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - Versions 0.3 and 0.4 [significantly broke compatibility](https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/)
 #### PCEAdvance
 - Audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
-- [CD-ROM ISO extracting guide](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
-- [CD-ROM / Super CD-ROM titles list](https://gamicus.fandom.com/wiki/List_of_PC-Engine_CD-ROM²_video_games)
-- [Arcade CD-ROM titles list](https://atariage.com/forums/topic/123757-pc-engine-arcade-card-games/)
+- [CD-ROM ISO extracting info](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
+- [CD-ROM² / Super CD-ROM² / Arcade CD-ROM² titles lists, and TOCs](https://www.necstasy.net/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
-- Though EZ-Flash IV PSRAM is now enabled allowing Super CD-ROM support, it does not currently work when the emulator is launched from NOR flash so this excludes compilations which are over 16MB (e.g. Akumajou Dracula X)
+- Although EZ-Flash IV PSRAM is now enabled, allowing Super CD-ROM² and Arcade CD-ROM² support, it does not currently work when the emulator is launched from NOR flash. This prevents execution of compilations which are over 16MB-192KB for Super CD-ROM² (e.g. Akumajou Dracula X), or those over 14MB-192KB for Arcade CD-ROM² (probably most of them).
 #### SMSAdvance
 - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
 - "Lock toprows" is an option for Full Screen display mode useful for certain Master System games, such as Outrun, which can keeps the score/speedometer on screen despite cropping the image to the GBA resolution
