@@ -99,7 +99,7 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - [CD-ROM² / Super CD-ROM² / Arcade CD-ROM² titles lists, and TOCs](https://www.necstasy.net/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
 - EZ-Flash IV & V PSRAM is now enabled for Super CD-ROM² support and, in theory, Arcade CD-ROM²
-- Super CD-ROM² and Arcade CD-ROM² ISOs should include 'SCD' and 'ACD' in their filenames
+- CD-ROM ISOs should include 'CD', 'SCD', or 'ACD' in their filenames to indicate their type
 #### SMSAdvance
 - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
 - "Lock toprows" is an option for Full Screen display mode useful for certain Master System games, such as Outrun, which can keeps the score/speedometer on screen despite cropping the image to the GBA resolution
