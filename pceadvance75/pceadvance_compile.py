@@ -185,6 +185,7 @@ if __name__ == "__main__":
 				# first data track ISO needs a CD-ROM BIOS + optional TCD tracklist first
 				cdbios = readfile(args.cdrombios)
 				cdbios = cdbios + b"\0" * ((4 - (len(cdbios)%4))%4)
+				cdtitle = romtitle
 	
 				if args.c:
 					romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
@@ -222,6 +223,23 @@ if __name__ == "__main__":
 	# finished iterating rom list, append any CD-ROM data
 	if iso_count:
 		compilation = compilation + cdrom
+
+		# Super CD-ROM compilations cannot be larger than 16384-192KB or they won't fit into PSRAM
+		if "SCD" in cdtitle and len(compilation) > 16192 * 1024:
+			compilation = compilation[:16191 * 1024]
+			print("Warning: this Super CD-ROM compilation had to be truncated to fit within the 16192KB of remaining PSRAM - so YMMV")
+
+		# Arcade Card compilations cannot be larger than 14336-192KB or they won't fit into PSRAM
+		elif "ACD" in cdtitle and len(compilation) > 14144 * 1024:
+			compilation = compilation[:14143 * 1024]
+			print("Warning: this Arcade Card CD-ROM compilation had to be truncated to fit within the 14144KB of remaining PSRAM - so YMMV")
+
+		# CD-ROM compilations cannot be larger than 16384KB or they won't fit into PSRAM
+		elif len(compilation) > 16384 * 1024:
+			compilation = compilation[:16383 * 1024]
+			print("Warning: this CD-ROM compilation had to be truncated to fit within the 16MB of PSRAM - so YMMV")
+			print("         build this one with a CD-ROM BIOS, rather than a Super CD-ROM BIOS")
+			print("         or you will lose an additional 192KB of PSRAM")
 
 	writefile(args.outputfile, compilation)
 
