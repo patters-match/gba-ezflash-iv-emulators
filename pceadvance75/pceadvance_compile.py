@@ -111,7 +111,7 @@ if __name__ == "__main__":
 	)
 	parser.add_argument(
 		'-sav',
-		help = "for EZ-Flash IV firmware 1.x - create a blank 8KB .sav file for the compilation, store in the SAVER folder, not needed for firmware 2.x which creates its own blank saves",
+		help = "for EZ-Flash IV firmware 1.x - create a blank 64KB .sav file for the compilation, store in the SAVER folder, not needed for firmware 2.x which creates its own blank saves",
 		action = 'store_true'
 	)
 	parser.add_argument(
