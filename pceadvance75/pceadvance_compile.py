@@ -119,6 +119,11 @@ if __name__ == "__main__":
 		help = "for EZ-Flash IV firmware 2.x - create a .pat file for the compilation to force 64KB SRAM saves, store in the PATCH folder",
 		action = 'store_true'
 	)
+	parser.add_argument(
+		'-trim',
+		help = "will, if needed, trim the compilation to fit into 16MB of PSRAM for Super CD-ROM support on EZ-Flash devices",
+		action = 'store_true'
+	)
 
 	args = parser.parse_args()
 
@@ -224,22 +229,23 @@ if __name__ == "__main__":
 	if iso_count:
 		compilation = compilation + cdrom
 
-		# Super CD-ROM compilations cannot be larger than 16384-192KB or they won't fit into PSRAM
-		if "SCD" in cdtitle and len(compilation) > 16192 * 1024:
-			compilation = compilation[:16191 * 1024]
-			print("Warning: this Super CD-ROM compilation had to be truncated to fit within the 16192KB of remaining PSRAM - so YMMV")
+		if args.trim:
+			# Super CD-ROM compilations cannot be larger than 16384-192KB or they won't fit into PSRAM
+			if "SCD" in cdtitle and len(compilation) > 16192 * 1024:
+				compilation = compilation[:16191 * 1024]
+				print("Warning: this Super CD-ROM compilation had to be truncated to fit within the 16192KB of remaining PSRAM - so YMMV")
 
-		# Arcade Card compilations cannot be larger than 14336-192KB or they won't fit into PSRAM
-		elif "ACD" in cdtitle and len(compilation) > 14144 * 1024:
-			compilation = compilation[:14143 * 1024]
-			print("Warning: this Arcade Card CD-ROM compilation had to be truncated to fit within the 14144KB of remaining PSRAM - so YMMV")
+			# Arcade Card compilations cannot be larger than 14336-192KB or they won't fit into PSRAM
+			elif "ACD" in cdtitle and len(compilation) > 14144 * 1024:
+				compilation = compilation[:14143 * 1024]
+				print("Warning: this Arcade Card CD-ROM compilation had to be truncated to fit within the 14144KB of remaining PSRAM - so YMMV")
 
-		# CD-ROM compilations cannot be larger than 16384KB or they won't fit into PSRAM
-		elif len(compilation) > 16384 * 1024:
-			compilation = compilation[:16383 * 1024]
-			print("Warning: this CD-ROM compilation had to be truncated to fit within the 16MB of PSRAM - so YMMV")
-			print("         build this one with a CD-ROM BIOS, rather than a Super CD-ROM BIOS")
-			print("         or you will lose an additional 192KB of PSRAM")
+			# CD-ROM compilations cannot be larger than 16384KB or they won't fit into PSRAM
+			elif len(compilation) > 16384 * 1024:
+				compilation = compilation[:16383 * 1024]
+				print("Warning: this CD-ROM compilation had to be truncated to fit within the 16MB of PSRAM - so YMMV")
+				print("         build this one with a CD-ROM BIOS, rather than a Super CD-ROM BIOS")
+				print("         or you will lose an additional 192KB of PSRAM")
 
 	writefile(args.outputfile, compilation)
 
