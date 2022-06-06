@@ -95,7 +95,7 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - Versions 0.3 and 0.4 [significantly broke compatibility](https://gbatemp.net/threads/msxadvance-compatibility-many-games-in-gamelist-txt-dont-work.609615/)
 #### PCEAdvance
 - Audio tends to work pretty well in mixer mode, but you do need to restart the emulator after enabling it
-- [CD-ROM ISO extracting info](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
+- [CD-ROM ISO extracting info](https://github.com/patters-syno/pceadvance#pc-engine-cd-rom-support), and [this forum thread](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
 - [CD-ROM² / Super CD-ROM² / Arcade CD-ROM² titles lists, and TOCs](https://www.necstasy.net/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
 - EZ-Flash IV & V PSRAM is now enabled for Super CD-ROM² support and, in theory, Arcade CD-ROM²
