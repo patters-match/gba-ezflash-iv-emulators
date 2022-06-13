@@ -1,7 +1,7 @@
 # EZ-Flash IV Exit-Patched Emulator Collection
 This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit-patched to function optimally with the EZ-Flash IV flashcart. Modern cross-platform compilation builder scripts are also included.
 
-Emulator|Target System|Author(s)|Released
+Emulator|Target System|Author(s)|1st Release
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
