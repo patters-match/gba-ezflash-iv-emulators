@@ -16,7 +16,7 @@ Emulator|Target System|Author(s)|1st Release
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [GhostsnGoblinsGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Ghosts'n Goblins Arcade|Flubba|Apr 2009
 [YieArKungFuGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Yie Ar Kung-Fu Arcade|Flubba|Apr 2009
-[Jagoomba 0.5](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga|Nov 2021
+[Jagoomba 0.5](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga + various|Nov 2021
 
 ## Background
 These emulators were originally designed to be used in a number of ways: 
