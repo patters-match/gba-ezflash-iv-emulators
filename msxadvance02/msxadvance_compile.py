@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import sys, os.path, struct, argparse, bz2, base64
+import sys, os.path, struct, argparse, bz2, base64, zlib
 from sys import argv
 
 EMUID = int(0x1A4C4F43) # "COL",0x1A - probably unintentional since Formats.txt incorrectly states it should be "MSX",0x1A
@@ -48,6 +48,77 @@ def set_bit(value, n):
 
 #def clear_bit(value, n):
 #    return value & ~(1 << n)
+
+def detectmapper(data):
+	size = len(data)
+	crcstr = hex(zlib.crc32(data))
+	if int(crcstr,16) == 0xa884911c:
+		return 'RTYPE'
+	if size < 0x10000:
+		if (size <= 0x4000) and (data[0] == b'A') and (data[1] == b'B'):
+			initAddr = struct.unpack("<H", data[2:4])[0]
+			textAddr = struct.unpack("<H", data[8:10])[0]
+			if (textAddr & 0xC000) == 0x8000:
+				if (initAddr == 0) or (((initAddr & 0xC000) == 0x8000) and (data[initAddr & (size - 1)] == 0xC9)):
+					#return 'ROM_PAGE2'
+					return 'KONAMI4'
+
+		# not correct for Konami-DAC, but does this really need
+		# to be correct for _every_ rom?
+		#return 'ROM_MIRRORED'
+		return 'KONAMI4'
+
+	elif size == 0x10000 and (not ((data[0] == b'A')) and (data[1] == b'B')):
+		# 64 kB ROMs can be plain or memory mapped...
+		# check here for plain, if not, try the auto detection
+		#(thanks for the hint, hap)
+		#return 'ROM_MIRRORED'
+		return 'KONAMI4'
+	else:
+		#  GameCartridges do their bankswitching by using the Z80
+		#  instruction ld(nn),a in the middle of program code. The
+		#  address nn depends upon the GameCartridge mappertype used.
+		#  To guess which mapper it is, we will look how much writes
+		#  with this instruction to the mapper-registers-addresses
+		#  occur.
+
+		typeGuess = {
+			'KONAMI4' : 0,
+			'KONAMI5' : 0,
+			'ASCII8'  : 0,
+			'ASCII16' : 0,
+		}
+		for i in range(0,size - 3):
+			if data[i] == 0x32:
+				value = struct.unpack("<H", data[i + 1:i + 3])[0]
+				if value == 0x5000 or value == 0x9000 or value == 0xb000:
+					typeGuess['KONAMI5'] += 1
+
+				elif value == 0x4000 or value == 0x8000 or value == 0xa000:
+					typeGuess['KONAMI4'] += 1
+
+				elif value == 0x6800 or value == 0x7800:
+					typeGuess['ASCII8'] += 1
+
+				elif value == 0x6000:
+					typeGuess['KONAMI4'] += 1
+					typeGuess['ASCII8'] += 1
+					typeGuess['ASCII16'] += 1
+				elif value == 0x7000:
+					typeGuess['KONAMI5'] += 1
+					typeGuess['ASCII8'] += 1
+					typeGuess['ASCII16'] += 1
+				elif value == 0x77ff:
+					typeGuess['ASCII16'] += 1
+
+		if typeGuess['ASCII8']:
+			typeGuess['ASCII8'] -= 1 # -1 -> max_int
+
+		type = max(typeGuess, key=typeGuess.get)
+
+		if type == 'ASCII16' and typeGuess['KONAMI4'] == typeGuess['ASCII16']:
+			type = 'KONAMI4'
+		return type;
 
 
 if __name__ == "__main__":
@@ -153,15 +224,20 @@ if __name__ == "__main__":
 		biosflag = 0
 		flags = 0
 		follow = 0 # sprite or address follow for Unscaled (Auto) display mode
+		mapper = ""
 
 		romfilename = os.path.split(item.name)[1]
 		romtype = os.path.splitext(romfilename)[1]
 		romtitle = os.path.splitext(romfilename)[0]
+		rom = item.read()
+		rom = rom + b"\0" * ((4 - (len(rom)%4))%4)
 
 		if romtype.lower() == ".rom":
 
 			if "(E)" in romtitle or "(Europe)" in romtitle or "(EUR)" in romtitle:
 				flags = set_bit (flags, 0) # set PAL timing for EUR-only titles
+
+			mapper = detectmapper(rom)
 
 		else:
 			print("Error: unsupported filetype for compilation -", romfilename)
@@ -179,13 +255,10 @@ if __name__ == "__main__":
 		else:
 			romtitle = romtitle[:31]
 
-
-		rom = item.read()
-		rom = rom + b"\0" * ((4 - (len(rom)%4))%4)
 		romheader = struct.pack(header_struct_format, EMUID, len(rom), flags, follow, biosflag, 0, 0, 0, romtitle.encode('ascii'), b"\0")
 		compilation = compilation + romheader + rom
 
-		print (romtitle)
+		print(romtitle.ljust(32), mapper)
 
 	writefile(args.outputfile, compilation)
 

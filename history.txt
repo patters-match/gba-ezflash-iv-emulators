@@ -1,3 +1,6 @@
+06-13-22 patters
+* added mapper detection to MSXAdvance builder
+
 06-05-22 patters
 * PCEAdvance now clears Super CD-ROM memory allowing multiple SCD titles to be played in a session without rebooting
 * PCEAdvance builder script now automatically truncates oversized CD-ROM compilations - Akumajou Dracula X works now!
