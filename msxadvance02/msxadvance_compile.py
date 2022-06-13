@@ -118,7 +118,7 @@ def detectmapper(data):
 
 		if type == 'ASCII16' and typeGuess['KONAMI4'] == typeGuess['ASCII16']:
 			type = 'KONAMI4'
-		return type;
+		return type
 
 
 if __name__ == "__main__":
