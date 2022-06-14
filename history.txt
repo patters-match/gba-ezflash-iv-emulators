@@ -1,3 +1,8 @@
+06-14-22 patters
+* MSXAdvance builder now stores game ROM mapper selection in an unused byte in the ROM header
+* forked MSXAdvance to use the mapper choice in the header if present
+* games just work now, directly from the menu list!
+
 06-13-22 patters
 * updated to Jagoomba 0.5
 * added mapper detection to MSXAdvance builder
