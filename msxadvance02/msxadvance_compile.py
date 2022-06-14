@@ -25,7 +25,7 @@ header_struct_format = "<8I31sc" # https://docs.python.org/3/library/struct.html
 #		Bit 5: 0=spritefollow, 1=addressfollow (32 in decimal)
 #	u32 spritefollow;
 #	u32 bios; 0=Game ROM, 1=MSX1 BIOS ROM
-#	u32 mapper; 0=undefined, 1=Konami4, 2=Konami5, 3=ASCII8Kk, 4=ASCII16Kk, 5=RTYPE
+#	u32 mapper; 0=undefined, 1=Konami4, 2=Konami5, 3=ASCII8k, 4=ASCII16k, 5=RTYPE
 #	u32 reserved[2];
 #	char name[32] null terminated;
 #} romheader;
