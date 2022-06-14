@@ -21,11 +21,12 @@ header_struct_format = "<8I31sc" # https://docs.python.org/3/library/struct.html
 #	u32 filesize;
 #	u32 flags;
 #		Bit 0: 0=NTSC, 1=PAL (1 in decimal)
-#		Bit 4: reserved for CPU speedhacks
+#		Bit 4: reserved for CPU speedhacks (16 in decimal)
 #		Bit 5: 0=spritefollow, 1=addressfollow (32 in decimal)
 #	u32 spritefollow;
-#	u32 0=Game ROM, 1=MSX1 BIOS ROM;
-#	u32 reserved[3];
+#	u32 bios; 0=Game ROM, 1=MSX1 BIOS ROM
+#	u32 mapper; 0=undefined, 1=Konami4, 2=Konami5, 3=ASCII8Kk, 4=ASCII16Kk, 5=RTYPE
+#	u32 reserved[2];
 #	char name[32] null terminated;
 #} romheader;
 
@@ -49,17 +50,27 @@ def set_bit(value, n):
 #def clear_bit(value, n):
 #    return value & ~(1 << n)
 
-def detectmapper(data):
-	size = len(data)
-	crcstr = hex(zlib.crc32(data))
-	if int(crcstr,16) == 0xa884911c:
+def detectmapper(romdata):
+	size = len(romdata)
+	crcval = zlib.crc32(romdata)
+	
+	#R-Type, various versions
+	if crcval == 0xa884911c or crcval == 0x5b14c736 or crcval == 0x827919e4 or crcval == 0x71e94fce:
 		return 'RTYPE'
+	if crcval == 0x2a019191:
+		return 'ASCII8K'
+	if crcval == 0xa3a51fbb:
+		return 'ASCII16K'
+	if crcval == 0x952bfaa4:
+		return 'KONAMI5'	
+	#not sure if the versions that don't use the RTYPE mapper are fully playable, but they seem to run ok
+
 	if size < 0x10000:
-		if (size <= 0x4000) and (data[0] == b'A') and (data[1] == b'B'):
-			initAddr = struct.unpack("<H", data[2:4])[0]
-			textAddr = struct.unpack("<H", data[8:10])[0]
+		if (size <= 0x4000) and (romdata[0] == b'A') and (romdata[1] == b'B'):
+			initAddr = struct.unpack("<H", romdata[2:4])[0]
+			textAddr = struct.unpack("<H", romdata[8:10])[0]
 			if (textAddr & 0xC000) == 0x8000:
-				if (initAddr == 0) or (((initAddr & 0xC000) == 0x8000) and (data[initAddr & (size - 1)] == 0xC9)):
+				if (initAddr == 0) or (((initAddr & 0xC000) == 0x8000) and (romdata[initAddr & (size - 1)] == 0xC9)):
 					#return 'ROM_PAGE2'
 					return 'KONAMI4'
 
@@ -68,7 +79,7 @@ def detectmapper(data):
 		#return 'ROM_MIRRORED'
 		return 'KONAMI4'
 
-	elif size == 0x10000 and (not ((data[0] == b'A')) and (data[1] == b'B')):
+	elif size == 0x10000 and (not ((romdata[0] == b'A')) and (romdata[1] == b'B')):
 		# 64 kB ROMs can be plain or memory mapped...
 		# check here for plain, if not, try the auto detection
 		#(thanks for the hint, hap)
@@ -85,38 +96,35 @@ def detectmapper(data):
 		typeGuess = {
 			'KONAMI4' : 0,
 			'KONAMI5' : 0,
-			'ASCII8'  : 0,
-			'ASCII16' : 0,
+			'ASCII8K'  : 0,
+			'ASCII16K' : 0,
 		}
 		for i in range(0,size - 3):
-			if data[i] == 0x32:
-				value = struct.unpack("<H", data[i + 1:i + 3])[0]
+			if romdata[i] == 0x32:
+				value = struct.unpack("<H", romdata[i + 1:i + 3])[0]
 				if value == 0x5000 or value == 0x9000 or value == 0xb000:
 					typeGuess['KONAMI5'] += 1
-
 				elif value == 0x4000 or value == 0x8000 or value == 0xa000:
 					typeGuess['KONAMI4'] += 1
-
 				elif value == 0x6800 or value == 0x7800:
-					typeGuess['ASCII8'] += 1
-
+					typeGuess['ASCII8K'] += 1
 				elif value == 0x6000:
 					typeGuess['KONAMI4'] += 1
-					typeGuess['ASCII8'] += 1
-					typeGuess['ASCII16'] += 1
+					typeGuess['ASCII8K'] += 1
+					typeGuess['ASCII16K'] += 1
 				elif value == 0x7000:
 					typeGuess['KONAMI5'] += 1
-					typeGuess['ASCII8'] += 1
-					typeGuess['ASCII16'] += 1
+					typeGuess['ASCII8K'] += 1
+					typeGuess['ASCII16K'] += 1
 				elif value == 0x77ff:
-					typeGuess['ASCII16'] += 1
+					typeGuess['ASCII16K'] += 1
 
-		if typeGuess['ASCII8']:
-			typeGuess['ASCII8'] -= 1 # -1 -> max_int
+		if typeGuess['ASCII8K']:
+			typeGuess['ASCII8K'] -= 1 # -1 -> max_int
 
 		type = max(typeGuess, key=typeGuess.get)
 
-		if type == 'ASCII16' and typeGuess['KONAMI4'] == typeGuess['ASCII16']:
+		if type == 'ASCII16K' and typeGuess['KONAMI4'] == typeGuess['ASCII16K']:
 			type = 'KONAMI4'
 		return type
 
@@ -193,6 +201,11 @@ if __name__ == "__main__":
 		help = "for EZ-Flash IV firmware 2.x - create a .pat file for the compilation to force 64KB SRAM saves, store in the PATCH folder",
 		action = 'store_true'
 	)
+	parser.add_argument(
+		'-nomap',
+		help = "disable automatic selection of ROM mapper type",
+		action = 'store_true'
+	)
 	args = parser.parse_args()
 
 
@@ -203,20 +216,22 @@ if __name__ == "__main__":
 
 	biosflag = 1
 	flags = 0
+	mapper = 0
 	follow = 0 # sprite or address follow for 'Unscaled (Auto)' display mode
 	bios = args.bios.read()
 	bios = bios + b"\0" * ((4 - (len(bios)%4))%4)
 	biosfilename = os.path.split(args.bios.name)[1]
-	biosheader = struct.pack(header_struct_format, EMUID, len(bios), flags, follow, biosflag, 0, 0, 0, biosfilename[:31].encode('ascii'), b"\0")
+	biosheader = struct.pack(header_struct_format, EMUID, len(bios), flags, follow, biosflag, mapper, 0, 0, biosfilename[:31].encode('ascii'), b"\0")
 	compilation = compilation + biosheader + bios
 
 	if args.bb:
 		biosflag = 0
 		flags = 0
+		mapper = 0
 		follow = 0 # sprite or address follow for 'Unscaled (Auto)' display mode
 		empty = b"\xff" * 16384
 		emptyname = "-- Empty --"
-		emptyheader = struct.pack(header_struct_format, EMU_ID, len(empty), flags, follow, biosflag, 0, 0, 0, emptyname.encode('ascii'), b"\0")
+		emptyheader = struct.pack(header_struct_format, EMU_ID, len(empty), flags, follow, biosflag, mapper, 0, 0, emptyname.encode('ascii'), b"\0")
 		compilation = compilation + emptyheader + empty
 
 	for item in args.romfile:
@@ -224,7 +239,8 @@ if __name__ == "__main__":
 		biosflag = 0
 		flags = 0
 		follow = 0 # sprite or address follow for Unscaled (Auto) display mode
-		mapper = ""
+		mapper = 0
+		mappername = ""
 
 		romfilename = os.path.split(item.name)[1]
 		romtype = os.path.splitext(romfilename)[1]
@@ -237,7 +253,13 @@ if __name__ == "__main__":
 			if "(E)" in romtitle or "(Europe)" in romtitle or "(EUR)" in romtitle:
 				flags = set_bit (flags, 0) # set PAL timing for EUR-only titles
 
-			mapper = detectmapper(rom)
+			if not args.nomap:
+				mappername = detectmapper(rom)
+				if mappername == 'KONAMI4': mapper = 1
+				elif mappername == 'KONAMI5': mapper = 2
+				elif mappername == 'ASCII8K': mapper = 3
+				elif mappername == 'ASCII16K': mapper = 4
+				elif mappername == 'RTYPE': mapper = 5
 
 		else:
 			print("Error: unsupported filetype for compilation -", romfilename)
@@ -255,12 +277,17 @@ if __name__ == "__main__":
 		else:
 			romtitle = romtitle[:31]
 
-		romheader = struct.pack(header_struct_format, EMUID, len(rom), flags, follow, biosflag, 0, 0, 0, romtitle.encode('ascii'), b"\0")
+		romheader = struct.pack(header_struct_format, EMUID, len(rom), flags, follow, biosflag, mapper, 0, 0, romtitle.encode('ascii'), b"\0")
 		compilation = compilation + romheader + rom
 
-		print(romtitle.ljust(32), mapper)
+		print(romtitle.ljust(32), mappername)
 
+	if not args.romfile:
+		print("No ROMs specified, writing emulator and BIOS only")
 	writefile(args.outputfile, compilation)
+
+	if not args.romfile:
+		parser.print_usage()
 
 	if args.pat:
 		# EZ-Flash IV fw2.x GSS patcher metadata to force 64KB SRAM saves - for PATCH folder on SD card
