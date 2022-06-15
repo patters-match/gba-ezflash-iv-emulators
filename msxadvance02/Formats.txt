@@ -1,18 +1,25 @@
 ------------------------------------
-Format of MSXAdvance (v1) GBA images:
+Format of MSXAdvance (v1.1) GBA images:
 ------------------------------------
+
+updated 06/14/22 by patters to correct:
+- some errors (identifier, byte count)
+- an omission (PAL/NTSC flag)
+and to add the Mapper type
+
 
 ???? bytes:  MSXAdvance.gba contents
 (optional) 76800 bytes:  Splash screen (raw 240x160 15bit image)
 ----
-4 bytes:  Identifier = "MSX",0x1A
+4 bytes:  Identifier = "COL",0x1A
 4 bytes:  ROM size
 2 bytes:  ROM flags
 1 byte:   Branch hacks, bit 0-3: opcode, bit 4-7: length. (not yet).
 1 byte:   Reserved (set to 0)
 4 bytes:  Autoscroll value (a.k.a. "sprite following")
-1 byte:   BIOS flag, bit0=1 for BIOS rom.
-15 bytes: Reserved (set to 0)
+4 bytes:  BIOS flag, bit0=1 for BIOS rom.
+4 bytes:  Mapper 0=undefined, 1=Konami4, 2=Konami5, 3=ASCII8k, 4=ASCII16k, 5=RTYPE
+8 bytes:  Reserved (set to 0)
 32 bytes: ROM title (NULL terminated)
 ???? bytes:  ROM contents (.MSX format)
 ----
@@ -21,7 +28,8 @@ etc etc...
 ----
 
 ROM flags:
-    Bit 0: Reserved
+    Bit 0: 0=NTSC
+           1=PAL
     Bit 1: Reserved
     Bit 2: Reserved
     Bit 3: Reserved
