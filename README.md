@@ -97,7 +97,7 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - [CD-ROM ISO extracting info](https://github.com/patters-syno/pceadvance#pc-engine-cd-rom-support), and [this forum thread](https://gbatemp.net/threads/pceadvance-cd-rom-support-howto-required.610542/)
 - [CD-ROM² / Super CD-ROM² / Arcade CD-ROM² titles lists, and TOCs](https://www.necstasy.net/)
 - [Speedhacks howto](https://web.archive.org/web/20060508083011/http://boards.pocketheaven.com/viewtopic.php?t=27)
-- EZ-Flash IV & V PSRAM is now enabled for Super CD-ROM² support and, in theory, Arcade CD-ROM²
+- EZ-Flash IV & EZ-Flash 3in1 PSRAM is now enabled for Super CD-ROM² support and, in theory, Arcade CD-ROM²
 - CD-ROM ISOs should include 'CD', 'SCD', or 'ACD' in their filenames to indicate their type
 #### SMSAdvance
 - BIOS booting (effectively a blank 16KB ROM image) requires the system type to be hard set to Master System, assuming Master System BIOS games, because without a ROM the emulator cannot guess which system BIOS (SMS or GG) should be loaded
