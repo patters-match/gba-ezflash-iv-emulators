@@ -51,6 +51,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   GGAC = 1   #GhostsnGoblinsGBA
   GMBC = 1   #Goomba Color/Jagoomba
   GMBA = 1   #Goomba
+  HVCA = 1   #HVCA
   MSXA = 1   #MSXAdvance
   MRDO = 1   #Murdoc
   NGPA = 1   #NGPAdvance
@@ -114,3 +115,5 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - [Compatibility list](https://web.archive.org/web/20090508192702/http://wiki.pocketheaven.com/Snezziboy_Compatibility_List)
 #### YieArKungFuGBA
 - The emulator menu is broken unless you build a compilation with both ROM variants
+#### HVCA
+- Hold L+R in the menu to exit back to the flashcart menu
