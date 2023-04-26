@@ -6,6 +6,8 @@ Emulator|Target System|Author(s)|1st Release
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
+[HVCA](https://www.gamebrew.org/wiki/HVCA_GBA)|Nintendo NES / Famicom Disk System|outside-agb?|Sep 2004
+[Wasabi](https://github.com/FluBBaOfWard/WasabiGBA)|Watara Supervision|FluBBa|Nov 2004
 [SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
@@ -16,7 +18,7 @@ Emulator|Target System|Author(s)|1st Release
 [NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [GhostsnGoblinsGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Ghosts'n Goblins Arcade|Flubba|Apr 2009
 [YieArKungFuGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Yie Ar Kung-Fu Arcade|Flubba|Apr 2009
-[Jagoomba 0.5](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|Jaga + various|Nov 2021
+[Jagoomba 0.5](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|FluBBa, Dwedit, Jaga + various|Nov 2021
 
 ## Background
 These emulators were originally designed to be used in a number of ways: 
@@ -60,6 +62,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   SMSA = 1   #SMSAdvance
   SNAV = 1   #SNESAdvance
   SNZI = 1   #Snezziboy
+  WSBI = 1   #Wasabi
   YIAC = 1   #YieArKungFuGBA
   ```
 #### Firmware 1.x
