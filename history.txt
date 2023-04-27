@@ -1,9 +1,10 @@
 04-23-23 patters
-* Added HVCA emulator for Famicom Disk System and NES, and new Python 3 compile script
+* Added HVCA emulator for Famicom Disk System and NES, and a new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'HVCA' to base.bin which had blank header info
-* Added Flubba's Wasabi emulator for Watara Supervision, and new Python 3 compile script
+* Added Flubba's Wasabi emulator for Watara Supervision, and a new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'WSBI' to WasabiGBA.gba which had blank header info
-* Added Flubba's newer NGPGBA emulator to replace NGPAdvance, and new Python 3 compile script
+* Added Flubba's newer NGPGBA emulator to replace NGPAdvance, and a new Python 3 compile script
+* NGPGBA now uses a GAME_ID of NGPE so update KEYSET.CFG at the root of the SD card
 * build.bat and build.sh now pass through their command line parameters so you can easily add a splash screen etc.
 
 06-14-22 patters
