@@ -4,6 +4,7 @@
 * Added Flubba's Wasabi emulator for Watara Supervision, and new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'WSBI' to WasabiGBA.gba which had blank header info
 * Added Flubba's newer NGPGBA emulator to replace NGPAdvance, and new Python 3 compile script
+* build.bat and build.sh now pass through their command line parameters so you can easily add a splash screen etc.
 
 06-14-22 patters
 * MSXAdvance builder now stores game ROM mapper selection in an unused byte in the ROM header

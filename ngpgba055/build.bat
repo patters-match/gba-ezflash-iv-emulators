@@ -1,1 +1,1 @@
-for %%f in (*.ngp *.ngc) do @ngpadvance_compile.py "%%f" -o "%%~nf.gba" -pat
+for %%f in (*.ngp *.ngc) do @ngpgba_compile.py "%%f" -o "%%~nf.gba" -pat %*
