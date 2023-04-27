@@ -128,7 +128,7 @@ if __name__ == "__main__":
 				rom = romarray
 
 			compilation = compilation + rom
-			print (outputtitle)
+			print('{:<17}{}'.format(outputtitle.rstrip("\x00"),romtype.strip(".")))
 		else:
 			print("Error: unsupported filetype for compilation -", romfilename)
 			sys.exit(1)

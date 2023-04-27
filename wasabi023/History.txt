@@ -1,0 +1,25 @@
+Wasabi revision history
+-=-=-=-=-=-=-=-=-=-=-=-
+
+V0.2.3 - 2022-10-13 (FluBBa)
+	Added Quit Emulator menu item.
+	Added Overclock EWRAM menu item.
+
+V0.2.2 - 2022-10-06 (FluBBa)
+	Added new debug menu.
+	Better menu traversing.
+
+V0.2.1 - 2022-09-26 (FluBBa)
+	Ported back to Nintendo GBA devkitPro.
+	(NDS) Added mapping of X & Y as Start and Select.
+	Added Frame stepping.
+
+V0.2.0 - 2022-09-17 (FluBBa)
+	First release for Nintendo DS.
+
+V0.1.1 - 2022-08-24 (FluBBa)
+	Started port to Nintendo DS & devkitPro.
+
+V0.1.0 - 2004-11-30 (FluBBa)
+	First release: cpu, vram emulated.
+	Probably the last release as well.

@@ -1,3 +1,10 @@
+04-23-23 patters
+* Added HVCA emulator for Famicom Disk System and NES, and new Python 3 compile script
+* added a GBA title, and a GAME_ID of 'HVCA' to base.bin which had blank header info
+* Added Flubba's Wasabi emulator for Watara Supervision, and new Python 3 compile script
+* added a GBA title, and a GAME_ID of 'WSBI' to WasabiGBA.gba which had blank header info
+* Added Flubba's newer NGPGBA emulator to replace NGPAdvance, and new Python 3 compile script
+
 06-14-22 patters
 * MSXAdvance builder now stores game ROM mapper selection in an unused byte in the ROM header
 * forked MSXAdvance to use the mapper choice in the header if present

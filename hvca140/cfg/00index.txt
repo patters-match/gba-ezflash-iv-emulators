@@ -1,0 +1,33 @@
+
+cfg samples
+                    0x10        0x30    0x31    0x32    0x33    0x34    0x3F
+Title               MAPR        V-SPR   VSync   Layer   Delay   HIT     EXT
+------------------------------------------------------------------------------
+Adventures of       ----        ----    ----    0x01    ----    ----    ----
+            Lolo 2
+
+AFTER BURNER II     ----        0xA6    ----    ----    ----    ----    ----
+Akumajyou Densetsu  mvrc6_a1a0  0x3A    ----    ----    ----    ----    ----
+Captain Tsubasa II  ----        0x7C    ----    ----    ----    ----    ----
+CRISIS FORCE        mvrc4_a3a2  ----    ----    ----    ----    ----    ----
+DEJA VU             ----        0x9C    ----    0x01    ----    ----    ----
+DERBY STALLION      ----        ----    ----    ----    ----    ----    0x0F
+EXCITING BOXING     ----        ----    ----    ----    ----    ----    0x03
+Famicom Jump II     ----        ----    ----    0x01    ----    ----    ----
+
+Famicom Mukashibanashi
+   Shin Onigashima  ----        ----    ----    0x01    ----    ----    ----
+
+GALL FORCE          ----        0x60    ----    ----    ----    ----    ----
+GIMMICK!            m069_dsp    ----    ----    ----    ----    ----    ----
+GRADIUS II          mvrc4_a0a1  ----    ----    ----    ----    ----    ----
+HYPER OLIMPIC       ----        ----    ----    ----    ----    ----    0x02
+KING OF KINGS       mn163_dsp   ----    ----    ----    ----    ----    ----
+MAPPY KIDS          mn163_dsp   0xCC    ----    ----    ----    ----    ----
+Ninjya RyukendenIII ----        0x34    ----    ----    ----    ----    ----
+Parodius Da!        mvrc4_a3a2  0xD4    ----    ----    ----    ----    ----
+Pokkun Mogurar      ----        ----    ----    ----    ----    ----    0x04
+PUNCH OUT           m009_po     0x01    ----    ----    ----    ----    ----
+ROLLING THUNDER     mn163_dsp   0xC8    ----    ----    ----    ----    ----
+SUPER MARIO BROS.3  ----        ----    ----    0x01    ----    ----    ----
+Youkai Douchuuki    mn163_dsp   0x60    ----    ----    ----    ----    ----

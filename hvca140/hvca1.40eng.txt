@@ -1,0 +1,203 @@
+2008/07/12
+
+HVCA Ver.1.40
+
+. Delete all old files and extract new ones.
+   Overwriting will cause malfunction.
+
+. It does not work as intended on "VisualBoy Advance(1.8.0)".
+
+============================================================================
+     construction
+============================================================================
+
+<Step 1: Basic>
+    Make the following file structure.
+
+    <hvca>
+     +--- /add
+     |    +--- *.cfg
+     |    +--- *.nes
+     |    +--- *.nsf
+     |    +--- *.fds
+     |    +--- disksys.rom
+     |
+     +----/bin
+     +----/cfg(samples)
+     +--- hvcamkfs.exe  (*1)
+     +--- merge.bat
+
+    (*1) "hvcamkfs.exe" does not support kana (including double-byte alphanumeric characters).
+    1. Run "merge.bat". "hvca.bin" is output.
+    2. Add license code and create "hvca.bin -> hvca.gba".
+    ~~~~~~~~~~~~~~~~~~~~ Each one will do something.
+
+
+<Step 1: NES2FCA Ver.0.93>
+    Make the following file structure.
+
+    <hvca>
+     +--- /add
+     |    +--- *.nsf (!) "NES2FCA" cannot bind NSF.
+     |    +--- disksys.rom
+     |
+     +----/bin
+     +----/cfg(samples)
+     +--- hvcamkfs.exe
+     +--- merge.bat
+
+    <nes2fca>
+     +--- nes2fca.exe
+     +--- nes2fca.cfg
+
+    <PATH>/*.cfg
+    <PATH>/*.nes
+    <PATH>/*.fds
+
+    1. Run "merge.bat". "hvca.bin" is output.
+    2. Rewrite "nes2fca.cfg".
+
+    -- >8 -- cut here -- 8< --
+    [list]
+    num=1
+    list0=hvca_merged
+
+    [hvca_merged]
+    shell=hvca.bin
+    -- >8 -- cut here -- 8< --
+
+<Procedure 2: Common>
+    By preparing "%name%.cfg", you can change the initial setting of operation.
+    Also, some iNES mapper numbers are not compatible, so in this case also
+    Specify the mapper driver in "%name%.cfg". See below for details.
+
+<Procedure X>
+    You can use custom palettes.
+    The format is compatible with the "*.pal" exported by VirtuaNES,
+    According to AGB specifications, the lower 3 bits are truncated.
+    (R,G,B):0xF7,0xF7,0xF7 == 0xF0,0xF0,0xF0
+
+           +0    +1    +2  ..    +C    +D    +E    +F
+    0x00:R_00  G_00  B_00  ..  R_04  G_04  B_04  R_05
+    |
+    0xB0:B_3A  R_3B  G_3B  ..  B_3E  R_3F  G_3F  B_3F
+    [EOB]
+
+    Combined as "hvca.pal".
+
+============================================================================
+     start up
+============================================================================
+
+. Check and set the operating environment at the first startup.
+
+    1. [WRAM Ctrl]
+    Change the operating cycle of the internal memory.
+    NTR, OXY, should not be changed.
+    It seems that some later AGB may not be effective.
+
+    2.[Action[L]...]
+    Go to CONFIG MENU when pressing [L] during emulation
+    Set the wait time.
+
+    X. Examine data integrity. Operation in an environment where "Err" appears is not supported.
+
+    . These items can be reconfigured with "Start while holding [R]".
+    . When the operating environment changes or the SRAM data is transferred (VBA <-> AGB <-> NTR)
+    Be sure to reconfigure.
+
+============================================================================
+     operation
+============================================================================
+
+              +- INIT MENU
+              |       |
+          Hold [R]    |
+              |       V
+    BOOT -(LD)+> GAME MENU <--- [R]/[L] ---------------> SRAM MENU
+           A      |                                       A   |
+           |      |   +-----> Unscale/Scale               |   |
+           |     [A] Hold [R]                            [L] [R]
+           |      |   | +[U]/[D](Unscale Y offset)        |   |
+           |      V   |                                   |   V
+           |     Emulation <--- [R]/[L] --------------->
+           |               <--- Hold [R](Reset) -------  CONFIG MENU
+           +------------------- Hold [R]+[L](Reboot)---
+
+    .NSF
+    .[L]+[R] : Exit
+    .[DOWN] : Next NSF
+    .[UP] : Forward NSF
+    .[RIGHT] : Next track
+    .[LEFT] : Forward track
+
+    NSF mode supports namco and SUNSOFT extended sound sources.
+    When there is silence for less than 10 seconds or when the performance is less than 4 minutes, it will automatically move to the next song.
+    Only track transition is valid for plug-in operation.
+
+    .Crazy climber vertical mode
+    Vertical/horizontal switching with [SELECT]
+    Input Left Right
+    Up ↑ ↓
+    Down ↓ ↑
+    Left ← ←
+    Right → →
+    ○+B ○ --
+    ○+A -- ○
+    B+A ↓ ↓
+
+    .Hyper Shot
+    input
+    B RUN
+    A JUMP
+    Left JUMP
+
+    .Pokkun Moler (Whack-A-Mole Mat)
+    [1]*[2]*[3]*[4] D-pad moves virtual cursor to "*"
+    [5]*[6] [7]*[8] When pressing [1], upper left + B
+    [9]*[a]*[b]*[c] When pressing [2], upper left + A or up + B
+    It seems that simultaneous pressing is not allowed inside the game,
+    Up + B + A, [2] takes precedence
+
+    .exciting boxing
+    Left : Move left Right : Move right
+     B: Left jab A: Right jab
+    Left + B: Left hook Right + A: Right hook
+    Left + A: Right hook Left + B: Left hook Always hook if left and right are in
+    Down + B: Body Up + A: Straight
+
+=============================================================================
+     [SRAM MENU]
+=============================================================================
+
+    . *.srz : Compressed data for battery backup
+    . *.stz : Compressed data of save state
+    . *.sdz : Compressed data of DISKSYSTEM save
+
+=============================================================================
+     [CONFIG MENU]
+=============================================================================
+
+    [Rapid[x]]
+        [ Xor ] : Reverse Key On/Off
+
+    [Input Mode]
+        [ I --> ] : Parent during communication (Master)
+        [ II--> ] : Slave during communication
+
+        1. Connect -> Start
+        2. After setting the child side of the connector to "II -->", press [R] to return.
+          child is stuck in wait
+        3. After setting the parent side of the connector to "I -->", return with [R]
+        4. Synchronous reset is applied when communication is established
+        ! Can't enter [CONFIG MENU] after communication is established
+
+     [ Advanced Options ] -> [ V-SPR:<XX> (Hit:XX/INT:XX) ]
+        Up to two SPRite groups can be displayed using this value as a boundary.
+        "Hit" is the Y coordinate where the 0th sprite hit
+        "INT" is the Y coordinate of the last interrupt
+            ~~~~~~
+        If you set either value + α, SPRite may be able to display well.
+        ! In the case of multiple interrupts, the "INT" value is not helpful.
+        If there is no problem with the display, there is no need to change
+        
