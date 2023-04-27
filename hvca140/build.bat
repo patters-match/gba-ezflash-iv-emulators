@@ -1,6 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: Place disksys.rom in the same folder as this script
+
 for %%f in (add\*.fds add\*.nes) do (
     set "file=%%f"
     set "name=%%~nf"
