@@ -27,7 +27,7 @@ These emulators were originally designed to be used in a number of ways:
 2. as plugins for the Pogoshell file manager  
    - *only supports much older flashcart devices e.g. Flash2Advance*  
 3. bundle each game ROM with its own copy of the emulator into a standalone ```.gba``` file  
-   - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
+   - *best for EZ-Flash IV - plenty of SD card storage, quick to load, can use save states since each game has its own 64KB of SRAM*  
 
 ## Purpose
 This collection serves use case 3 above. In each emulator folder the build script will iterate through the ROMs in the current folder, building a ```.gba``` executable for each title. The build scripts invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, which may also serve use case 1 if required. Run the compile script with ```-h``` for more information.
