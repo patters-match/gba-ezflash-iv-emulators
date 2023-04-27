@@ -5,8 +5,8 @@
 for file in add/*.fds add/*.nes ; do
 	out="${file/ \(*}" # strip brackets from name
 	if [ -e "${file%.*}.cfg" ]; then
-		./hvca_compile.py "${file}" "${file%.*}.cfg" -x "bin/flash_ez4_ezo.sub" -o "${out%.*}.gba" -pat
+		./hvca_compile.py "${file}" "${file%.*}.cfg" -x "bin/flash_ez4_ezo.sub" -o "${out%.*}.gba" -c -pat
 	else
-		./hvca_compile.py "${file}" -x "bin/flash_ez4_ezo.sub" -o "${out%.*}.gba" -pat
+		./hvca_compile.py "${file}" -x "bin/flash_ez4_ezo.sub" -o "${out%.*}.gba" -c -pat
 	fi
 done
