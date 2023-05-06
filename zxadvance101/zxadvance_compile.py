@@ -136,6 +136,11 @@ if __name__ == "__main__":
 		action = 'store_true'
 	)
 	parser.add_argument(
+		'-c',
+		help = "clean the inifile, converts all [section] entries to lower case and sorts the file",
+		action = 'store_true'
+	)
+	parser.add_argument(
 		'-sav',
 		help = "for EZ-Flash IV firmware 1.x - create a blank 64KB .sav file for the compilation, store in the SAVER folder, not needed for firmware 2.x which creates its own blank saves",
 		action = 'store_true'
@@ -179,10 +184,6 @@ if __name__ == "__main__":
 		print("...wrote", default_emubinary, "(fixed header, exit-patched)")
 		quit()
 
-	elif not args.romfile and not args.p:
-		parser.print_usage()
-		#raise Exception(f'nothing to do')
-
 	elif args.p:
 		# create Pogoshell plugin
 		pogobin = readfile(clean_emubinary)
@@ -208,6 +209,37 @@ if __name__ == "__main__":
 		pogobin += b'\0'
 		writefile(pogo_plugin, pogobin)
 		print("...wrote", pogo_plugin)
+
+	elif args.c:
+		# clean inifile
+		if os.path.exists(args.inifile):
+			config = configparser.ConfigParser()
+			config.optionxform = str
+			games_config = configparser.ConfigParser()
+			games_config.optionxform = str
+			new_config = configparser.ConfigParser()
+			new_config.optionxform = str
+			config.read(args.inifile)
+			gamelist = (list(config))
+			for item in config:
+				# keep these sections at the top of the new inifile, as they were originally
+				if any(item.lower() == s for s in ('default', 'zxa', 'homepage', 'settings', 'control defaults', )) or item.lower().startswith("control_"):
+					new_config[item] = config[item]
+					gamelist.remove(item)
+			for item in gamelist:
+				# ensure all section headings are lower case before they can be sorted
+				games_config[item.lower()] = config[item]
+			sortedgamelist = sorted(list(games_config))
+			for item in sortedgamelist:
+				# add the cleaned and sorted games sections to the new inifile
+				new_config[item] = games_config[item]
+			with open(args.inifile, "w") as ini_output:
+				new_config.write(ini_output, space_around_delimiters=False)
+		else:
+			parser.print_usage()
+
+	elif not args.romfile:
+		parser.print_usage()
 
 	else:
 		# build a compilation
