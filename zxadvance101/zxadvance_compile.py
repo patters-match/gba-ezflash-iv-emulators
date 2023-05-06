@@ -110,7 +110,7 @@ if __name__ == "__main__":
 	parser.add_argument(
 		'-e', 
 		dest = 'emubinary',
-		help = "ZXAdvance binary, defaults to " + localpath + default_emubinary + ". On first run, point this to the 'ZXAdvance 1.0.1.exe' injector tool to extract the emulator.",
+		help = "ZXAdvance binary, defaults to " + localpath + default_emubinary + ". Run this script with '-e ZXAdvance 1.0.1.exe' to extract " + default_emubinary,
 		type = argparse.FileType('rb'),
 		default = localpath + default_emubinary
 	)
@@ -180,9 +180,10 @@ if __name__ == "__main__":
 		quit()
 
 	elif not args.romfile and not args.p:
-		raise Exception(f'nothing to do')
+		parser.print_usage()
+		#raise Exception(f'nothing to do')
 
-	if args.p:
+	elif args.p:
 		# create Pogoshell plugin
 		pogobin = readfile(clean_emubinary)
 		pogobin += pogoheader('<POGOSHELL>', default_controls)
@@ -207,77 +208,76 @@ if __name__ == "__main__":
 		pogobin += b'\0'
 		writefile(pogo_plugin, pogobin)
 		print("...wrote", pogo_plugin)
-		quit()
 
+	else:
+		# build a compilation
+		roms = bytes()
+		headers = bytes()
+		# there is one blank header between the last header and the first ROM data
+		headers_size = (len(args.romfile) + 1 ) * EMU_HEADER
+		offset = headers_size
 
-	# build a compilation
-	roms = bytes()
-	headers = bytes()
-	# there is one blank header between the last header and the first ROM data
-	headers_size = (len(args.romfile) + 1 ) * EMU_HEADER
-	offset = headers_size
+		for item in args.romfile:
+			romfilename = os.path.split(item.name)[1]
+			romtitle = os.path.splitext(romfilename)[0]
+			romtype = os.path.splitext(romfilename)[1]
 
-	for item in args.romfile:
-		romfilename = os.path.split(item.name)[1]
-		romtitle = os.path.splitext(romfilename)[0]
-		romtype = os.path.splitext(romfilename)[1]
-
-		if romtype.lower() == ".sna":
-			filetype = 0
-		elif romtype.lower() == ".z80":
-			filetype = 1
-		else:
-			raise Exception(f'unsupported filetype for compilation - {romfilename}')
-
-		keys = default_controls
-		controlscheme = ""
-
-		if os.path.exists(args.inifile):
-			# read controls mappings from ZXA.INI, if present
-			config = configparser.ConfigParser()
-			config.read(args.inifile)
-			if romtitle.lower() in config:
-				gameconfig = config[romtitle.lower()]
-				controlscheme = gameconfig['control']
-				if controlscheme == 'Custom':
-					keys = dict(gameconfig)
-				else:
-					schemesectionname = 'Control_' + controlscheme
-					schemeconfig = config[schemesectionname]
-					keys = dict(schemeconfig)
-				name = gameconfig['filename'][:15].ljust(15)
+			if romtype.lower() == ".sna":
+				filetype = 0
+			elif romtype.lower() == ".z80":
+				filetype = 1
 			else:
-				name = romtitle[:15].ljust(15)
+				raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
-		rom = item.read()
-		rom += b"\0" * ((4 - (len(rom)%4))%4) # 4 byte alignment
+			keys = default_controls
+			controlscheme = ""
 
-		fileheader = struct.pack(
-			header_struct_format, name.encode('ascii'), offset, filetype,
-			control_map[keys['button a']], control_map[keys['button b']], control_map[keys['select']], control_map[keys['start']],
-			control_map[keys['dpad right']], control_map[keys['dpad left']], control_map[keys['dpad up']], control_map[keys['dpad down']],
-			control_map[keys['back right']], control_map[keys['back left']]
-		)
+			if os.path.exists(args.inifile):
+				# read controls mappings from ZXA.INI, if present
+				config = configparser.ConfigParser()
+				config.read(args.inifile)
+				if romtitle.lower() in config:
+					gameconfig = config[romtitle.lower()]
+					controlscheme = gameconfig['control']
+					if controlscheme == 'Custom':
+						keys = dict(gameconfig)
+					else:
+						schemesectionname = 'Control_' + controlscheme
+						schemeconfig = config[schemesectionname]
+						keys = dict(schemeconfig)
+					name = gameconfig['filename'][:15].ljust(15)
+				else:
+					name = romtitle[:15].ljust(15)
 
-		headers += fileheader
-		roms += rom
-		offset += len(rom)
-		print('{:<16}{:<4}{}'.format(name,romtype.strip('.').lower(),controlscheme))
+			rom = item.read()
+			rom += b"\0" * ((4 - (len(rom)%4))%4) # 4 byte alignment
 
-	blankheader = b'\0' * EMU_HEADER
-	compilation = args.emubinary.read() + headers + blankheader + roms
+			fileheader = struct.pack(
+				header_struct_format, name.encode('ascii'), offset, filetype,
+				control_map[keys['button a']], control_map[keys['button b']], control_map[keys['select']], control_map[keys['start']],
+				control_map[keys['dpad right']], control_map[keys['dpad left']], control_map[keys['dpad up']], control_map[keys['dpad down']],
+				control_map[keys['back right']], control_map[keys['back left']]
+			)
 
-	writefile(args.outputfile, compilation)
+			headers += fileheader
+			roms += rom
+			offset += len(rom)
+			print('{:<16}{:<4}{}'.format(name,romtype.strip('.').lower(),controlscheme))
 
-	if args.pat:
-		# EZ-Flash IV fw2.x GSS patcher metadata to force 64KB SRAM saves - for PATCH folder on SD card
-		patchname = os.path.splitext(args.outputfile)[0] + ".pat"
-		patchdata = b'QlpoOTFBWSZTWRbvmZEAAAT44fyAgIAAEUAAAACIAAQAAAQESaAAVEIaaGRoxBKeqQD1GTJoks40324rSIskHSFhIywXzTCaqwSzf4exCBTgBk/i7kinChIC3fMyIA=='
-		writefile(patchname, bz2.decompress(base64.b64decode(patchdata)))
+		blankheader = b'\0' * EMU_HEADER
+		compilation = args.emubinary.read() + headers + blankheader + roms
 
-	if args.sav:
-		# EZ-Flash IV fw1.x blank save - for SAVER folder on SD card
-		savename = os.path.splitext(args.outputfile)[0] + ".sav"
-		saveempty = b"\xff" * SRAM_SAVE
-		if not os.path.exists(savename): # careful not to overwrite an existing save
-			writefile(savename, saveempty)
+		writefile(args.outputfile, compilation)
+
+		if args.pat:
+			# EZ-Flash IV fw2.x GSS patcher metadata to force 64KB SRAM saves - for PATCH folder on SD card
+			patchname = os.path.splitext(args.outputfile)[0] + ".pat"
+			patchdata = b'QlpoOTFBWSZTWRbvmZEAAAT44fyAgIAAEUAAAACIAAQAAAQESaAAVEIaaGRoxBKeqQD1GTJoks40324rSIskHSFhIywXzTCaqwSzf4exCBTgBk/i7kinChIC3fMyIA=='
+			writefile(patchname, bz2.decompress(base64.b64decode(patchdata)))
+
+		if args.sav:
+			# EZ-Flash IV fw1.x blank save - for SAVER folder on SD card
+			savename = os.path.splitext(args.outputfile)[0] + ".sav"
+			saveempty = b"\xff" * SRAM_SAVE
+			if not os.path.exists(savename): # careful not to overwrite an existing save
+				writefile(savename, saveempty)
