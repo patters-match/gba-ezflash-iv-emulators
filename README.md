@@ -4,6 +4,7 @@ This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit
 Emulator|Target System|Author(s)|1st Release
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
+[ZXAdvance](https://www.gamebrew.org/wiki/ZXAdvance_GBA)|Sinclair ZX Spectrum 48K|TheHiVE|May 2001
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
 [HVCA](https://www.gamebrew.org/wiki/HVCA_GBA)|Nintendo NES / Famicom Disk System|outside-agb?|Sep 2004
@@ -15,10 +16,11 @@ Emulator|Target System|Author(s)|1st Release
 [MSXAdvance 0.2](https://github.com/patters-syno/msxadvance)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
 [Murdoc 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Mr. Do! Arcade|Flubba|May 2006
 [Snezziboy 0.26](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES|bubble2k|May 2006
-[NGPAdvance 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
+[NGPGBA 0.5.5](https://github.com/FluBBaOfWard/NGPGBA)|SNK Neo Geo Pocket / NGP Color|Flubba|Jul 2008
 [GhostsnGoblinsGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Ghosts'n Goblins Arcade|Flubba|Apr 2009
 [YieArKungFuGBA 0.1](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Yie Ar Kung-Fu Arcade|Flubba|Apr 2009
 [Jagoomba 0.5](https://github.com/EvilJagaGenius/jagoombacolor/releases)|An enhanced Goomba Color fork|FluBBa, Dwedit, Jaga + various|Nov 2021
+
 
 ## Background
 These emulators were originally designed to be used in a number of ways: 
@@ -27,7 +29,7 @@ These emulators were originally designed to be used in a number of ways:
 2. as plugins for the Pogoshell file manager  
    - *only supports much older flashcart devices e.g. Flash2Advance*  
 3. bundle each game ROM with its own copy of the emulator into a standalone ```.gba``` file  
-   - *best for EZ-Flash IV - plenty of SD card storage, quick to load*  
+   - *best for EZ-Flash IV - plenty of SD card storage, quick to load, can use save states since each game has its own 64KB of SRAM*  
 
 ## Purpose
 This collection serves use case 3 above. In each emulator folder the build script will iterate through the ROMs in the current folder, building a ```.gba``` executable for each title. The build scripts invoke my own Python 3 [gba-emu-compilation-builders](https://github.com/patters-syno/gba-emu-compilation-builders) scripts, which may also serve use case 1 if required. Run the compile script with ```-h``` for more information.
@@ -56,7 +58,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   HVCA = 1   #HVCA
   MSXA = 1   #MSXAdvance
   MRDO = 1   #Murdoc
-  NGPA = 1   #NGPAdvance
+  NGPE = 1   #NGPGBA
   PCEA = 1   #PCEAdvance
   PNES = 1   #PocketNES
   SMSA = 1   #SMSAdvance
@@ -121,3 +123,6 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - The emulator menu is broken unless you build a compilation with both ROM variants
 #### HVCA
 - Hold L+R in the menu to exit back to the flashcart menu
+- A .cfg filename must match the filename of the game it targets
+#### ZXAdvance:
+- ZXA.INI has a \[section\] for each game filename (lower case without file extension), the 'filename=' key is in fact how the game title will be displayed in the ZXAdvance ROM list. 'Config' can be Custom, or can refer to one of the sections prefixed with 'Config_' at the top of the file - e.g. Config=Kempston
