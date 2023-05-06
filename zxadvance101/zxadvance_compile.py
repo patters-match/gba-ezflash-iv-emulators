@@ -184,8 +184,8 @@ if __name__ == "__main__":
 
 	if args.p:
 		# create Pogoshell plugin
-		pogoplugin = readfile(clean_emubinary)
-		pogoplugin += pogoheader('<POGOSHELL>', default_controls)
+		pogobin = readfile(clean_emubinary)
+		pogobin += pogoheader('<POGOSHELL>', default_controls)
 		if os.path.exists(args.inifile):
 			# read controls mappings from ZXA.INI, if present
 			config = configparser.ConfigParser()
@@ -203,9 +203,9 @@ if __name__ == "__main__":
 					schemeconfig = config[schemesectionname]
 					keys = dict(schemeconfig)
 				name = item[:31].ljust(31).lower() # ZXAdvance converts Pogoshell filenames to lower case before matching them against ZXA.INI entries
-				pogoplugin += pogoheader(name, keys)
-		pogoplugin += b'\0'
-		writefile(pogo_plugin, pogoplugin)
+				pogobin += pogoheader(name, keys)
+		pogobin += b'\0'
+		writefile(pogo_plugin, pogobin)
 		print("...wrote", pogo_plugin)
 		quit()
 
