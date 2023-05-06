@@ -152,7 +152,8 @@ if __name__ == "__main__":
 	emubinaryfilename = os.path.split(args.emubinary.name)[1]
 
 	if emubinaryfilename in original_binaries:
-	
+		
+		# extract emulator binary
 		args.emubinary.seek(0xB0B04)
 		emubin = bytearray(args.emubinary.read(0x23D70))
 		emubin[0x30C] = 0                             # patch to disable intro (already 0 in v1.0.1a, which is the only difference)
@@ -182,6 +183,7 @@ if __name__ == "__main__":
 		raise Exception(f'nothing to do')
 
 	if args.p:
+		# create Pogoshell plugin
 		pogoplugin = readfile(clean_emubinary)
 		pogoplugin += pogoheader('<POGOSHELL>', default_controls)
 		if os.path.exists(args.inifile):
@@ -207,6 +209,8 @@ if __name__ == "__main__":
 		print("...wrote", pogo_plugin)
 		quit()
 
+
+	# build a compilation
 	roms = bytes()
 	headers = bytes()
 	# there is one blank header between the last header and the first ROM data
