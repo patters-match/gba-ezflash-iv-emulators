@@ -10,7 +10,7 @@ SRAM_SAVE = 65536
 default_outputfile = "pocketnes-compilation.gba"
 default_emubinary = "pocketnes.gba"
 default_database = "pnesmmw.mdb"
-header_struct_format = "<31sc4I" # https://docs.python.org/3/library/struct.html
+header_struct_format = "<31sx4I" # https://docs.python.org/3/library/struct.html
 
 # ROM header
 #
@@ -128,10 +128,10 @@ if __name__ == "__main__":
 
 	# ensure the first ROM's data is 256 byte aligned (after headers) for optimal performance
 	# https://github.com/Dwedit/PocketNES/issues/5
-	compilation = compilation + b"\0" * ((256 - ((len(compilation) + EMU_HEADER + NES_HEADER)%256))%256) 
+	compilation += cb"\0" * ((256 - ((len(compilation) + EMU_HEADER + NES_HEADER)%256))%256) 
 
 	if args.splashscreen:
-		compilation = compilation + args.splashscreen.read()
+		compilation += args.splashscreen.read()
 
 	for item in args.romfile:
 
@@ -198,18 +198,17 @@ if __name__ == "__main__":
 			romtitle = romtitle[:31]
 
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+		raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 		# align rom data (after headers) on 256 byte boundaries for optimal performance
 		# https://github.com/Dwedit/PocketNES/issues/5
 		# https://en.wikipedia.org/wiki/Data_structure_alignment
-		rom = rom + b"\0" * ((256 - ((len(rom) + EMU_HEADER)%256))%256)
+		rom += b"\0" * ((256 - ((len(rom) + EMU_HEADER)%256))%256)
 
-		romheader = struct.pack(header_struct_format, romtitle.encode('ascii'), b"\0", len(rom), flags, follow, 0)
-		compilation = compilation + romheader + rom
+		romheader = struct.pack(header_struct_format, romtitle.encode('ascii'), len(rom), flags, follow, 0)
+		compilation += romheader + rom
 
-		print (db_match, romtitle)
+		print(db_match, romtitle)
 
 	writefile(args.outputfile, compilation)
 

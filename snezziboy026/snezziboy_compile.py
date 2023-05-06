@@ -43,7 +43,7 @@ def SVEC(v):
 def _set(x,v):
 	global memorymap
 	result = (v(x * 0x2000) - (x * 0x2000)) & 0xFFFFFFFF
-	memorymap = memorymap + struct.pack("<I", int(result))
+	memorymap += struct.pack("<I", int(result))
 
 def _map(s,e,m0,m1,m2,m3,m4,m5,m6,m7):
 	for i in range(s,e+1):
@@ -85,7 +85,7 @@ def formmemorymap(loRom, romSize):
 		_map(0xb0, 0xbf, LRAM,IO,  IO,  SRAM,HROM,HROM,HROM,HROM)
 		_map(0xc0, 0xff, HROM,HROM,HROM,HROM,HROM,HROM,HROM,HROM)
 	
-	memorymap = memorymap + struct.pack("<2I", sramSizeBytes - 1, 0x8000000 + snesRomPosition)
+	memorymap += struct.pack("<2I", sramSizeBytes - 1, 0x8000000 + snesRomPosition)
 
 
 def checksum(input):
@@ -313,7 +313,7 @@ if __name__ == "__main__":
 			emulator[anchorfound+8:anchorfound+8+len(memorymap)] = memorymap
 			
 			# pad to snesRomPosition and add romdata
-			emulator = emulator + b"\0" * (snesRomPosition - len(emulator)) + rom
+			emulator += b"\0" * (snesRomPosition - len(emulator)) + rom
 
 			if args.v:
 				print()
@@ -341,13 +341,12 @@ if __name__ == "__main__":
 					writefile(savename, saveempty)
 
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 	if args.v:
-		print ("press L+R+Start for the emulator menu")
-		print ("press L+R+Select+Up to cycle BG Priority Sets")
-		print ("press L+R+Select+Down to cycle Forced BG Modes")
+		print("press L+R+Start for the emulator menu")
+		print("press L+R+Select+Up to cycle BG Priority Sets")
+		print("press L+R+Select+Down to cycle Forced BG Modes")
 
 
 

@@ -1,9 +1,15 @@
+05-05-23 patters
+* added ZXAdvance emulator for Sinclair ZX Spectrum 48K, and a new Python 3 compile script
+* fixed rom header and changed the GAME_ID to 'ZXAV'
+* hacked in an Exit menu item for EZ-Flash IV / 3in1 / Omega
+
 04-23-23 patters
-* Added HVCA emulator for Famicom Disk System and NES, and new Python 3 compile script
+* added HVCA emulator for Famicom Disk System and NES, and new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'HVCA' to base.bin which had blank header info
-* Added Flubba's Wasabi emulator for Watara Supervision, and new Python 3 compile script
+* added a reset subroutine (.sub) for EZ-Flash IV / 3in1 / Omega
+* added Flubba's Wasabi emulator for Watara Supervision, and new Python 3 compile script
 * added a GBA title, and a GAME_ID of 'WSBI' to WasabiGBA.gba which had blank header info
-* Added Flubba's newer NGPGBA emulator to replace NGPAdvance, and new Python 3 compile script
+* added Flubba's newer NGPGBA emulator to replace NGPAdvance, and new Python 3 compile script
 * build.bat and build.sh now pass through their command line parameters so you can easily add a splash screen etc.
 
 06-14-22 patters

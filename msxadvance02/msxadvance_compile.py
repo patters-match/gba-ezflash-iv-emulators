@@ -3,14 +3,14 @@
 import sys, os.path, struct, argparse, bz2, base64, zlib
 from sys import argv
 
-EMUID = int(0x1A4C4F43) # "COL",0x1A - probably unintentional since Formats.txt incorrectly states it should be "MSX",0x1A
+EMU_ID = int(0x1A4C4F43) # "COL",0x1A - probably unintentional since Formats.txt incorrectly states it should be "MSX",0x1A
 EMU_HEADER = 64
 SRAM_SAVE = 65536
 
 default_outputfile = "msxadv-compilation.gba"
 default_emubinary = "msxadva.gba"
 default_bios = "bios.bin" # recommended to use 'MSX System v1.0 + MSX BASIC (1983)(Microsoft)[MSX.ROM]'
-header_struct_format = "<8I31sc" # https://docs.python.org/3/library/struct.html
+header_struct_format = "<8I31sx" # https://docs.python.org/3/library/struct.html
 
 # ROM header
 #
@@ -219,10 +219,10 @@ if __name__ == "__main__":
 	mapper = 0
 	follow = 0 # sprite or address follow for 'Unscaled (Auto)' display mode
 	bios = args.bios.read()
-	bios = bios + b"\0" * ((4 - (len(bios)%4))%4)
+	bios += b"\0" * ((4 - (len(bios)%4))%4)
 	biosfilename = os.path.split(args.bios.name)[1]
-	biosheader = struct.pack(header_struct_format, EMUID, len(bios), flags, follow, biosflag, mapper, 0, 0, biosfilename[:31].encode('ascii'), b"\0")
-	compilation = compilation + biosheader + bios
+	biosheader = struct.pack(header_struct_format, EMU_ID, len(bios), flags, follow, biosflag, mapper, 0, 0, biosfilename[:31].encode('ascii'))
+	compilation += biosheader + bios
 
 	if args.bb:
 		biosflag = 0
@@ -231,8 +231,8 @@ if __name__ == "__main__":
 		follow = 0 # sprite or address follow for 'Unscaled (Auto)' display mode
 		empty = b"\xff" * 16384
 		emptyname = "-- Empty --"
-		emptyheader = struct.pack(header_struct_format, EMU_ID, len(empty), flags, follow, biosflag, mapper, 0, 0, emptyname.encode('ascii'), b"\0")
-		compilation = compilation + emptyheader + empty
+		emptyheader = struct.pack(header_struct_format, EMU_ID, len(empty), flags, follow, biosflag, mapper, 0, 0, emptyname.encode('ascii'))
+		compilation += emptyheader + empty
 
 	for item in args.romfile:
 
@@ -246,7 +246,7 @@ if __name__ == "__main__":
 		romtype = os.path.splitext(romfilename)[1]
 		romtitle = os.path.splitext(romfilename)[0]
 		rom = item.read()
-		rom = rom + b"\0" * ((4 - (len(rom)%4))%4)
+		rom += b"\0" * ((4 - (len(rom)%4))%4)
 
 		if romtype.lower() == ".rom":
 
@@ -262,8 +262,7 @@ if __name__ == "__main__":
 				elif mappername == 'RTYPE': mapper = 5
 
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 		if args.c:
 			romtitle = romtitle.split(" [")[0] # strip the square bracket parts of the name
@@ -277,8 +276,8 @@ if __name__ == "__main__":
 		else:
 			romtitle = romtitle[:31]
 
-		romheader = struct.pack(header_struct_format, EMUID, len(rom), flags, follow, biosflag, mapper, 0, 0, romtitle.encode('ascii'), b"\0")
-		compilation = compilation + romheader + rom
+		romheader = struct.pack(header_struct_format, EMU_ID, len(rom), flags, follow, biosflag, mapper, 0, 0, romtitle.encode('ascii'))
+		compilation += romheader + rom
 
 		print(romtitle.ljust(32), mappername)
 

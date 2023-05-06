@@ -83,7 +83,7 @@ if __name__ == "__main__":
 	compilation = args.emubinary.read()
 
 	if args.splashscreen:
-		compilation = compilation + args.splashscreen.read()
+		compilation += args.splashscreen.read()
 
 	for item in args.romfile:
 		romfilename = os.path.split(item.name)[1]
@@ -127,16 +127,15 @@ if __name__ == "__main__":
 				romarray[308:308+titlelength] = headername
 				rom = romarray
 
-			compilation = compilation + rom
+			compilation += rom
 			print('{:<17}{}'.format(outputtitle.rstrip("\x00"),romtype.strip(".")))
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 	# on EZ-Flash IV, random data in PSRAM after Goomba compilation may be interpreted as GB roms without 264 null bytes of padding
 	# which can result in duplicate game list entries
 	# https://www.dwedit.org/dwedit_board/viewtopic.php?id=643
-	compilation = compilation + b"\0" * 264
+	compilation += b"\0" * 264
 
 	writefile(args.outputfile, compilation)
 

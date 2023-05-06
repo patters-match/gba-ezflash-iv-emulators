@@ -3,14 +3,14 @@
 import sys, os.path, struct, argparse, bz2, base64
 from sys import argv
 
-EMUID = int(0x1A53454E) # "NES",0x1A - probably unintentional
+EMU_ID = int(0x1A53454E) # "NES",0x1A - probably unintentional
 EMU_HEADER = 60
 SRAM_SAVE = 65536 # not 8KB as advertised in readme.txt
 
 default_outputfile = "pceadv-compilation.gba"
 default_emubinary = "pceadvance.gba"
 default_cdrombios = "bios.bin"
-header_struct_format = "<31sc5I12s" # https://docs.python.org/3/library/struct.html
+header_struct_format = "<31sx5I12s" # https://docs.python.org/3/library/struct.html
 
 # ROM header
 #
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 	compilation = args.emubinary.read()
 
 	if args.splashscreen:
-		compilation = compilation + args.splashscreen.read()
+		compilation += args.splashscreen.read()
 
 	iso_count = 0
 
@@ -147,7 +147,7 @@ if __name__ == "__main__":
 		# HuCard
 		if romtype.lower() == ".pce":
 			rom = item.read()
-			rom = rom + b"\0" * ((4 - (len(rom)%4))%4)
+			rom += b"\0" * ((4 - (len(rom)%4))%4)
 
 			# USA ROMs need this specific flag - remember, most will need to be decrypted first using PCEToy
 			if "(U)" in romtitle or "(USA)" in romtitle:
@@ -179,9 +179,9 @@ if __name__ == "__main__":
 
 			# unsure why 16 bytes are added to len(rom), but the original builder does this, despite that it pads the roms a lot more than 16b
 			# however, you can't add more than one rom to the compilation unless this is done
-			romheader = struct.pack(header_struct_format, romtitle.encode('ascii'), b"\0", len(rom)+16, flags, follow, 0, EMUID, b"@           ")
+			romheader = struct.pack(header_struct_format, romtitle.encode('ascii'), len(rom)+16, flags, follow, 0, EMU_ID, b"@           ")
 
-			compilation = compilation + romheader + rom
+			compilation += romheader + rom
 
 		# CD-ROM
 		elif romtype.lower() == ".iso":
@@ -189,7 +189,7 @@ if __name__ == "__main__":
 			if iso_count == 0:
 				# first data track ISO needs a CD-ROM BIOS + optional TCD tracklist first
 				cdbios = readfile(args.cdrombios)
-				cdbios = cdbios + b"\0" * ((4 - (len(cdbios)%4))%4)
+				cdbios += b"\0" * ((4 - (len(cdbios)%4))%4)
 				cdtitle = romtitle
 	
 				if args.c:
@@ -199,8 +199,8 @@ if __name__ == "__main__":
 				romtitle = romtitle[:31]
 
 				# use the ISO name for the cdbios entry in the rom list
-				cdromheader = struct.pack(header_struct_format, romtitle.encode('ascii'), b"\0", len(cdbios)+16, flags, follow, 0, EMUID, b"@           ")
-				compilation = compilation + cdromheader + cdbios
+				cdromheader = struct.pack(header_struct_format, romtitle.encode('ascii'), len(cdbios)+16, flags, follow, 0, EMU_ID, b"@           ")
+				compilation += cdromheader + cdbios
 
 				if args.tcdfile:
 					tracklist = args.tcdfile.read()
@@ -212,22 +212,20 @@ if __name__ == "__main__":
 				cdrom = tracklist
 
 			# append data track (any subsequent tracks are simply concatenated - a TCD file is required for multiple data tracks)
-			cdrom = cdrom + item.read()
-			iso_count = iso_count + 1
+			cdrom += item.read()
+			iso_count += 1
 			if iso_count == 2 and tracklist == b"":
-				print("Error: multiple ISO data tracks require a TCD tracklist, either named to match the first ISO, or defined via -t")
-				print("       Note that PCEAdvance supports only a single CD-ROM game per compilation")
-				sys.exit(1)
+				raise Exception('multiple ISO data tracks require a TCD tracklist, either named to match the first ISO, or defined via -t\n' +
+						'Note that PCEAdvance supports only a single CD-ROM game per compilation')
 
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
-		print (romtitle)
+		print(romtitle)
 
 	# finished iterating rom list, append any CD-ROM data
 	if iso_count:
-		compilation = compilation + cdrom
+		compilation += cdrom
 
 		if args.trim:
 			# Super CD-ROM compilations cannot be larger than 16384-192KB or they won't fit into PSRAM

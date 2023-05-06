@@ -12,7 +12,7 @@ default_outputfile = "hvca-compilation.gba"
 default_emubinpath = "bin"
 default_bios = "disksys.rom" # must be 8KB
 default_palette = "hvca.pal"
-header_struct_format = "<I31sc3scI" # https://docs.python.org/3/library/struct.html
+header_struct_format = "<I31sx3sxI" # https://docs.python.org/3/library/struct.html
 
 # hvcamkfs file header
 #
@@ -50,16 +50,15 @@ def appendfile(file, verbose):
 			name = name.split(" (")[0] # strip the bracket parts of the name
 	contents = file.read()
 	if ext.lower() == "nes" and contents[:4] != b'NES\x1a':
-		print("Error: NES ROMs must be headered")
-		sys.exit(1)
+		raise Exception('NES ROMs must be headered')
 	if ext.lower() == "fds" and contents[:4] != b'FDS\x1a':
 		# reconstruct missing FDS header which HVCA requires
 		num_disk_sides = int(len(contents)/65500).to_bytes(1, byteorder='little')
 		contents = b'FDS\x1a' + num_disk_sides + b"\0" * 11 + contents
 	size = len(contents)
-	contents = contents + b"\0" * ((4 - (len(contents)%4))%4) # 4 byte alignment
-	fileheader = struct.pack(header_struct_format, EMU_ID, name.encode('ascii'), b"\0", ext.encode('ascii'), b"\0", size)
-	compilation = compilation + fileheader + contents
+	contents += b"\0" * ((4 - (len(contents)%4))%4) # 4 byte alignment
+	fileheader = struct.pack(header_struct_format, EMU_ID, name.encode('ascii'), ext.encode('ascii'), size)
+	compilation += fileheader + contents
 	if verbose:
 		print('{:<32}{}'.format(name,ext))
 
@@ -172,20 +171,19 @@ if __name__ == "__main__":
 	fdsfiles, nesfiles, nsffiles, cfgfiles =([], [], [], [])
 
 	for item in args.romfile:
-		romname = os.path.split(item.name)[1]
-		romfilename = os.path.splitext(romname)[0]
-		romfileext = os.path.splitext(romname)[1]
-		if romfileext.lower() == ".fds":
+		romfilename = os.path.split(item.name)[1]
+		romtitle = os.path.splitext(romfilename)[0]
+		romtype = os.path.splitext(romfilename)[1]
+		if romtype.lower() == ".fds":
 			fdsfiles.append(item)
-		elif romfileext.lower() == ".nes":
+		elif romtype.lower() == ".nes":
 			nesfiles.append(item)
-		elif romfileext.lower() == ".nsf":
+		elif romtype.lower() == ".nsf":
 			nsffiles.append(item)
-		elif romfileext.lower() == ".cfg":
+		elif romtype.lower() == ".cfg":
 			cfgfiles.append(item)
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 	if fdsfiles:
 		appendfile(args.bios, args.v)
@@ -201,7 +199,7 @@ if __name__ == "__main__":
 
 	# this does not appear to be needed, but it's here for consistency with merge.bat's use of the hvcamkfs -c option:
 	#  -c   Add END-MAGIC-NUM (FCA compatible)
-	compilation = compilation + EMU_END_MARKER.to_bytes(4, byteorder='little') + b"\0" * (EMU_HEADER - 4)
+	compilation += EMU_END_MARKER.to_bytes(4, byteorder='little') + b"\0" * (EMU_HEADER - 4)
 
 	writefile(args.outputfile, compilation)
 
