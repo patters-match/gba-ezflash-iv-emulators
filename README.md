@@ -4,12 +4,12 @@ This is a collection of emulators for the Gameboy Advance, SRAM-patched and exit
 Emulator|Target System|Author(s)|1st Release
 :-------|:------------|:--------|:---
 [PocketNES 1-4-2020](https://github.com/Dwedit/PocketNES/releases)|Nintendo NES|Loopy, later FluBBa, Dwedit|Jan 2001?
-[ZXAdvance](https://www.gamebrew.org/wiki/ZXAdvance_GBA)|Sinclair ZX Spectrum 48K|TheHiVE|May 2001
+[ZXAdvance 1.0.1a](https://www.gamebrew.org/wiki/ZXAdvance_GBA)|Sinclair ZX Spectrum 48K|TheHiVE|May 2001
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
 [PocketBeeb 1.01](https://web.archive.org/web/20171216184403/http://www.geocities.ws/quirky_2k1/emulation/index.html)|Acorn BBC Micro|Quirky|Sep 2004
-[HVCA](https://www.gamebrew.org/wiki/HVCA_GBA)|Nintendo NES / Famicom Disk System|outside-agb?|Sep 2004
-[Wasabi](https://github.com/FluBBaOfWard/WasabiGBA)|Watara Supervision|FluBBa|Nov 2004
+[HVCA 1.40](https://www.gamebrew.org/wiki/HVCA_GBA)|Nintendo NES / Famicom Disk System|outside-agb?|Sep 2004
+[Wasabi 0.23](https://github.com/FluBBaOfWard/WasabiGBA)|Watara Supervision|FluBBa|Nov 2004
 [SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
