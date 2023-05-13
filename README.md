@@ -129,5 +129,5 @@ I found that by progressively trimming both ends of this sequence, I was able to
 #### ZXAdvance:
 - ZXA.INI has a \[section\] for each game filename (lower case without file extension), the 'filename=' key is in fact how the game title will be displayed in the ZXAdvance ROM list. 'Config' can be Custom, or can refer to one of the sections prefixed with 'Config_' at the top of the file - e.g. Config=Kempston
 #### PocketBeeb:
-- The original builder command line tool can be compiled on macOS using
+- The original builder command line tool can be compiled on macOS using  
   ```clang -Dlinux pbappend.c -o pbappend```
