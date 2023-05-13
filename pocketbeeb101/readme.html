@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>none</title>
+</head>
+  <body>
+ <a name="top"></a>
+ <a href="#introduction">Introduction</a>
+ <br>
+ <a href="#disc">A GBA with a disc drive</a>
+ <br>
+ <a href="#keys">Keys</a>
+ <br>
+ <a href="#work">Things that work</a>
+ <br>
+ <a href="#dont_work">Things that don't</a>
+ <br>
+ <a href="#credits">Credits</a>
+ <br>
+ <br>
+ 
+<hr width="100%" size="2"><br>
+ 
+<h3><a name="introduction"></a>
+  Introduction</h3>
+ <br>
+  PocketBeeb is a BBC 'B' emulator for the GBA.  
+<p>  The BBC was a popular 8-bit micro computer used in schools in the UK
+ in the 1980s. It was probably most famous as the birth place of Elite. </p>
+ 
+<p>Originally PocketBeeb was conceived as a stand-alone emulator to run just one game: Exile. 
+I've added bits on until the current version supports a not-too-shabby number of games using 
+the common  <font color="#33cc00"><b>single-sided disc format (SSD)</b></font>
+and is also compatible with BeebEm UEF save states.</p>
+ 
+<p><a href="#top">Back</a>
+ <br>
+ </p>
+ 
+<hr width="100%" size="2"> 
+<p><br>
+ </p>
+ 
+<h3><b><a name="disc"></a>
+  A GBA with a disc drive</b></h3>
+ 
+<p>  In order to load discs on the GBA, you have to append the files onto
+ the emulator. A program is included that makes adding ssd and uef files
+a  fairly painless experience.</p>
+ 
+<p>  The steps are:</p>
+ 
+<ul>
+   <li>1. Download PocketBeeb   </li>
+   <li>2. Download some BBC disc images</li>
+   <li>3. Run injector program</li>
+   <li>4. Select the discs you want to add</li>
+   <li>5. Create the PocketBeeb+discs ROM</li>
+   <li>6. Flash this to your GBA cartridge</li>
+ 
+</ul>
+    Once PocketBeeb is up and running on the GBA, you will see either the 
+first  save state loaded (if you added a save state in step 4 above) or the 
+BBC's  "command prompt".   
+<ul>
+   <li>Press Start &amp; Select to bring up the PocketBeeb menu. </li>
+   <li>Highlight "Load Disc" and press A.</li>
+   <li>All being well, you should see a list of the discs you added</li>
+   <li>Choose one and press A</li>
+ 
+</ul>
+    The BBC resets and the disc starts to load... assuming it is an auto
+booting  disc.<br>
+ 
+<p><a href="emu.html#top">Back</a>
+ <br>
+ </p>
+    
+<hr width="100%" size="2"> 
+<h3><b><a name="keys"></a>
+  Keys</b></h3>
+<p>The GBA has just 10 different control inputs. The BBC has a keyboard  with
+over 50 keys. PocketBeeb overcomes this hurdle using a virual keyboard  and
+mappable controls.</p>
+<p>Pressing <b><font color="#ff6600">Start + Select</font></b> together brings
+up the emulation options menu. From here you can redfine keys, load games,
+change video preferences, etc<br>
+ </p>
+ 
+<p>  When creating the ROM, double clicking a game will bring up a window
+where you can select the keys that each GBA input will correspond to. These
+are the default controls used when you load the game on the GBA - you can
+remap them later  but each time you reload, the default keys are restored. 
+</p>
+ 
+<p>  Some games require multiple key presses (e.g entering hiscore names
+or passwords)  the virtual keyboard can be used for this. Menu-&gt;Keys-&gt;
+ Press A on the VK option to turn it ON. When you exit the menu, the virtual
+ keyboard is shown over the BBC screen. </p>
+ 
+<p> 
+<table>
+   <tbody>
+     <tr>
+       <td>d-pad</td>
+       <td>changes the selected key</td>
+     </tr>
+     <tr>
+       <td>A</td>
+       <td>'press' the virtual key. </td>
+     </tr>
+     <tr>
+       <td>B</td>
+       <td>hide virtual keyboard</td>
+     </tr>
+     <tr>
+       <td>R/L</td>
+       <td>change virtual keyboard position</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ </p>
+ 
+<p><a href="emu.html#top">Back</a>
+ <br>
+ </p>
+ 
+<hr width="100%" size="2"> 
+<h3><b><a name="work"></a>
+  Things that work ok...</b></h3>
+ 
+<ul>
+   <li>"Fat pixel", low resolution modes (as seen in Exile, Repton, Magic
+Mushrooms, etc etc)</li>
+   <li>Sound - 3 channels plus noise generator </li>
+   <li>Multiload games (Repton 3, Ravenskull, etc)</li>
+   <li>Palette changes (Felix + Weevils, Magic Mushrooms, etc, etc)</li>
+   <li>Teletext, but barely enough to see the controls on Acornsoft games.</li>
+   <li>Timers, as used in every game ever, especially Volcano and Snapper</li>
+ 
+</ul>
+ 
+<p><a href="emu.html#top">Back</a>
+ <br>
+ </p>
+ 
+<hr width="100%" size="2"> 
+<h3><b><a name="dont_work"></a>
+  Things that don't work and probably never will....</b></h3>
+ 
+<p>  Accurate emulation is possible on giga hertz PCs, on a 16Mhz GBA things 
+ get a bit tougher. Don't expect to see these things any time soon:</p>
+ 
+<ul>
+   <li>Hi-res graphics - eg. Meteors, Frak - are not drawn correctly. How
+can   I fit a 320*256 screen resolution into 240*160? Answer: with great
+difficulty</li>
+   <li>Teletext Mode - this is a major fudge, most of it is not drawn correctly</li>
+   <li>Palette changes - some games use very accurate timing to change the
+    palette and provide extra colours on screen. These appear very flickery 
+   as I don't emulate the video accurately enough  e.g Last Ninja, Stryker's
+ Run. A hack is in place to stop the flickering, but it is not ideal</li>
+   <li>Clever games - Uridium, Firetrack, Revs, Elite, etc - that do exciting
+ things   to the video registers are too much for my timing hacks.</li>
+   <li>Funky keyboard interrupt usage - Stryker's Run title screen</li>
+   <li>Tape emulation<br>
+   </li>
+ 
+</ul>
+ 
+<p><a href="emu.html#top">Back</a>
+ <br>
+ </p>
+ 
+<hr width="100%" size="2"> 
+<h3><b><a name="credits"></a>
+  Credits</b></h3>
+ 
+<p>  Basic, Acorn DFSi, OS 1.2 roms&nbsp;&copy; 1981 Acorn Computers Ltd. 
+Used without  permission... but then who would you ask?</p>
+ 
+<p>  PocektNES authors - Emulation of the BBC's 6502 uses a modified version
+ of the PocketNES core. (do no NES games use ADC/SBC with the D flag set
+then?)  </p>
+ 
+<p>  BBC specific emulation is taken from numerous sources, but thankyous
+ must go to the authors of BeebEm for making an emulator with such easy to
+ read source code.</p>
+ 
+<p>  ZXAdvance/Foon - Though I've not used anything really specific from
+ either of these - ZXAdvance's sprite based screen notwithstanding - they
+have influenced my approach for 8-bit to GBA ideas enough to warrant credit.</p>
+ 
+<p><a href="emu.html#top">Back</a>
+ </p>
+ 
+<hr width="100%" size="2"> 
+<p><br>
+ </p>
+ 
+<p> </p>
+ 
+</body>
+</html>

@@ -1,0 +1,120 @@
+WHAT IS THIS?
+------------
+
+pbappend is the 'new' PocketBeeb command line append program, with a very old UI. 
+Use to add games to PocketBeeb emulator. 
+
+Example:
+  ./pbappend -i bbc.gba  -o menu.gba *.uef *.ssd 
+Usage : ./pbappend [OPTIONS ... ] file ...  
+Where OPTIONS are:
+  -o FILE                Output to FILE.
+  -i FILE                Emulator input FILE
+  -k FILE                Keyboard configuration is in FILE
+
+One or more file may of be Single Sided Disc (ssd) images or BeebEm UEF save
+states.  Format guessed by file extension (.uef or .ssd). UEF states are
+stripped and only used blocks are appended to the output.  By default the file
+`pbkeys.cfg' is checked for keyboard definitions but this can be changed with
+the -k switch.
+
+If no input file is given, then bbc.gba is used. If no output is given the
+program exits.  If no Keyboard configuration file is given, pbkeys.cfg is used.
+All default files are searched for in the current directory only.
+
+KEY MAPPING
+-----------
+
+The file pbkeys.cfg is plain ASCII text and is interpreted to have the following format:
+
+<filename>  <KEY_A> <KEY_B> <SELECT> <START> <Right> <Left> <Up> <Down> <KEY_R> <KEY_L>  [xscale yscale xoff yoff]
+
+* Comments are lines that start with # 
+* The key mappings may be hex numbers (e.g. 0x00 0x3A) or characters (e.g A M s x) 
+* The list is sorted alphabetically in memory when read for faster searching for entries, 
+  so there is no need to keep it in order.
+* Maximum line width is 100 characters.
+* File names must not include the path. This means that you can't have 2 mappings for 
+  2 files with the same name in different directories, but I figured that is an 
+  unlikely situation.
+* xoff and yoff are not used, but may be in future. (Screen x and y offset)
+* xscale and yscale are not too useful, but help set the x and y scale when the game is loaded.
+
+Use ASCII characters for most keys. Special keys have the following values:
+
+  [-OFF-]           0x00
+  [BACKSP]          0x01
+  [TAB]             0x02
+  [CTRL]            0x03
+  [CAPS]            0x04
+  [ESC]             0x05
+  [COPY]            0x06
+  [Up]              0x07
+  [Down]            0x08
+  [Left]            0x09
+  [Right]           0x0a
+  [DEL]             0x0b
+  [SHIFT]           0x0c
+  [RETURN]          0x0d
+  [SH.LCK]          0x0e
+
+To convert old-style pbeeb.ini files to the new format, the convertpbeeb.C file is included. Compile
+this with :
+
+g++ convertpbeeb.C -o convertpbeeb
+
+and use it like this:
+
+./convertpbeeb pbeeb.ini converted.txt
+
+converted.txt contains the converted keyboard mappings in ASCII format. 
+
+WHY?
+----
+
+The original pbinject program was written to use wxWidgets, because Windows GUI
+are all the rage in the world of GBA emulation game injection programs. The
+idea for using wx being that this allows cross platform coding. But wxMS (for
+Windows) and wxGTK (for GNU/Linux) have rather different behaviour for the same
+code. 
+
+The wx API also changes a great deal with each minor release of the library.
+Even after struggling to align with an altered API, the GTK version is useless
+in 2.4, the drop down combo boxes don't scroll, lists don't register keyboard
+events, etc, and the API altered beyond all comprehension in wxGTK 2.5. Enough
+was enough. 
+
+The result: a simple command line program that uses the standard C library,
+which isn't going to suddenly change :)  It takes a fraction of the time to
+append a list of games to PocketBeeb - the shell globs the file patterns
+magically - though you may have to type something instead of using the mouse...
+Copying keyboard configurations from one game to another is done in your
+favourite text editor, rather than by 4000 mouse clicks in a shoddy UI ;) 
+
+BUGS
+----
+
+It is quite likely that the game name is not what you want: it uses the file
+name and shortens it to 11 chars max, removing the extension. 
+
+i.e. game.ssd -> game
+     abcdefghijklmnopqrstu.uef -> abcdefghijk
+
+You can probably fudge the key entries to break things by using key > 255 or  
+9 < key < 32. Don't do it is my advice.
+
+I have no idea if the Windows executables actually work. Let me know if you use them!
+
+LICENCE
+--------
+
+  Copyright (C) 2005 R.Quirk
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any
+  damages arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any
+  purpose, including commercial applications, and to alter it and
+  redistribute it freely.
+

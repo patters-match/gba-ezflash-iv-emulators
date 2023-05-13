@@ -1,3 +1,8 @@
+05-13-23 patters
+* added PocketBeeb emulator for Acorn BBC Micro
+* added GAME_ID of 'BEEB'
+* exit patched for for EZ-Flash IV / 3in1 / Omega
+
 05-05-23 patters
 * added ZXAdvance emulator for Sinclair ZX Spectrum 48K, and a new Python 3 compile script
 * fixed rom header and changed the GAME_ID to 'ZXAV'
