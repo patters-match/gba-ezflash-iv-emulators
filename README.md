@@ -7,6 +7,7 @@ Emulator|Target System|Author(s)|1st Release
 [ZXAdvance](https://www.gamebrew.org/wiki/ZXAdvance_GBA)|Sinclair ZX Spectrum 48K|TheHiVE|May 2001
 [PCEAdvance 7.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|NEC PC Engine / Super CD-ROM²|FluBBa|Apr 2003
 [Goomba Paletted 2.40](http://goomba.webpersona.com)|Nintendo Gameboy|FluBBa|Oct 2003
+[PocketBeeb 1.01](https://web.archive.org/web/20171216184403/http://www.geocities.ws/quirky_2k1/emulation/index.html)|Acorn BBC Micro|Quirky|Sept 2004
 [HVCA](https://www.gamebrew.org/wiki/HVCA_GBA)|Nintendo NES / Famicom Disk System|outside-agb?|Sep 2004
 [Wasabi](https://github.com/FluBBaOfWard/WasabiGBA)|Watara Supervision|FluBBa|Nov 2004
 [SNESAdvance 0.1f](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
@@ -51,6 +52,7 @@ Each emulator's Exit function in the L+R menu was typically intended for Pogoshe
   ```
   #GAMELIST TO SKIP GSS AUTOMATICALLY
   #EMULATORS
+  BEEB = 1   #PocketBeeb
   COLG = 1   #Cologne
   GGAC = 1   #GhostsnGoblinsGBA
   GMBC = 1   #Goomba Color/Jagoomba
@@ -126,3 +128,5 @@ I found that by progressively trimming both ends of this sequence, I was able to
 - A .cfg filename must match the filename of the game it targets
 #### ZXAdvance:
 - ZXA.INI has a \[section\] for each game filename (lower case without file extension), the 'filename=' key is in fact how the game title will be displayed in the ZXAdvance ROM list. 'Config' can be Custom, or can refer to one of the sections prefixed with 'Config_' at the top of the file - e.g. Config=Kempston
+#### PocketBeeb:
+- The original builder command line tool can be compiled on macOS using ```clang -Dlinux pbappend.c -o pbappend```
