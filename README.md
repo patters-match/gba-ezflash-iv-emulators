@@ -13,7 +13,7 @@ Emulator|Target System|Author(s)|1st Release
 [SNESAdvance 0.1F](https://web.archive.org/web/20080208234615/http://www.snesadvance.org/index.html)|Nintendo SNES|Loopy, FluBBa|Feb 2005
 [SMSAdvance 2.5](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|SEGA Master System / Game Gear / SG-1000|FluBBa|Jul 2005
 [Cologne 0.8](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|ColecoVision|FluBBa|Jan 2006
-[Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|A Goomba fork to add Gameboy Color|FluBBa, Dwedit|Jan 2006
+[Goomba Color 2019_5_4](https://www.dwedit.org/gba/goombacolor.php)|Nintendo Gameboy / Gameboy Color|FluBBa, Dwedit|Jan 2006
 [MSXAdvance 0.2](https://github.com/patters-syno/msxadvance)|MSX-1 (*version 0.2 is most compatible*)|FluBBa|Mar 2006
 [Murdoc 0.3](https://web.archive.org/web/20150430211123/http://www.ndsretro.com/gbadown.html)|Mr. Do! Arcade|Flubba|May 2006
 [Snezziboy 0.26](https://sourceforge.net/projects/snezziboy/files/snezziboy%20%28binaries%2Bsource%29/v0.26/)|Nintendo SNES|bubble2k|May 2006
