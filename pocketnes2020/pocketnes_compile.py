@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
 	# ensure the first ROM's data is 256 byte aligned (after headers) for optimal performance
 	# https://github.com/Dwedit/PocketNES/issues/5
-	compilation += cb"\0" * ((256 - ((len(compilation) + EMU_HEADER + NES_HEADER)%256))%256) 
+	compilation += b"\0" * ((256 - ((len(compilation) + EMU_HEADER + NES_HEADER)%256))%256) 
 
 	if args.splashscreen:
 		compilation += args.splashscreen.read()
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 			romtitle = romtitle[:31]
 
 		else:
-		raise Exception(f'unsupported filetype for compilation - {romfilename}')
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 		# align rom data (after headers) on 256 byte boundaries for optimal performance
 		# https://github.com/Dwedit/PocketNES/issues/5
