@@ -579,8 +579,7 @@ if __name__ == "__main__":
 				print(db_match, romtitle)
 
 		else:
-			print("Error: unsupported filetype for compilation -", romfilename)
-			sys.exit(1)
+			raise Exception(f'unsupported filetype for compilation - {romfilename}')
 
 		rom += b"\0" * ((4 - (len(rom)%4))%4)
 		romheader = struct.pack(header_struct_format, romtitle.encode('latin-1'), len(rom), int(crcstr,16), flags1, flags2, autoscroll1, autoscroll2, scale, offset)
